@@ -46,7 +46,8 @@ html {
 .custom-table {
   text-align: center;
 }
-.custom-table th, td {
+.custom-table th, 
+.custom-table td {
   text-align: center;
   background-image: none !important;
 }
@@ -61,4 +62,11 @@ html {
 }
 .icon--js {
   color: var(--js-color);
+}
+.in-white {
+  color: white !important;
+}
+.slide--cern {
+  background: linear-gradient(rgba(0,0,0, 0.6), rgba(0,0,0, 0.5)), url('https://www.universetoday.com/wp-content/uploads/2018/12/nwOtx-2000x1200.jpg');
+  background-size: cover;
 }
