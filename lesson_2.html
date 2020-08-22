@@ -32,11 +32,11 @@
   <section class="slide">
     <h2>План</h2>
     <ol>
-      <li>Списки. Виды списков, их применение</li>
-      <li>Таблицы</li>
-      <li>Изображения. Способы добавления изображений на страницу</li>
-      <li>Относительные и абсолютные адреса</li>
-      <li>Форматы графики</li>
+      <li>Списки. Виды списков, их применение;</li>
+      <li>Таблицы;</li>
+      <li>Изображения. Способы добавления изображений на страницу;</li>
+      <li>Относительные и абсолютные адреса;</li>
+      <li>Форматы графики.</li>
     </ol>
   </section>
   <section class="slide">
@@ -99,9 +99,78 @@
     </table>
   </section>
   <section class="slide">
+    <h2>Практика | Разметка навигации сайта</h2>
+    <strong>Задача:</strong> написать разметку для главной навигации сайта используя следующие теги:
+    <code>&lt;nav&gt;</code>
+    <code>&lt;ul&gt;</code>
+    <code>&lt;li&gt;</code>
+    <code>&lt;a&gt;</code>
+    <hr>
+    <table>
+      <tr>
+        <th>Название пункта меню</th>
+        <th>href</th>
+      </tr>
+      <tr>
+        <td>Главная</td>
+        <td>#home</td>
+      </tr>
+      <tr>
+        <td>Услуги</td>
+        <td>#services</td>
+      </tr>
+      <tr>
+        <td>О компании</td>
+        <td>#about</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Контакты</td>
+        <td>#contacts</td>
+      </tr>
+    </table>
+  </section>
+  <section class="slide">
+    <h2>Тестируем навигацию на доступность</h2>
+    Screeen Reader:
+    <a target="_blank" href="https://chrome.google.com/webstore/detail/chromevox-classic-extensi/kgejglhpjiefppelpmljglcjbhoiplfn?hl=en">
+      ChromeVox Classic Extension
+    </a>
+    <hr>
+    <nav>
+      <ul class="example-nav">
+        <li><a href="index.html">Home Page</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contacts.html">Contacts</a></li>
+      </ul>
+    </nav>
+    <hr>
+    <a href="index.html">Home Page</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">About Us</a>
+    <a href="contacts.html">Contacts</a>
+    <style>
+      .example-nav li {
+        display: inline-block;
+      }
+      .example-nav li:before {
+        display: none;
+      }
+    </style>
+    <hr>
+    <a href="https://youtu.be/20SHvU2PKsM" target="_blank">
+      <span class="fab fa-youtube"></span>
+      Introduction to Web Accessibility and W3C Standards
+    </a>
+  </section>
+  <section class="slide">
     <h2>Таблицы</h2>
     Для добавления таблицы на страницу используется тег  <code>&lt;table&gt;</code><br>
-    Как и любая таблица html-таблица состоит из строк и ячеек.<br>
+    Как и любая таблица, html-таблица состоит из строк и ячеек.<br>
     Для строк используется тег  <code>&lt;tr&gt;</code><br>
     Для ячеек используется тег  <code>&lt;td&gt;</code><br>
     Тег <code>&lt;th&gt;</code> определяет ячейку заголовка таблицы (table header cell )<br>
@@ -111,9 +180,9 @@
     <pre>
       <code>&lt;table&gt;</code>
       <code>  &lt;caption&gt;Заголовок таблицы&lt;/caption&gt;</code>
-      <code>  &lt;thead&gt;&lt;!-- шапка таблицы (table head) --&gt;&lt;/thead&gt;</code>
-      <code>  &lt;tbody&gt;&lt;!-- тело таблицы (table body) --&gt;&lt;/tbody&gt;</code>
-      <code>  &lt;tfoot&gt;&lt;!-- подвал таблицы (table foot) --&gt;&lt;/tfoot&gt;</code>
+      <code style="background: rgb(255, 178, 178);">  &lt;thead&gt;&lt;!-- шапка таблицы (table head) --&gt;&lt;/thead&gt;</code>
+      <code style="background: rgb(165, 255, 250);">  &lt;tbody&gt;&lt;!-- тело таблицы (table body) --&gt;&lt;/tbody&gt;</code>
+      <code style="background: rgb(255, 254, 182);">  &lt;tfoot&gt;&lt;!-- подвал таблицы (table foot) --&gt;&lt;/tfoot&gt;</code>
       <code>&lt;/table&gt;</code>
     </pre>
   </section>
@@ -155,7 +224,7 @@
   </section>
   <section class="slide">
     <h2>Форматы изображений</h2>
-    Универсально формата изображений на данный момент не существует.
+    <mark>Универсально формата изображений на данный момент не существует.</mark>
     Есть большое количество различных форматов, каждый из которых обладает своими преимуществами и недостатками.
   </section>
   <section class="slide">
@@ -168,18 +237,24 @@
     <strong>Преимущества:</strong>  Качество не страдает при масштабировании. Небольшой вес.
     Есть возможность взаимодействия через CSS и JavaScript (анимации).<br>
     <strong>Недостатки:</strong>  Ограниченная область применения (как правило небольшие иконки, интерфейсная графика).
+    <br>
+    <a href="https://febasic.github.io/images/html_tag.svg" target="_blank">svg file</a>
   </section>
   <section class="slide">
     <h2>jpeg (jpg)</h2>
     Формат jpeg является одним из наиболее популярных форматов графики.
     <strong>Преимущества:</strong>  относительно небольшой вес. Высокая поддержка браузерами.<br>
     <strong>Недостатки:</strong>  не поддерживает прозрачность (альфа канал).
+    <hr>
+    Задача: добавить в html документ jpeg изображение
   </section>
   <section class="slide">
     <h2>png</h2>
     Наряду с jpeg является одним из наиболее популярных форматов графики, но в отличии от него поддерживает прозрачность.
     <strong>Преимущества:</strong>  Поддерживает прозрачность. Высокая поддержка браузерами.<br>
     <strong>Недостатки:</strong>  вес файла.
+    <hr>
+    Задача: добавить в html документ png изображение
   </section>
   <section class="slide">
     <h2><s>gif</s></h2>
@@ -192,6 +267,16 @@
     webp - это не один а целых два формата (сжатие с потерями и без потерь качества). <br>
     <strong>Преимущества:</strong> Небольшой вес. Поддержка прозрачности.<br>
     <strong>Недостатки:</strong> Есть проблемы с поддержкой. Необходимо добавлять fallback.
+  </section>
+  <section class="slide">
+    <h2>Практика</h2>
+    Задача: 
+    <ol>
+      <li>сконвертировать jpeg в webp</li>
+      <li>сконвертировать png в webp</li>
+      <li>добавить в html документ оба webp изображения</li>
+    </ol>
+    Для конвертации использовать онлайн-сервисы.
   </section>
   <section class="slide">
     <h2>avif</h2>
