@@ -34,8 +34,7 @@
     <ol>
       <li>Тег form и его атрибуты;</li>
       <li>Элементы форм;</li>
-      <li>Типы тега input;</li>
-      <li>HTML-валидация форм.</li>
+      <li>Типы тега input.</li>
     </ol>
   </section>
   <section class="slide">
@@ -98,7 +97,7 @@
           <td><code>&lt;input&gt;</code></td>
           <td>предназначен для ввода данных пользователем</td>
           <td>
-            <input type="text" name="text">
+            <input type="text" name="text" required>
           </td>
         </tr>
         <tr>
@@ -107,7 +106,7 @@
           </td>
           <td>позволяет выбрать пункт из списка</td>
           <td>
-            <select name="select">
+            <select name="select" required>
               <option value="value1">option1</option>
               <option value="value2">option2</option>
               <option value="value3">option3</option>
@@ -132,7 +131,7 @@
           <td rowspan="2">
             <fieldset>
               <legend>Заголовок группы</legend>
-              <input type="date" name="date"><input type="time" name="time">
+              <input type="date" name="date" required><input type="time" name="time" required>
             </fieldset>
           </td>
         </tr>
