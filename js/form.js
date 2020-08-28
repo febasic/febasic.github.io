@@ -7,8 +7,12 @@
       let form = this;
       for ( let i = 0; i < form.elements.length - 1; i++ ) {
         let element = form.elements[i];
-        if ((element.value != '') && (element.name != '')) {
+        if (((element.value != '') && (element.name != '')) && ((element.type != 'radio') && (element.type != 'checkbox'))) {
           data.push(`${element.name}:${element.value}`);
+        } else if ((element.type == 'radio') || (element.type == 'checkbox')) {
+          if (element.checked) {
+            data.push(`${element.name}:${element.value}`);
+          }
         }
       }
       if (data.length) {
