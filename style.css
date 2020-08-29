@@ -70,3 +70,21 @@ html {
   background: linear-gradient(rgba(0,0,0, 0.6), rgba(0,0,0, 0.5)), url('https://www.universetoday.com/wp-content/uploads/2018/12/nwOtx-2000x1200.jpg');
   background-size: cover;
 }
+.close-button {
+  width: 66px;
+  height: 66px;
+  border: 4px solid var(--color-blue);
+  color: var(--color-blue);
+  font-weight: 900;
+  font-size: 60px;
+  line-height: 56px;
+  font-weight: 400;
+  background-color: transparent;
+  cursor: pointer;
+}
+.demo-nav__list-item {
+  display: inline-block;
+}
+.demo-nav__list-item:before {
+  display: none;
+}
