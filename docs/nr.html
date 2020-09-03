@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link class="link-js" rel="stylesheet" href="">
+</head>
+<body>
+  <div class="button-wrap">
+    <button class="main-btn main-btn--active toggle-styles-js" data-src="">native</button>
+    <button class="main-btn toggle-styles-js" data-src="https://necolas.github.io/normalize.css/latest/normalize.css">normalize.css</button>
+    <button class="main-btn toggle-styles-js" data-src="https://cdn.jsdelivr.net/npm/reset-css@4.0.1/reset.css">reset.css</button>
+  </div>
+
+  <style>
+    .button-wrap {
+      position: fixed;
+      top: 0;
+      right: 0;
+      background-color: #fff;
+      padding: 15px;
+    }
+    .main-btn {
+      background-color: rgb(6, 6, 12);
+      margin-right: 8px;
+      border: none;
+      padding: 10px 15px;
+      color: white;
+      font-weight: 700;
+      font-size: 16px;
+      border-radius: 4px;
+      font-family: sans-serif;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+    .main-btn--active {
+      background-color: #00f;
+    }
+  </style>
+
+  <script>
+    let resetButtons = document.querySelectorAll('.toggle-styles-js');
+    let resetLength = resetButtons.length;
+    let linkElement = document.querySelector('.link-js');
+
+    for (let i = 0; i < resetLength; i++) {
+      let button = resetButtons[i];
+      button.addEventListener('click', function(event) {
+        event.preventDefault();
+        let styleSrc = event.target.getAttribute('data-src');
+        linkElement.setAttribute('href', styleSrc);
+        
+        for (let j = 0; j < resetLength; j++) {
+          let button = resetButtons[j];
+          button.classList.remove('main-btn--active');
+        }
+
+        event.target.classList.add('main-btn--active');
+      })
+    }
+  </script>
+
+  <h1>lorem2</h1>
+  <h2>lorem2</h2>
+  <h3>lorem2</h3>
+  <h4>lorem2</h4>
+  <h5>lorem2</h5>
+  <h6>lorem2</h6>
+  <pre>
+    <code>
+    function (event) {
+      event.preventDafault();
+    }
+    </code>
+  </pre>
+  <hr>
+  <a href="#link">link</a>
+  <fieldset>
+    <legend>form elements</legend>
+    <button>link</button>
+    <input type="reset">
+    <input type="submit">
+    <input type="search" placeholder="placeholder">
+    <select>
+      <option value="1">option1</option>
+      <option value="2">option2</option>
+      <option value="3">option3</option>
+      <option value="4">option4</option>
+      <option value="5">option5</option>
+    </select>
+  </fieldset>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, placeat!<br>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, placeat!<br>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, placeat!<br>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, placeat!<br>
+  </p>
+  <table>
+    <tr>
+      <td>
+        <ul>
+          <li>lorem1</li>
+          <li>lorem1</li>
+          <li>lorem1</li>
+          <li>lorem1</li>
+          <li>lorem1</li>
+          <li>lorem1</li>
+          <li>lorem1</li>
+          <li>lorem1</li>
+          <li>lorem1</li>
+          <li>lorem1</li>
+        </ul>
+      </td>
+      <td>
+        <ol>
+          <li>lorem1</li>
+          <li>lorem1</li>
+          <li>lorem1</li>
+          <li>lorem1</li>
+          <li>lorem1</li>
+          <li>lorem1</li>
+          <li>lorem1</li>
+          <li>lorem1</li>
+          <li>lorem1</li>
+          <li>lorem1</li>
+        </ol>
+      </td>
+      <td>
+      </td>
+    </tr>
+  </table>
+  <table>
+      <tr>
+        <td>lorem</td>
+        <td>lorem</td>
+        <td>lorem</td>
+        <td>lorem</td>
+        <td>lorem</td>
+      </tr>
+      <tr>
+        <td>lorem</td>
+        <td>lorem</td>
+        <td>lorem</td>
+        <td>lorem</td>
+        <td>lorem</td>
+      </tr>
+      <tr>
+        <td>lorem</td>
+        <td>lorem</td>
+        <td>lorem</td>
+        <td>lorem</td>
+        <td>lorem</td>
+      </tr>
+  </table>
+</body>
+</html>
