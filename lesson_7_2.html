@@ -32,8 +32,43 @@
   <section class="slide">
     <h2>План</h2>
     <ol>
-      <li></li>
+      <li>Float. Clearfix.</li>
+      <li>Float layout.</li>
     </ol>
+  </section>
+  <section class="slide">
+    <h2>Float (плавающие элементы)</h2>
+    Свойство <strong>float</strong> определяет выравнивание элемента по левой или правой стороне,
+    при этом остальные элементы будут обтекать float-элемент (плаващий элемент). Плавающий элемент выпадает из нормального потока.
+    <hr>
+    <pre>
+      <code>float: left | right | none</code>
+    </pre>
+  </section>
+  <section class="slide">
+    <h2>Практическое применение</h2>
+    <ul>
+      <li>обтекание изображения в тексте;</li>
+      <li>модульные сетки.</li>
+    </ul>
+  </section>
+  <section class="slide">
+    <h2>Clearfix</h2>
+    Clearfix - это вспомогательный класс, служащий для устранения побочных эффектов, вызванных плавающими элементами. 
+  </section>
+  <section class="slide">
+    <h2>Простейший пример Clearfix</h2>
+    <pre>
+      <code>.clearfix:after {</code>
+      <code>  content: '';</code>
+      <code>  display: block;</code>
+      <code>  clear: both;</code>
+      <code>}</code>
+    </pre>
+  </section>
+  <section class="slide">
+    <h2>Практика</h2>
+    С помощью свойста float реализовать 12-ти колоночную модульную сетку.
   </section>
   <section class="slide">
     <h2>Домашка</h2>
@@ -42,7 +77,9 @@
   <section class="slide">
     <h2>Вопросы для подготовки к интервью</h2>
     <ol>
-      <li></li>
+      <li>Что такое float/clearfix?</li>
+      <li>Для чего нужны float-элементы?</li>
+      <li>Каковы недостатки построения layout на float'ax?</li>
     </ol>
   </section>
   <footer class="badge">
