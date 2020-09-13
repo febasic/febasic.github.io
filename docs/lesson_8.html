@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <title>Position | Курс Frontend Basic</title>
+  <meta charset="utf-8">
+  <meta content='NOINDEX, NOFOLLOW' name='robots'>
+  <meta name="description" content="Position | Курс Frontend Basic. Компьютерная Школа Hillel">
+  <meta property="og:title" content="Frontend Basic">
+  <meta property="og:description" content="Position | Курс Frontend Basic | Компьютерная Школа Hillel">
+  <meta property="og:image" content="https://assets.ithillel.ua/images/og.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="shower/themes/ribbon/styles/styles.css">
+  <link rel="stylesheet" href="fontawesome-free-5.14.0-web/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176065403-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-176065403-1');
+  </script>
+</head>
+<body class="shower list">
+  <header class="caption">
+      <h1>Position | Курс Frontend Basic</h1>
+      <p>Александр Плахотенко, Компьютерная Школа Hillel</p>
+  </header>
+  <section class="slide slide--title">
+    <h2>Position</h2>
+  </section>
+  <section class="slide">
+    <h2>План</h2>
+    <ol>
+      <li>Позиционирование в CSS.</li>
+      <li>Виды позиционирования, их практическое применение.</li>
+    </ol>
+  </section>
+  <section class="slide">
+    <h2>Position</h2>
+    <blockquote>
+      <p>
+        Свойсто <code>position</code> определяет как элемент будет
+        позиционироваться в документе относительно других элементов либо относительно
+        самого себя (в случае с <code>position: relative</code> ). 
+      </p>
+    </blockquote>
+    <code style='font-size: 24px;'>position: static | relative | absolute | fixed | sticky</code>
+  </section>
+  <section class="slide">
+    <h2>Position</h2>
+    Конечное положение элемента у которого position отлично от <code>static</code> (значение по умолчанию)
+    определяется с помощью свойств<br>
+    <code>top</code>
+    <code>right</code>
+    <code>bottom</code>
+    <code>left</code>
+  </section>
+  <section class="slide">
+    <h2>Static</h2>
+    <code>static</code> - значение по умолчанию. Для <code>static</code> элементов свойста
+    <code>top</code>
+    <code>right</code>
+    <code>bottom</code>
+    <code>left</code> а также <code>z-index</code>
+    игнорируются.
+  </section>
+  <section class="slide">
+    <h2>Relative</h2>
+    Элемент у которого задано свойсто <code>position: relative</code> может быть смещен относительно себя с помощью свойст
+    <code>top</code>
+    <code>right</code>
+    <code>bottom</code>
+    <code>left</code>.
+    При этом такое смещение не будет влиять на положение других элементов.
+  </section>
+  <section class="slide">
+    <h2>Absolute</h2>
+    Элемент у которого задано свойсто <code>position: absolute</code> выпадает из нормального потока и позиционируется
+    относительно ближайшего своего родителя у которого <code>position</code> отлично от <code>static</code>.
+    <br>
+    Положение такого элемента определяется с помощью свойств <br>
+    <code>top</code>
+    <code>right</code>
+    <code>bottom</code>
+    <code>left</code>.
+  </section>
+  <section class="slide">
+    <h2>Fixed</h2>
+    Элемент с <code>postion: fixed</code> ведет себя точно так же как элемент с  <code>position: absolute</code>,
+    но позиционируется относительно <br> элемента <code>body</code>.
+    (<a href="https://developer.mozilla.org/ru/docs/Web/CSS/position" target="_blank">есть исключения</a>)
+  </section>
+  <section class="slide">
+    <h2>Sticky</h2>
+    Элемент с <code>position: sticky</code> позиционируется в соответствии с нормальным потоком, а затем смещается относительно
+    своего родителя. Смещение не влияет на положение любых других элементов.
+  </section>
+  <section class="slide">
+    <h2>z-index</h2>
+    <figure>
+      <blockquote>
+        <p>
+          Свойство z-index определяет положение элемента и нижестоящих элементов по оси z. В случае перекрытия
+          элементов, это значение определяет порядок наложения. В общем случае, элементы с большим<br> z-index
+          перекрывают элементы с меньшим.
+        </p>
+      </blockquote>
+      <figcaption>
+        <a href="https://developer.mozilla.org/ru/docs/Web/CSS/z-index" target="_blank">MDN</a>
+      </figcaption>
+    </figure>
+  </section>
+  <section class="slide">
+    <h2>Контекст наложения</h2>
+    <figure>
+      <blockquote>
+        <p>
+          Контекст наложения (stacking context) это концепция трехмерного расположения HTML элементов вдоль оси
+          Z по отношению к пользователю, находящемуся перед экраном.  HTML элементы занимают это место по порядку,
+          основанному на атрибутах (свойствах) элемента.
+        </p>
+      </blockquote>
+      <figcaption>
+        <a href="https://developer.mozilla.org/ru/docs/Web/CSS/z-index" target="_blank">MDN</a>
+      </figcaption>
+    </figure>
+  </section>
+  <section class="slide">
+    <h2>Практика</h2>
+    <strong>Задача:</strong> реализовать верстку fixed элементов из проекта "house vop".
+  </section>
+  <section class="slide">
+    <h2>Домашка</h2>
+    <a href="https://docs.google.com/document/d/18NjHUTYk-xSNgfLRVn40fBB-C_tG9ufU92FxwnJP3P0/edit?usp=sharing" target="_blank">Ссылка</a>
+  </section>
+  <section class="slide">
+    <h2>Вопросы для подготовки к интервью</h2>
+    <ol>
+      <li>Какие есть значения у свойста postion?</li>
+      <li>Как будет вести себя элемент с каждым из этих значений?</li>
+      <li>Как на практике применяется свойство position.</li>
+      <li>Что такое z-index?</li>
+      <li>Что такое контекст наложения?</li>
+    </ol>
+  </section>
+  <footer class="badge">
+      <a href="/">Home</a>
+  </footer>
+  <div class="progress"></div>
+  <script src="shower/shower.js"></script>
+  <!-- &lt;&gt; -->
+</body>
+</html>
