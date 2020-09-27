@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <title>Адаптивная верстка | Курс Frontend Basic</title>
+  <meta charset="utf-8">
+  <meta content='NOINDEX, NOFOLLOW' name='robots'>
+  <meta name="description" content="Адаптивная верстка | Курс Frontend Basic. Компьютерная Школа Hillel">
+  <meta property="og:title" content="Frontend Basic">
+  <meta property="og:description" content="Адаптивная верстка | Курс Frontend Basic | Компьютерная Школа Hillel">
+  <meta property="og:image" content="https://assets.ithillel.ua/images/og.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="shower/themes/ribbon/styles/styles.css">
+  <link rel="stylesheet" href="fontawesome-free-5.14.0-web/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176065403-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-176065403-1');
+  </script>
+</head>
+<body class="shower list">
+  <header class="caption">
+      <h1>Адаптивная верстка | Курс Frontend Basic</h1>
+      <p>Александр Плахотенко, Компьютерная Школа Hillel</p>
+  </header>
+  <section class="slide slide--title">
+    <h2>Адаптивная верстка</h2>
+  </section>
+  <section class="slide">
+    <h2>План</h2>
+    <ol>
+      <li>Viewport.</li>
+      <li>Единицы измерения.</li>
+      <li>Responsive Web Design.</li>
+      <li>Адаптивная/резиновая верстка.</li>
+      <li>Mobile-first.</li>
+      <li>Graceful Degradation/Progressive Enhancement.</li>
+    </ol>
+  </section>
+  <section class="slide">
+    <h2>viewport</h2>
+    <figure>
+      <blockquote>
+        <p>
+          Viewport - это видимая пользователю область веб-страницы, то, что может
+          увидеть пользователь, не прибегая к прокрутке.
+        </p>
+      </blockquote>
+      <figcaption>
+        <a href="https://developer.mozilla.org/ru/docs/%D0%A1%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C/Viewport"
+           target="_blank">
+           MDN
+        </a>
+      </figcaption>
+    </figure>
+    <strong>Важно:</strong> scrollbar является частью viewport.
+  </section>
+  <section class="slide">
+    <h2>Единицы измерения</h2>
+    <style>
+      .table td {
+        padding: 10px;
+      }
+    </style>
+    <table class="table">
+      <tr>
+        <td>vh</td>
+        <td>
+          1vh соответствует 1% высоты viewport
+        </td>
+      </tr>
+      <tr>
+        <td>vw</td>
+        <td>
+          1vw соответствует 1% ширины viewport
+        </td>
+      </tr>
+      <tr>
+        <td>vmin</td>
+        <td>
+          1vmin соответствует меньшему из 1vh, 1vw
+        </td>
+      </tr>
+      <tr>
+        <td>vmax</td>
+        <td>
+          1vmax соответствует большему из 1vh, 1vw
+        </td>
+      </tr>
+      <tr>
+        <td>rem</td>
+        <td>
+          1rem соответствует значению свойства font-size корневого элемента
+        </td>
+      </tr>
+    </table>
+  </section>
+  <section class="slide">
+    <h2>meta viewport</h2>
+    <figure>
+      <blockquote>
+        <p>
+          Meta-тег <code>viewport</code> сообщает браузеру о том, как именно обрабатывать размеры страницы,
+          и изменять её масштаб. Этот тег необходимо добавлять в секцию <code>head</code>.
+        </p>
+      </blockquote>
+      <figcaption>
+        <a href="https://developer.mozilla.org/ru/docs/%D0%A1%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C/Viewport"
+           target="_blank">
+           MDN
+        </a>
+      </figcaption>
+    </figure>
+    <code style="font-size: 18px;">
+      &lt;meta name="<mark>viewport</mark>" content="width=device-width, initial-scale=1"&gt;
+    </code>
+  </section>
+  <section class="slide">
+    <h2>Responsive Web Design</h2>
+    <figure>
+      <blockquote>
+        <p>
+          Responsive Web Design (отзывчивый веб-дизайн) - это подход основная идея которого
+          заключается в том, что layout веб-страницы должен смотреться одинаково хорошо на различных
+          устройствах и автоматически подстраиваться под ширину/высоту устройства<br> (mobile, tablet, desktop).
+        </p>
+      </blockquote>
+      <figcaption>
+        <a href="https://alistapart.com/article/responsive-web-design/" target="_blank">
+          Responsive Web Design | by Ethan MarcotteMay 25, 2010
+        </a>
+      </figcaption>
+    </figure>
+  </section>
+  <section class="slide">
+    <h2>Responsive Web Design</h2>
+    <video width="800"
+           loop
+           autoplay
+           src="https://storage.googleapis.com/web-dev-assets/responsive-web-design-basics/resize.mp4"></video>
+  </section>
+  <section class="slide">
+    <h2>Резиновая верстка</h2>
+    В резиновой верстке размеры для составных элементов layout'а указываются в процентах,
+    то есть они меняют свои размеры в зависимости от размеров окна браузера.
+  </section>
+  <section class="slide">
+    <h2>Адаптивная верстка</h2>
+    Адаптивная верстка - это подход, основной идеей которого является корректное отображение интерфейса на конкретных, фиксированных
+    разрешениях (например: 576px, 768px, 992px, 1200px). Переход между брэйкпоинтами осуществляется рывками, а не плавно.
+    <a href="http://shpargalkablog.ru/2013/06/layout.html" target="_blank"><br>
+      Разница между фиксированной, резиновой, адаптивной и отзывчивой вёрсткой
+    </a>
+  </section>
+  <section class="slide">
+    <h2>Mobile First</h2>
+    Mobile First - это подход разработки пользовательского интерфейса в котором
+    изначально осуществляется разработка для мобильных устройств, а затем для широкоформатных дисплеев.
+  </section>
+  <section class="slide">
+    <h2>Graceful Degradation</h2>
+    Graceful Degradation (постепенная деградация) - это подход разработки, ориентированный на работу в самых современных браузерах.
+    При этом в более старых браузерах также важно сохранить функциональсть приложения.
+  </section>
+  <section class="slide">
+    <h2>Progressive Enhancement</h2>
+    Progressive Enhancement (прогрессивное улучшение) - это подход разработки идея которого заключается в создании
+    простого и функционально интерфейса на первом этапе разработки и постепенном улучшении на следующих итерацияx.
+  </section>
+  <section class="slide">
+    <h2>Media Queries</h2>
+    <figure>
+      <blockquote>
+        <p>
+          <strong>Media Queries</strong> - ключевой компонент отзывчивого дизайна, который делает возможным для CSS адаптироваться в
+          зависимости от различных парметров или характеристик устройства. Например, media query может применить
+          различные стили если экран меньше определенного размера, или в зависимости от того находится устройство
+          в портретном или альбомном режиме.
+        </p>
+      </blockquote>
+      <figcaption>
+        <a href="https://developer.mozilla.org/ru/docs/Web/CSS/Media_Queries"
+           target="_blank">
+           MDN
+        </a>
+      </figcaption>
+    </figure>
+  </section>
+  <section class="slide">
+    <h2>Медиа-запросы для разных типов <br>устройств</h2>
+    <code> all | screen | print | speech</code>
+    <pre>
+      <code>@media <mark>screen, print</mark> {</code>
+      <code>  body {</code>
+      <code>    background-color: black;</code>
+      <code>  }</code>
+      <code>}</code>
+    </pre>
+  </section>
+  <section class="slide">
+    <h2>Медиа-запросы для разной <br>ориентации устройств</h2>
+    <code> landscape | portrait</code>
+    <pre>
+      <code>@media <mark>(orientation: landscape)</mark> {</code>
+      <code>  body {</code>
+      <code>    background-color: black;</code>
+      <code>  }</code>
+      <code>}</code>
+    </pre>
+  </section>
+  <section class="slide">
+    <h2>Медиа-запросы для разных размеров <br>устройств</h2>
+    <code> min-width | max-width | min-height | max-height </code>
+    <pre>
+      <code>@media <mark>(min-width: 640px)</mark> {</code>
+      <code>  body {</code>
+      <code>    background-color: black;</code>
+      <code>  }</code>
+      <code>}</code>
+    </pre>
+  </section>
+  <section class="slide">
+    <h2>Медиа-запросы для устройств <br>c высокой плотностью пикселей</h2>
+    <pre>
+      <code>@media <mark>(-webkit-min-device-pixel-ratio: 2),</mark></code>
+      <code>       <mark>(min-resolution: 192dpi)</mark> {</code>
+      <code>  body {</code>
+      <code>    background-image: url('image_2x.png');</code>
+      <code>  }</code>
+      <code>}</code>
+    </pre>
+  </section>
+  <section class="slide">
+    <h2>Бонус: @supports</h2>
+    <code>@supports</code> позволяет проверить поддержку отдельных css свойств либо технологий в браузере.
+    <pre>
+      <code><mark>@supports</mark> (background-clip: text) {</code>
+      <code>  .section {</code>
+      <code>    background-color: black;</code>
+      <code>  }</code>
+      <code>}</code>
+    </pre>
+  </section>
+  <section class="slide">
+    <h2>Домашка</h2>
+    <a href="https://docs.google.com/document/d/1_7qnPf62AkIaB2dg0QA3pKLZiPVYjNkqdvZ9aEMSteU/edit?usp=sharing" target="_blank">Ссылка</a>
+  </section>
+  <section class="slide">
+    <h2>Вопросы для подготовки к интервью</h2>
+    <ol>
+      <li>Что такое вьюпорт?</li>
+      <li>Что такое адаптивная верстка?</li>
+      <li>Что такое резиновая верстка?</li>
+      <li>Что такое responsive верстка?</li>
+      <li>Что такое mobile-first? </li>
+      <li>Что такое Graceful Degradation/Progressive Enhancement?</li>
+      <li>Что такое медиа-запросы? Какие типы медиа-запросов существуют?</li>
+    </ol>
+  </section>
+  <section class="slide">
+    <h2>Почитать</h2>
+    <ul>
+      <li>
+        <a href="https://developer.mozilla.org/ru/docs/%D0%A1%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C/Viewport" target="_blank">
+          Viewport
+        </a>
+      </li>
+      <li>
+        <a href="https://developer.mozilla.org/ru/docs/Web/CSS/Media_Queries" target="_blank">
+          Media Queries
+        </a>
+      </li>
+      <li>
+        <a href="https://css-tricks.com/snippets/css/retina-display-media-query/" target="_blank">
+          Retina Display Media Query
+        </a>
+      </li>
+      <li>
+        <a href="https://htmlacademy.ru/blog/boost/frontend/graceful-degradation" target="_blank">
+          Постепенная деградация
+        </a>
+      </li>
+      <li>
+        <a href="https://developer.mozilla.org/en-US/docs/Glossary/Graceful_degradation" target="_blank">
+          Graceful degradation
+        </a>
+      </li>
+      <li>
+        <a href="https://htmlacademy.ru/blog/boost/frontend/progressive-enhancement" target="_blank">
+          Прогрессивное улучшение
+        </a>
+      </li>
+    </ul>
+  </section>
+  <section class="slide">
+    <h2>Посмотреть</h2>
+    <ul>
+      <li>
+        <a href="https://www.youtube.com/watch?v=srUZ9E4qQlQ" target="_blank">Адаптивная вёрстка — HTML Шорты</a>
+      </li>
+    </ul>
+  </section>
+  <footer class="badge">
+      <a href="/">Home</a>
+  </footer>
+  <div class="progress"></div>
+  <script src="shower/shower.js"></script>
+  <!-- &lt;&gt; -->
+</body>
+</html>

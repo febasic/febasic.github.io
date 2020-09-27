@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <title>Другие теги HTML | Курс Frontend Basic</title>
+  <meta charset="utf-8">
+  <meta content='NOINDEX, NOFOLLOW' name='robots'>
+  <meta name="description" content="Другие теги HTML | Курс Frontend Basic. Компьютерная Школа Hillel">
+  <meta property="og:title" content="Frontend Basic">
+  <meta property="og:description" content="Другие теги HTML | Курс Frontend Basic | Компьютерная Школа Hillel">
+  <meta property="og:image" content="https://assets.ithillel.ua/images/og.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="shower/themes/ribbon/styles/styles.css">
+  <link rel="stylesheet" href="fontawesome-free-5.14.0-web/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176065403-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-176065403-1');
+  </script>
+</head>
+<body class="shower list">
+  <header class="caption">
+      <h1>Другие теги HTML | Курс Frontend Basic</h1>
+      <p>Александр Плахотенко, Компьютерная Школа Hillel</p>
+  </header>
+  <section class="slide slide--title">
+    <h2>Другие теги HTML</h2>
+  </section>
+  <section class="slide">
+    <h2>План</h2>
+    <ol>
+      <li>Ориентиры (Landmarks);</li>
+      <li>Теги video, audio, iframe.</li>
+    </ol>
+  </section>
+  <section class="slide">
+    <h2>Ориентиры (Landmarks)</h2>
+    <table>
+      <tr>
+        <th>тег</th>
+        <th style="padding-left: 30px;">описание</th>
+      </tr>
+      <tr>
+        <td>
+          <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/main" target="_blank">
+            <code>&lt;main&gt;</code>
+          </a>
+        </td>
+        <td style="padding-left: 30px;">
+          главный контент (только один на странице)
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/nav" target="_blank">
+            <code>&lt;nav&gt;</code>
+          </a>
+        </td>
+        <td style="padding-left: 30px;">
+          навигация
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/header" target="_blank">
+            <code>&lt;header&gt;</code>
+          </a>
+        </td>
+        <td style="padding-left: 30px;">
+          как правило содержит лого, короткое описание сайта, навигацию и т.д.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/footer" target="_blank">
+            <code>&lt;footer&gt;</code>
+          </a>
+        </td>
+        <td style="padding-left: 30px;">
+          как правило содержит copyright, дополнительные ссылки
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/aside" target="_blank">
+            <code>&lt;aside&gt;</code>
+          </a>
+        </td>
+        <td style="padding-left: 30px;">
+          второстепенный контент (баннеры, реклама)
+        </td>
+      </tr>
+    </table>
+  </section>
+  <section class="slide">
+    <h2>Article vs Section</h2>
+    <table>
+      <tr>
+        <th>тег</th>
+        <th>описание</th>
+      </tr>
+      <tr>
+        <td>
+          <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/article" target="_blank">
+            <code>&lt;article&gt;</code>
+          </a>
+        </td>
+        <td>
+          независимая порция контента (пост, статья)
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/section" target="_blank">
+            <code>&lt;section&gt;</code>
+          </a>
+        </td>
+        <td>
+          раздел страницы, составная часть чего-то большего
+        </td>
+      </tr>
+    </table>
+    <p>
+      рекомендуется использовать заголовок (h1...h6) внутри article, section
+    </p>
+  </section>
+  <section class="slide">
+    <h2>Практика</h2>
+    Задача: написать разметку для страницы из
+    <a href="https://www.figma.com/file/Z0ZMAmnIMizwmn5QxrCrf2/Trafalgar" target="_blank">
+      макета
+    </a>
+  </section>
+  <section class="slide">
+    <h2>
+      Тег
+      <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/video" target="_blank">
+        &lt;video&gt;
+      </a>
+    </h2>
+    Для встраивания видео и анимированного контента.
+    <hr>
+    <pre>
+      <code>&lt;video <mark>src='video.mp4' autoplay  poster='poster.png'</mark>&gt;</code>
+      <code>  <a style="font-size: 20px;"
+                 href="https://caniuse.com/#search=Video%20element"
+                 target="_blank">Sorry, your browser doesn't support embedded videos.</a></code>
+      <code>&lt;/video&gt;</code>
+    </pre>
+  </section>
+  <section class="slide">
+    <h2>
+      Тег &lt;video&gt; + &lt;source&gt;
+    </h2>
+    <pre>
+      <code>&lt;video <mark>autoplay  poster='poster.png'</mark>&gt;</code>
+      <code>  &lt;source <mark>src='video.mp4' type='video/mp4'</mark> &gt;</code>
+      <code>  &lt;source <mark>src='video.ogv' type='video/ogg'</mark> &gt;</code>
+      <code>  &lt;source <mark>src='video.webm' type='video/webm'</mark> &gt;</code>
+      <code>&lt;/video&gt;</code>
+    </pre>
+  </section>
+  <section class="slide">
+    <h2>Атрибуты тега video</h2>
+    <table>
+      <tr>
+        <th>атрибут</th>
+        <th>назначение</th>
+      </tr>
+      <tr>
+        <td>autoplay</td>
+        <td>автоматическое воспроизведение</td>
+      </tr>
+      <tr>
+        <td>controls</td>
+        <td>добавляет элементы управления к видео</td>
+      </tr>
+      <tr>
+        <td>loop</td>
+        <td>зацикливает видео</td>
+      </tr>
+      <tr>
+        <td>muted</td>
+        <td>воспроизведение без звука</td>
+      </tr>
+      <tr>
+        <td>poster</td>
+        <td>адрес картинки-превью</td>
+      </tr>
+      <tr>
+        <td>
+          <mark style="background-color: rgb(255, 119, 119);">playsinline</mark>
+        </td>
+        <td>
+          <mark style="background-color: rgb(255, 119, 119);">need research</mark>
+        </td>
+      </tr>
+    </table>
+  </section>
+  <section class="slide">
+    <h2>
+      Тег
+      <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/audio" target="_blank">
+        &lt;audio&gt;
+      </a>
+    </h2>
+    <pre>
+      <code>&lt;audio <mark>src='sound.mp3'</mark>&gt;</code>
+      <code>  <a style="font-size: 20px;"
+                 href="https://caniuse.com/#search=Audio%20element"
+                 target="_blank">Your browser does not support the audio element.</a></code>
+      <code>&lt;/audio&gt;</code>
+    </pre>
+  </section>
+  <section class="slide">
+    <h2>Атрибуты тега audio</h2>
+    <table>
+      <tr>
+        <th>атрибут</th>
+        <th>назначение</th>
+      </tr>
+      <tr>
+        <td>autoplay</td>
+        <td>автоматическое воспроизведение</td>
+      </tr>
+      <tr>
+        <td>controls</td>
+        <td>добавляет элементы управления</td>
+      </tr>
+      <tr>
+        <td>loop</td>
+        <td>зацикливает воспроизведение</td>
+      </tr>
+      <tr>
+        <td>muted</td>
+        <td>отключает звук</td>
+      </tr>
+    </table>
+  </section>
+  <section class="slide">
+    <h2>
+      Тег &lt;audio&gt; + &lt;source&gt;
+    </h2>
+    <pre>
+      <code>&lt;audio <mark>controls</mark>&gt;</code>
+      <code>  &lt;source <mark>src='sound.ogg' type='audio/ogg'</mark>&gt;</code>
+      <code>  &lt;source <mark>src='sound.mp3' type='audio/mpeg'</mark>&gt;</code>
+      <code>&lt;/audio&gt;</code>
+    </pre>
+  </section>
+  <section class="slide">
+    <h2>Тег iframe</h2>
+    Предназначен для встраивания в документ других веб-страниц.<br>
+    Практическое применение: встраивание карт (google maps), видео (youtube, vimeo).
+    <hr>
+    <code>&lt;iframe <mark>src='https://febasic.github.io</mark>'&gt;&lt;/iframe&gt;</code>
+  </section>
+  <section class="slide">
+    <h2>Домашка</h2>
+    <a href="https://docs.google.com/document/d/12VGWk2rrVeBVlbFch7yReVR60Prf1qAswTvF17l6csk/edit?usp=sharing" target="_blank">Ссылка</a>
+  </section>
+  <section class="slide">
+    <h2>Вопросы для подготовки к интервью</h2>
+    <ol>
+      <li>Какие вы знаете теги HTML5?*</li>
+      <li>Каково семантическое значение того или иного тега?</li>
+      <li>Как добавить на страницу видео/аудио?</li>
+      <li>Какие форматы видео/аудио вы знаете?</li>
+      <li>В чем преимущество того или иного формата?</li>
+      <li>Для чего нужен тег iframe?</li>
+    </ol>
+    <i>* именно так этот вопрос звучит на собеседовании</i>
+  </section>
+  <footer class="badge">
+      <a href="/">Home</a>
+  </footer>
+  <div class="progress"></div>
+  <script src="shower/shower.js"></script>
+  <!-- &lt;&gt; -->
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <title>Float | Курс Frontend Basic</title>
+  <meta charset="utf-8">
+  <meta content='NOINDEX, NOFOLLOW' name='robots'>
+  <meta name="description" content="Float | Курс Frontend Basic. Компьютерная Школа Hillel">
+  <meta property="og:title" content="Frontend Basic">
+  <meta property="og:description" content="Float | Курс Frontend Basic | Компьютерная Школа Hillel">
+  <meta property="og:image" content="https://assets.ithillel.ua/images/og.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="shower/themes/ribbon/styles/styles.css">
+  <link rel="stylesheet" href="fontawesome-free-5.14.0-web/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176065403-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-176065403-1');
+  </script>
+</head>
+<body class="shower list">
+  <header class="caption">
+      <h1>Float | Курс Frontend Basic</h1>
+      <p>Александр Плахотенко, Компьютерная Школа Hillel</p>
+  </header>
+  <section class="slide slide--title">
+    <h2>Float</h2>
+  </section>
+  <section class="slide">
+    <h2>План</h2>
+    <ol>
+      <li>Float. Clearfix.</li>
+      <li>Float layout.</li>
+    </ol>
+  </section>
+  <section class="slide">
+    <h2>Float (плавающие элементы)</h2>
+    Свойство <strong>float</strong> определяет выравнивание элемента по левой или правой стороне,
+    при этом остальные элементы будут обтекать float-элемент (плаващий элемент). Плавающий элемент выпадает из нормального потока.
+    <hr>
+    <pre>
+      <code>float: left | right | none</code>
+    </pre>
+  </section>
+  <section class="slide">
+    <h2>Практическое применение</h2>
+    <ul>
+      <li>обтекание изображения в тексте;</li>
+      <li>модульные сетки.</li>
+    </ul>
+  </section>
+  <section class="slide">
+    <h2>Clearfix</h2>
+    Clearfix - это вспомогательный класс, служащий для устранения побочных эффектов, вызванных плавающими элементами. 
+  </section>
+  <section class="slide">
+    <h2>Простейший пример Clearfix</h2>
+    <pre>
+      <code>.clearfix:after {</code>
+      <code>  content: '';</code>
+      <code>  display: block;</code>
+      <code>  clear: both;</code>
+      <code>}</code>
+    </pre>
+  </section>
+  <section class="slide">
+    <h2>Практика</h2>
+    С помощью свойста float реализовать 12-ти колоночную модульную сетку.
+  </section>
+  <section class="slide">
+    <h2>Домашка</h2>
+    <a href="https://docs.google.com/document/d/1S-dkmAi6fGAHH9EwQhRGxi83FW5owRLhBEt3cOpvxG0/edit?usp=sharing" target="_blank">Ссылка</a>
+  </section>
+  <section class="slide">
+    <h2>Вопросы для подготовки к интервью</h2>
+    <ol>
+      <li>Что такое float/clearfix?</li>
+      <li>Для чего нужны float-элементы?</li>
+      <li>Каковы недостатки построения layout на float'ax?</li>
+    </ol>
+  </section>
+  <footer class="badge">
+      <a href="/">Home</a>
+  </footer>
+  <div class="progress"></div>
+  <script src="shower/shower.js"></script>
+  <!-- &lt;&gt; -->
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <title>Transition | Курс Frontend Basic</title>
+  <meta charset="utf-8">
+  <meta content='NOINDEX, NOFOLLOW' name='robots'>
+  <meta name="description" content="Transition | Курс Frontend Basic. Компьютерная Школа Hillel">
+  <meta property="og:title" content="Frontend Basic">
+  <meta property="og:description" content="Transition | Курс Frontend Basic | Компьютерная Школа Hillel">
+  <meta property="og:image" content="https://assets.ithillel.ua/images/og.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="shower/themes/ribbon/styles/styles.css">
+  <link rel="stylesheet" href="fontawesome-free-5.14.0-web/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176065403-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-176065403-1');
+  </script>
+</head>
+<body class="shower list">
+  <header class="caption">
+    <h1>Transition | Курс Frontend Basic</h1>
+    <p>Александр Плахотенко, Компьютерная Школа Hillel</p>
+  </header>
+  <section class="slide slide--title">
+    <h2>Transition</h2>
+  </section>
+  <section class="slide">
+    <h2>План</h2>
+    <ol>
+      <li>CSS свойство transition.</li>
+      <li>Практическое применение свойства transition.</li>
+    </ol>
+  </section>
+  <section class="slide">
+    <h2>Transition</h2>
+    CSS свойство <code>transition</code> позволяет реализовать плавный переход между двумя состояниями элемента.
+  </section>
+  <section class="slide">
+    <h2>Пример</h2>
+    <table>
+      <tr>
+        <td>
+          <pre>
+            <code>.button {</code>
+            <code>  <mark>transition: all 0.3s;</mark></code>
+            <code>}</code>
+            <code>.button:hover {</code>
+            <code>  color: white;</code>
+            <code>  background-color: navy;</code>
+            <code>}</code>
+          </pre>
+        </td>
+        <td>
+          <style>
+            .button {
+              padding: 15px 30px;
+              text-transform: uppercase;
+              border: none;
+              font-size: 42px;
+              cursor: pointer;
+              margin-left: 20px;
+              margin-bottom: 20px;
+              background-color: rgb(212, 212, 212);
+            }
+            .button-transition {
+              transition: all 0.3s;
+            }
+            .button:hover {
+              color: white;
+              background-color: navy;
+            }
+          </style>
+          <button class="button">button</button>
+          <button class="button button-transition">button</button>
+        </td>
+      </tr>
+    </table>
+  </section>
+  <section class="slide">
+    <h2>transition-property</h2>
+    Свойство <code>transition-property</code> устанавливает какие именно css свойства должны изменяться плавно.
+    Как правило <code>transition</code> можно применить ко всем свойствам, которые имеют числовое значение, но есть исключения.
+    <hr>
+    <pre>
+      <code>.transition {</code>
+      <code>  <mark>transition-property: color, background-color;</mark></code>
+      <code>}</code>
+    </pre>
+  </section>
+  <section class="slide">
+    <h2>transition-duration</h2>
+    Свойство <code>transition-duration</code> устанавливает в течении какого отрезка времени будет произведен переход из одного состояния в другое.
+    <hr>
+    <pre>
+      <code>.transition {</code>
+      <code>  <mark>transition-duration: 0.5s;</mark></code>
+      <code>}</code>
+    </pre>
+  </section>
+  <section class="slide">
+    <h2>transition-timing-function</h2>
+    Свойство <code>transition-timing-function</code> устанавливает функцию с помощью которой будут вычислены промежуточное состояния во время перехода.
+    <pre style="font-size: 22px;">
+      <code>.transition {</code>
+      <code>  <mark>transition-timing-function: linear | ease-in;</mark></code>
+      <code>  <mark>transition-timing-function: cubic-bezier(0,1.69,.93,-1.37);</mark></code>
+      <code>}</code>
+    </pre>
+    <a href="https://cubic-bezier.com/" target="_blank">https://cubic-bezier.com/</a>
+  </section>
+  <section class="slide">
+    <h2>transition-delay</h2>
+    Свойство <code>transition-duration</code> устанавливает временной отрезок на который будет отложено начало плавного перехода.
+    <pre>
+      <code>.transition {</code>
+      <code>  <mark>transition-delay: 0.5s;</mark></code>
+      <code>}</code>
+    </pre>
+  </section>
+  <section class="slide">
+    <h2>Домашка (опционально)</h2>
+    С помощью свойства transition реализовать плавные переходы между состояниями default и hover | focus | active для кнопок и ссылок.
+  </section>
+  <section class="slide">
+    <h2>Вопросы для подготовки к интервью</h2>
+    <ol>
+      <li>Что делает свойство transition?</li>
+      <li>К каким свойствам можно применять transition?</li>
+    </ol>
+  </section>
+  <footer class="badge">
+      <a href="/">Home</a>
+  </footer>
+  <div class="progress"></div>
+  <script src="shower/shower.js"></script>
+  <!-- &lt;&gt; -->
+</body>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <title>Знакомство с HTML | Курс Frontend Basic</title>
+  <meta charset="utf-8">
+  <meta content='NOINDEX, NOFOLLOW' name='robots'>
+  <meta name="description" content="Курс Frontend Basic. Компьютерная Школа Hillel">
+  <meta property="og:title" content="Frontend Basic">
+  <meta property="og:description" content="Знакомство с HTML | Курс Frontend Basic | Компьютерная Школа Hillel">
+  <meta property="og:image" content="https://assets.ithillel.ua/images/og.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="shower/themes/ribbon/styles/styles.css">
+  <link rel="stylesheet" href="fontawesome-free-5.14.0-web/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176065403-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-176065403-1');
+  </script>
+</head>
+<body class="shower list">
+  <header class="caption">
+    <h1>Знакомство с HTML | Курс Frontend Basic</h1>
+    <p>Александр Плахотенко, Компьютерная Школа Hillel</p>
+  </header>
+  <section class="slide slide--title">
+    <h2>Знакомство с HTML</h2>
+  </section>
+  <section class="slide">
+    <h2>План</h2>
+    <ol>
+      <li>Что такое HTML;</li>
+      <li>Базовая структура HTML-документа;</li>
+      <li>Тег. Атрибуты тегов;</li>
+      <li>meta теги;</li>
+      <li>Разметка текста с помощью HTML;</li>
+      <li>Блочный элемент vs строчный элемент;</li>
+      <li>Ссылки.</li>
+    </ol>
+  </section>
+  <section class="slide">
+    <h2>HTML (Hypertext Markup Language)</h2>
+      HTML — это язык разметки, разработанный для создания веб-страниц.<br>
+      С помощью HTML мы можем добавить на страницу:
+      <ul>
+        <li>контент (текст, изображения, видео, аудио);</li>
+        <li>элементы пользовательского интерфейса (кнопки, ссылки, формы и т.д.);</li>
+        <li>meta-информацию.</li>
+      </ul>
+      <a href="https://html.spec.whatwg.org/multipage/" target="_blank">Современная спецификация HTML.</a>
+  </section>
+  <section class="slide slide--cern">
+    <h2 class="in-white">Немного истории</h2>
+    <p class="in-white">
+      HTML был изобретён
+      <a class="in-white" href="https://ru.wikipedia.org/wiki/%D0%91%D0%B5%D1%80%D0%BD%D0%B5%D1%80%D1%81-%D0%9B%D0%B8,_%D0%A2%D0%B8%D0%BC">Тимом Бернерсом-Ли</a>,
+      физиком из исследовательского института <abbr title="Conseil européen pour la recherche nucléaire">CERN</abbr>.</p>
+    <p class="in-white">
+      Первая версия языка HTML была опубликована в 1991 году<br> и состояла из 18 тегов.
+    </p>
+  </section>
+  <section class="slide">
+    <h2>Структура HTML документа</h2>
+    <pre style="font-size: 16px;">
+      <!-- &lt;&gt; -->
+      <code>&lt;!DOCTYPE html&gt;</code>
+      <code>&lt;html lang='en'&gt;</code>
+      <code>  &lt;head&gt;</code>
+      <code>    &lt;!-- этот раздел предназначен для 'служебной' информации --&gt;</code>
+      <code>  &lt;/head&gt;</code>
+      <code>  &lt;body&gt;</code>
+      <code>    &lt;!-- этот раздел предназначен для содержимого страницы (контента) --&gt;</code>
+      <code>  &lt;/body&gt;</code>
+      <code>&lt;/html&gt;</code>
+    </pre>
+    <a href="https://codepen.io/plakhotenko/pen/LYNNLrm" target="_blank">демо</a>
+  </section>
+  <section class="slide">
+    <h2>Тег</h2>
+    <p>
+      <dfn>Тег</dfn> - это элемент HTML разметки.<br>
+      Имя тега оборачивается специальными символами '<code>&lt;</code>''<code>&gt;</code>'<br>
+      Теги бывают <b>одинарные</b> и <b>двойные</b>.<br>
+      Примеры одинарных тегов:
+      <code>&lt;img&gt;</code>,
+      <code>&lt;br&gt;</code><br>
+      Двойной тег состоит из открывающего тега и закрывающего тега:<br>
+      Пример двойного тега:
+      <code>&lt;h1&gt;Главный заголовок&lt;/h1&gt;</code>
+    </p>
+  </section>
+  <section class="slide">
+    <h2>Атрибуты</h2>
+    <dfn>Атрибут</dfn> — это специальное слово внутри открывающего(!) тега необходимое для определения характеристик HTML элемента.<br>
+    Атрибут состоит из имени и значения.<br>
+    Пример: <code>&lt;a <mark class="important"> href='https://google.com'</mark>&gt;Google&lt;/a&gt;</code><br>
+    Имя: <code>href</code><br>
+    Значение: <code>https://google.com</code>
+  </section>
+  <div class="slide slide--title">
+    <img width="800" src="images/html_tag.svg" alt="">
+  </div>
+  <section class="slide">
+    <h2>meta теги</h2>
+    <p>
+      meta теги - это теги необходимые для передачи служебной информации (такой которая не рендерится на странице).<br>
+      Примеры:<br>
+      <code>&lt;title&gt;Заголовок <s>страницы</s> вкладки браузера&lt;/title&gt;</code>
+      <code>&lt;meta name='description' content='Описание страницы'&gt;</code>
+    </p>
+  </section>
+  <section class="slide">
+    <h2>Возможности мета тегов</h2>
+    С помощью meta тегов можно:
+    <ul>
+      <li>установить заголовок, описание, ключевые слова (<abbr title="Search engine optimization">SEO</abbr>  информация);</li>
+      <li>добавить иконку (favicon) сайта;</li>
+      <li>настроить вид превьюшки для шеринга через соц.сети ( <a href="https://ogp.me/" target="_blank">Open Graph</a> );</li>
+      <li>настроить viewport (необходимо для корректного отображения страницы на мобильных устройствах).</li>
+    </ul>
+    <a href="https://codepen.io/plakhotenko/pen/LYNNLrm" target="_blank">демо</a>
+  </section>
+  <section class="slide">
+    <h2>Разметка текста с помощью HTML</h2>
+    <table style="font-size: 14px;">
+      <th>Обозначение</th>
+      <th>Назначение</th>
+      <th>Примечание</th>
+      <tr>
+        <td><code>&lt;h1&gt;</code></td>
+        <td>главный заголовок страницы</td>
+        <td>обязательно (!) только один h1 на странице</td>
+      </tr>
+      <tr>
+        <td ><code>&lt;h2&gt;...&lt;h6&gt;</code></td>
+        <td colspan="2">другие заголовки по убыванию степени важности. <code>&lt;h2&gt;</code>-более важные <code>&lt;h6&gt;</code>-наименее важные</td>
+      </tr>
+      <tr>
+        <td><code>&lt;p&gt;</code></td>
+        <td>абзац (параграф)</td>
+        <td>Определяет текстовый абзац. </td>
+      </tr>
+      <tr>
+        <td><code>&lt;em&gt;</code></td>
+        <td>акцентированный текст</td>
+        <td><em>отображается курсивным начертанием</em></td>
+      </tr>
+      <tr>
+        <td><code>&lt;i&gt;</code></td>
+        <td>курсивный текст (italic)</td>
+        <td><i>отображается курсивным начертанием</i></td>
+      </tr>
+      <tr>
+        <td><code>&lt;strong&gt;</code></td>
+        <td>важный текст</td>
+        <td><strong>отображается жирным начертанием</strong></td>
+      </tr>
+      <tr>
+        <td><code>&lt;b&gt;</code></td>
+        <td>жирный текст (b)</td>
+        <td><b>отображается жирным начертанием</b></td>
+      </tr>
+      <tr>
+        <td><code>&lt;mark&gt;</code></td>
+        <td>выделенный текст</td>
+        <td><mark>отображается как-то так</mark></td>
+      </tr>
+    </table>
+    <strong class="next">Важно: не используйте теги для стилизации! Для этого есть CSS.</strong>
+  </section>
+  <section class="slide">
+    <h2><s>Пишите разметку</s> Рассказывайте историю</h2>
+    <span>Friday Party</span><br>
+    <span>I met so many young people yesterday. And they were so cool and awesome.</span>
+    <hr>
+    <strong>Friday Party</strong><br>
+    <span>I met so many young people yesterday. And they were so <em>cool</em>  and <em>awesome</em>.</span>
+  </section>
+  <section class="slide">
+    <h2>Блочный элемент vs строчный элемент</h2>
+    Блочный элемент занимает 100% ширины своего родителя.<br>
+    Пример:
+    <div style="background-color: var(--color-yellow);">
+      <code style="background:transparent;">&lt;div&gt;&lt;/div&gt;</code>
+    </div>
+    <hr>
+    Строчный элемент изменяет ширину в зависомотсти от количества контента<br>
+    <span style="background-color: var(--color-yellow);">
+      <code style="background:transparent;">&lt;span&gt;Мало контента&lt;/span&gt;</code>
+    </span>
+    <br>
+    <span style="background-color: var(--color-yellow);">
+      <code style="background:transparent;">&lt;span&gt;Немножко больше контента&lt;/span&gt;</code>
+    </span>
+  </section>
+  <section class="slide">
+    <h2>Ссылки</h2>
+    Ссылка - это многогранный и функциональный элемент <abbr title="User Interface">UI</abbr>.<br>
+    Переадресация на другой документ:<br>
+    <code style="font-size: 22px;">&lt;a href='https://google.com/<mark>index.html</mark>'&gt;Google&lt;/a&gt;</code><br>
+    <a href="https://google.com/index.html" target="_blank">Google</a><br>
+    Ссылка на файл:<br>
+    <code style="font-size: 22px;">&lt;a href='https://google.com/<mark>robots.txt</mark>' <mark>download</mark>&gt;Файл&lt;/a&gt;</code><br>
+    <a href="https://google.com/robots.txt" target="_blank" download='true'>Файл</a><br>
+  </section>
+  <section class="slide">
+    <h2>Ссылки</h2>
+    Tel:
+    <code style="font-size:22px;">&lt;a href=<mark>'tel:+380992233555'</mark>&gt;Позвонить&lt;/a&gt;</code><br>
+    <a href="tel:+380992233555">Позвонить</a><br>
+    Mailto:
+    <code style="font-size:22px;">&lt;a href=<mark>'mailto:test@gmail.com'</mark>&gt;test@gmail.com&lt;/a&gt;</code><br>
+    <a href="mailto:test@gmail.com">test@gmail.com</a><br>
+    Skype:
+    <code style="font-size:22px;">&lt;a href=<mark>'skype:username?chat'</mark>&gt;skype&lt;/a&gt;</code><br>
+    <a href="skype:username?chat">skype</a><br>
+  </section>
+  <section class="slide">
+    <h2>Домашка</h2>
+    <a href="https://docs.google.com/document/d/1ORRy8JKYVbLmp6Rnq2CGZZ73tvspBsPEcP6Gq0DE34U/edit?usp=sharing" target="_blank">Ссылка</a>
+  </section>
+  <section class="slide">
+    <h2>Вопросы для подготовки к интервью</h2>
+    <ol>
+      <li>Что такое HTML для чего он нужен?</li>
+      <li>Что такое тег?</li>
+      <li>Что такое атрибуты для чего они нужны?</li>
+      <li>Что такое meta информация для чего она нужна?</li>
+      <li>Чем отличается строчный элемент от блочного?</li>
+    </ol>
+  </section>
+  <footer class="badge">
+      <a href="/">Home</a>
+  </footer>
+  <div class="progress"></div>
+  <script src="shower/shower.js"></script>
+</body>
+</html>

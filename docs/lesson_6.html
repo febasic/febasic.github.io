@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <title>CSS селекторы | Курс Frontend Basic</title>
+  <meta charset="utf-8">
+  <meta content='NOINDEX, NOFOLLOW' name='robots'>
+  <meta name="description" content="CSS селекторы | Курс Frontend Basic. Компьютерная Школа Hillel">
+  <meta property="og:title" content="Frontend Basic">
+  <meta property="og:description" content="CSS селекторы | Курс Frontend Basic | Компьютерная Школа Hillel">
+  <meta property="og:image" content="https://assets.ithillel.ua/images/og.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="shower/themes/ribbon/styles/styles.css">
+  <link rel="stylesheet" href="fontawesome-free-5.14.0-web/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176065403-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-176065403-1');
+  </script>
+</head>
+<body class="shower list">
+  <header class="caption">
+      <h1>CSS селекторы | Курс Frontend Basic</h1>
+      <p>Александр Плахотенко, Компьютерная Школа Hillel</p>
+  </header>
+  <section class="slide slide--title">
+    <h2>CSS селекторы</h2>
+  </section>
+  <section class="slide slide--title">
+    <progress style="height:100px;width:500px;" id="file" value="20" max="100"></progress>
+  </section>
+  <section class="slide">
+    <h2>План</h2>
+    <ol>
+      <li>Сложные селекторы.</li>
+      <li>Специфичность селекторов.</li>
+    </ol>
+  </section>
+  <section class="slide">
+    <h2>DOM</h2>
+    <figure>
+      <blockquote>
+        <p>
+          <strong>Объектная Модель Документа (DOM) </strong> - программный интерфейс для HTML,
+          XML и SVG документов. Обеспечивает структурированное представление документа (дерева), и определяет способ, по которому
+          структура может быть доступна для программы, для изменения структуры документа, его <strong>стиля</strong> и содержания.
+        </p>
+      </blockquote>
+      <figcaption>MDN</figcaption>
+    </figure>
+  </section>
+  <section class="slide">
+    <h2>DOM Дерево</h2>
+    <img width="830" src="images/dom.png" alt="">
+  </section>
+  <section class="slide">
+    <h2>Комбинаторы</h2>
+    <style>
+      .table-css-selectors {
+        font-size: 16px;
+      }
+      .table-css-selectors td,
+      .table-css-selectors th {
+        padding: 12px 8px;
+      }
+    </style>
+    <table class="table-css-selectors">
+      <tr>
+        <th>Комбинатор</th>
+        <th>Описание</th>
+        <th>Пример</th>
+      </tr>
+      <tr>
+        <td>
+          <code>,</code>
+        </td>
+        <td>
+          выбор нескольких элементов
+        </td>
+        <td>
+          <code>div, span { }</code>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code>
+            ' '
+          </code>
+        </td>
+        <td>
+          выбор всех вложенных элементов
+        </td>
+        <td>
+          <code>
+            nav a { }
+          </code>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code>></code>
+        </td>
+        <td>
+          выбор дочерних элементов первого уровня вложенности
+        </td>
+        <td>
+          <code>
+            ul > li { }
+          </code>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code>~</code>
+        </td>
+        <td>
+          выбор последующих соседей
+        </td>
+        <td>
+          <code>
+            p ~ span { }
+          </code>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code>+</code>
+        </td>
+        <td>
+          выбор <span style="background-color: aqua;">элемента</span>, который находится непосредственно после указанного
+        </td>
+        <td>
+          <code>
+            p + <span style="background-color: aqua;">span</span> { }
+          </code>
+        </td>
+      </tr>
+    </table>
+  </section>
+  <section class="slide">
+    <h2>Селекторы</h2>
+    <table class="table-css-selectors">
+      <tr>
+        <th>Селектор</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>
+          <code>[href]</code>
+        </td>
+        <td>
+          выбор всех элементов у которых есть заданный атрибут
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code>
+            [title='link']
+          </code>
+        </td>
+        <td>
+          выбор всех элементов у которых есть заданный атрибут c заданным значением
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code>
+            [title*='nk']
+          </code>
+        </td>
+        <td>
+          выбор элементов по частичному совпадению значения атрибута
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code>
+            [title^='li']
+          </code>
+        </td>
+        <td>
+          выбор элементов у которых первые символы значения атрибута совпадают с указанным значением
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code>
+            [href$='txt']
+          </code>
+        </td>
+        <td>
+          выбор элементов у которых последние символы значения атрибута совпадают с указанным значением
+        </td>
+      </tr>
+    </table>
+  </section>
+  <section class="slide">
+    <h2>Псевдоклассы</h2>
+    <table class="table-css-selectors">
+      <tr>
+        <th>Псевдокласс</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>
+          <code>:first-child</code>
+        </td>
+        <td>
+          выбор первого потомка
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code>:last-child</code>
+        </td>
+        <td>
+          выбор последнего потомка
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code>:hover</code>
+        </td>
+        <td>
+          устанавливает стили при наведении курсора мыши
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code>:focus</code>
+        </td>
+        <td>
+          устанавливает стили в состоянии фокуса
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code>:active</code>
+        </td>
+        <td>
+          устанавливает стили элемента в активном состоянии (нажатая кнопка мыши)
+        </td>
+      </tr>
+    </table>
+  </section>
+  <section class="slide">
+    <h2>Специфичность</h2>
+    <figure>
+      <blockquote>
+        <p>
+          Специфичность представляет собой <strong>вес</strong>, придаваемый конкретному правилу CSS. Вес правила определяется
+          количеством каждого из типов селекторов в данном правиле. Если у нескольких правил специфичность
+          одинакова, то к элементу применяется последнее по порядку правило CSS.</p>
+      </blockquote>
+      <figcaption>
+        <a href="https://developer.mozilla.org/ru/docs/Web/CSS/Specificity" target="_blank">MDN</a>
+      </figcaption> 
+    </figure>
+  </section>
+  <section class="slide">
+    <h2>Специфичность</h2>
+    <table style="font-size: 22px;">
+      <tr>
+        <th>Селектор</th>
+        <th>Вес</th>
+      </tr>
+      <tr>
+        <td>
+          <code>*</code>
+        </td>
+        <td>
+          <code>0,0,0,0</code>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code>tag</code>
+        </td>
+        <td>
+          <code>0,0,0,1</code>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code>[attr=value]</code>
+        </td>
+        <td>
+          <code>0,0,1,0</code>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code>.class</code>
+        </td>
+        <td>
+          <code>0,0,1,0</code>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code>#id</code>
+        </td>
+        <td>
+          <code>0,1,0,0</code>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code>style=""</code>
+        </td>
+        <td>
+          <code>1,0,0,0</code>
+        </td>
+    </table>
+    <a href="http://css.yoksel.ru/specifity/" target="_blank">Сколько весят селекторы?</a>
+  </section>
+  <section class="slide">
+    <h2>!important</h2>
+    <code>!important</code> повышает приоритет стилей
+    <hr>
+    <pre>
+      <code>a {</code>
+      <code>  color: red <mark class="important">!important</mark>;</code>
+      <code>}</code>
+    </pre>
+  </section>
+  <section class="slide">
+    <h2>Задачка</h2>
+    <pre style="font-size: 18px;">
+      <code>&lt;a style='color:red' href="//google.com"&gt;<mark>Какого я цвета?</mark>&lt;a&gt;</code>
+      <code>a[href] {</code>
+      <code>  color: blue;</code>
+      <code>}</code>
+      <div class="next">
+        <code>a[href] {</code>
+        <code>  color: green !important;</code>
+        <code>}</code>
+      </div>
+      <div class="next">
+        <code>a {</code>
+        <code>  color: black !important;</code>
+        <code>}</code>
+      </div>
+    </pre>
+  </section>
+  <section class="slide">
+    <h2>Вопросы для подготовки к интервью</h2>
+    <ol>
+      <li>Какие вы знаете селеторы?</li>
+      <li>Что такое специфичность селекторов?</li>
+      <li>Какие теги имеют наибольшую/наименьшую специфичность?</li>
+      <li>Что такое DOM?</li>
+      <li>Какие вы знаете способы комбинирования селекторов?</li>
+    </ol>
+  </section>
+  <footer class="badge">
+      <a href="/">Home</a>
+  </footer>
+  <div class="progress"></div>
+  <script src="shower/shower.js"></script>
+  <!-- &lt;&gt; -->
+</body>
+</html>

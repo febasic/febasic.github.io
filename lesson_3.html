@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <title>HTML  формы | Курс Frontend Basic</title>
+  <meta charset="utf-8">
+  <meta content='NOINDEX, NOFOLLOW' name='robots'>
+  <meta name="description" content="HTML  формы | Курс Frontend Basic. Компьютерная Школа Hillel">
+  <meta property="og:title" content="Frontend Basic">
+  <meta property="og:description" content="HTML  формы | Курс Frontend Basic | Компьютерная Школа Hillel">
+  <meta property="og:image" content="https://assets.ithillel.ua/images/og.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="shower/themes/ribbon/styles/styles.css">
+  <link rel="stylesheet" href="fontawesome-free-5.14.0-web/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176065403-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-176065403-1');
+  </script>
+</head>
+<body class="shower list">
+  <header class="caption">
+      <h1>HTML  формы | Курс Frontend Basic</h1>
+      <p>Александр Плахотенко, Компьютерная Школа Hillel</p>
+  </header>
+  <section class="slide slide--title">
+    <h2>HTML  формы</h2>
+  </section>
+  <section class="slide">
+    <h2>План</h2>
+    <ol>
+      <li>Тег form и его атрибуты;</li>
+      <li>Элементы форм;</li>
+      <li>Типы тега input.</li>
+    </ol>
+  </section>
+  <section class="slide">
+    <h2>Тег form</h2>
+    HTML элемент <code>&lt;form&gt;</code> служит тегом-оберткой (контейнером) для всех элементов внутри него.
+    Он объединяет данные со всех элементов в одно целое.
+    <hr>
+    Благодаря элементу <code>&lt;form&gt;</code> мы можем получать данные, вводимые пользователем и отправлять их на сервер.
+  </section>
+  <section class="slide">
+    <h2>Атрибуты тега form</h2>
+    <table>
+      <tr>
+        <th>Атрибут</th>
+        <th>Назначение</th>
+      </tr>
+      <tr>
+        <td>action</td>
+        <td>
+          указывал адрес обработчика формы (пример: action.php)
+        </td>
+      </tr>
+      <tr>
+        <td>
+          autocomplete
+        </td>
+        <td>
+          включает/отключает автозаполнение
+        </td>
+      </tr>
+      <tr>
+        <td>
+          novalidate
+        </td>
+        <td>
+          включает/отключает HTML валидацию
+        </td>
+      </tr>
+    </table>
+    <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/form" target="_blank">Подробнее</a>
+  </section>
+  <section class="slide">
+    <h2>Элементы форм</h2>
+    <style>
+      .form-table td,
+      .form-table th {
+        padding: 8px 5px;
+        background: none;
+        background-image: none !important;
+      }
+    </style>
+    <form>
+      <table class="form-table" style="font-size:15px;">
+        <tr>
+          <th>тег</th>
+          <th>описание</th>
+          <th>вид</th>
+        </tr>
+        <tr>
+          <td><code>&lt;input&gt;</code></td>
+          <td>предназначен для ввода данных пользователем</td>
+          <td>
+            <input type="text" name="text" required>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <code>&lt;select&gt;</code>
+          </td>
+          <td>позволяет выбрать пункт из списка</td>
+          <td>
+            <select name="select" required>
+              <option value="value1">option1</option>
+              <option value="value2">option2</option>
+              <option value="value3">option3</option>
+              <option value="value4">option4</option>
+              <option value="value5">option5</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td><code>&lt;textarea&gt;</code></td>
+          <td>
+            поле для ввода нескольких строк текста<br>
+            дополнительные параметры: cols, rows
+          </td>
+          <td>
+            <textarea cols="30" rows="5" name="textarea"></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td><code>&lt;fieldset&gt;</code></td>
+          <td>объединяет несколько элементов в одну группу</td>
+          <td rowspan="2">
+            <fieldset>
+              <legend>Заголовок группы</legend>
+              <input type="date" name="date" required><input type="time" name="time" required>
+            </fieldset>
+          </td>
+        </tr>
+        <tr>
+          <td><code>&lt;legend&gt;</code></td>
+          <td>заголовок группы</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><code>&lt;button&gt;</code></td>
+          <td>кнопка отправки/очистки данных</td>
+          <td>
+            <button type="reset">reset</button>
+            <button type="submit">submit</button>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </section>
+  <section class="slide">
+    <h2>Типы тега input</h2>
+    <table style="font-size:14px;line-height:2.4;">
+      <tr>
+        <th>тип</th>
+        <th>дополнительные атрибуты</th>
+        <th>вид</th>
+      </tr>
+      <tr>
+        <td>button</td>
+        <td>value</td>
+        <td><input type="button" value='value'></td>
+      </tr>
+      <tr>
+        <td>checkbox</td>
+        <td>value checked indeterminate</td>
+        <td><input type="checkbox" checked value='1'></td>
+      </tr>
+      <tr>
+        <td>color</td>
+        <td></td>
+        <td><input type="color"></td>
+      </tr>
+      <tr>
+        <td>date</td>
+        <td></td>
+        <td><input type="date"></td>
+      </tr>
+      <tr>
+        <td>datetime-local</td>
+        <td></td>
+        <td><input type="datetime-local"></td>
+      </tr>
+      <tr>
+        <td>email</td>
+        <td></td>
+        <td><input type="email"></td>
+      </tr>
+      <tr>
+        <td>hidden</td>
+        <td></td>
+        <td><input type="hidden"></td>
+      </tr>
+      <tr>
+        <td>file</td>
+        <td>accept</td>
+        <td><input type="file"></td>
+      </tr>
+      <tr>
+        <td>image</td>
+        <td>src alt height width</td>
+        <td><input type="image"></td>
+      </tr>
+      <tr>
+        <td>month</td>
+        <td></td>
+        <td><input type="month"></td>
+      </tr>
+    </table>
+  </section>
+  <section class="slide">
+    <form>
+      <table style="font-size:14px;line-height:2.4;">
+        <tr>
+          <th>тип</th>
+          <th>дополнительные атрибуты</th>
+          <th>вид</th>
+          <tr>
+            <td>number</td>
+            <td>min max step</td>
+            <td><input type="number"></td>
+          </tr>
+          <tr>
+            <td>password</td>
+            <td>minlength maxlength</td>
+            <td><input name="password" type="password"></td>
+          </tr>
+          <tr>
+            <td>radio</td>
+            <td></td>
+            <td>
+              <input value="radio1" type="radio" name="radio1">
+              <input value="radio2" type="radio" name="radio1">
+              <input value="radio3" type="radio" name="radio1">
+              <input value="radio4" type="radio" name="radio1">
+            </td>
+          </tr>
+          <tr>
+            <td>range</td>
+            <td>min max step</td>
+            <td><input name="range" type="range"></td>
+          </tr>
+          <tr>
+            <td>search</td>
+            <td></td>
+            <td><input name="search" type="search"></td>
+          </tr>
+          <tr>
+            <td>tel</td>
+            <td></td>
+            <td><input name="tel" type="tel"></td>
+          </tr>
+          <tr>
+            <td>text</td>
+            <td></td>
+            <td><input name="text" type="text"></td>
+          </tr>
+          <tr>
+            <td>time</td>
+            <td></td>
+            <td><input name="time" type="time"></td>
+          </tr>
+          <tr>
+            <td>url</td>
+            <td></td>
+            <td><input name="url" type="url"></td>
+          </tr>
+          <tr>
+            <td>week</td>
+            <td></td>
+            <td><input name="week" type="week"></td>
+          </tr>
+          <tr>
+            <td>reset</td>
+            <td>value</td>
+            <td><input type="reset" value="reset"></td>
+          </tr>
+          <tr>
+            <td>submit</td>
+            <td></td>
+            <td><input value="sumit" type="submit"></td>
+          </tr>
+      </table>
+    </form>
+  </section>
+  <section class="slide slide--title">
+    <h2>Даже не думайте все это запоминать!</h2>
+  </section>
+  <section class="slide">
+    <h2>Почему? Потому что...</h2>
+    <blockquote style="margin-left:40px;font-size:32px;">
+      Хороший разработчик - это тот не тот, кто знает много тегов, а тот, кто умеет работать с документацией (гуглить).
+    </blockquote>
+  </section>
+  <section class="slide">
+    <h2>Практика</h2>
+    Задание: написать разметку для формы из
+    <a href="https://www.figma.com/file/YUI5Gv2uAVJQU9Sguf2nqR/Untitled?node-id=0%3A1" target="_blank">макета</a>
+  </section>
+  <section class="slide">
+    <h2>Домашка</h2>
+    <a href="https://docs.google.com/document/d/1rhjD08aCKjZSlCOxS8NgsmFiu2TQ-uHlguo8y3dLXi8/edit?usp=sharing" target="_blank">Ссылка</a>
+  </section>
+  <section class="slide">
+    <h2>Вопросы для подготовки к интервью</h2>
+    <ol>
+      <li>Для чего нужны HTML формы?</li>
+      <li>Какие существуют атрибуты для тега form и для чего они?</li>
+      <li>Какие типы тега input вы знаете?</li>
+    </ol>
+  </section>
+  <footer class="badge">
+      <a href="/">Home</a>
+  </footer>
+  <div class="progress"></div>
+  <script src="shower/shower.js"></script>
+  <script src="js/form.js"></script>
+  <!-- &lt;&gt; -->
+</body>
+</html>

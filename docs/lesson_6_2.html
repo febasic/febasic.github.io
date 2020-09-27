@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <title>Блочная модель | Курс Frontend Basic</title>
+  <meta charset="utf-8">
+  <meta content='NOINDEX, NOFOLLOW' name='robots'>
+  <meta name="description" content="Блочная модель | Курс Frontend Basic. Компьютерная Школа Hillel">
+  <meta property="og:title" content="Frontend Basic">
+  <meta property="og:description" content="Блочная модель | Курс Frontend Basic | Компьютерная Школа Hillel">
+  <meta property="og:image" content="https://assets.ithillel.ua/images/og.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="shower/themes/ribbon/styles/styles.css">
+  <link rel="stylesheet" href="fontawesome-free-5.14.0-web/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176065403-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-176065403-1');
+  </script>
+</head>
+<body class="shower list">
+  <header class="caption">
+      <h1>Блочная модель | Курс Frontend Basic</h1>
+      <p>Александр Плахотенко, Компьютерная Школа Hillel</p>
+  </header>
+  <section class="slide slide--title">
+    <h2>Блочная модель</h2>
+  </section>
+  <section class="slide">
+    <h2>План</h2>
+    <ol>
+      <li>Блочная модель.</li>
+      <li>Особенности блочной модели.</li>
+      <li>Сетка на основе inline-block.</li>
+    </ol>
+  </section>
+  <section class="slide slide--title">
+    <img class="cover" src="images/box_model.png" alt="box model">
+  </section>
+  <section class="slide">
+    <h2>Свойство margin</h2>
+    Устанавливает внешний отступ.
+    <table style="font-size: 20px;">
+      <tr>
+        <td>
+          <pre>
+            <code>div {</code>
+            <code> margin-top: 10px;</code>
+            <code> margin-right: 20px;</code>
+            <code> margin-bottom: 30px;</code>
+            <code> margin-left: 40px;</code>
+            <code>}</code>
+          </pre>
+        </td>
+        <td>
+          <pre>
+            <code>div {</code>
+            <code> margin: 10px 20px 30px 40px;</code>
+            <code>}</code>
+          </pre>
+        </td>
+      </tr>
+    </table>
+  </section>
+  <section class="slide">
+    <h2>Хак</h2>
+    <pre>
+      <code>div {</code>
+      <code> width: 100px;</code>
+      <code> height: 100px;</code>
+      <code> <mark>margin-right: auto;</mark></code>
+      <code> <mark>margin-left: auto;</mark></code>
+      <code>}</code>
+    </pre>
+  </section>
+  <section class="slide">
+    <h2>Свойство padding</h2>
+    Устанавливает внутренний отступ.
+    <table style="font-size: 20px;">
+      <tr>
+        <td>
+          <pre>
+            <code>div {</code>
+            <code> padding-top: 10px;</code>
+            <code> padding-right: 20px;</code>
+            <code> padding-bottom: 30px;</code>
+            <code> padding-left: 40px;</code>
+            <code>}</code>
+          </pre>
+        </td>
+        <td>
+          <pre>
+            <code>div {</code>
+            <code> padding: 10px 20px 30px 40px;</code>
+            <code>}</code>
+          </pre>
+        </td>
+      </tr>
+    </table>
+  </section>
+  <section class="slide">
+    <h2>Особенности</h2>
+    <ul>
+      <li>схлопывание margin;</li>
+      <li>выпадение margin из родителя;</li>
+      <li>margin и pagging для inline элементов.</li>
+    </ul>
+  </section>
+  <section class="slide">
+    <h2>Задачка</h2>
+    <pre>
+      <code>&lt;div&gt;</code>
+      <code>  &lt;div style='padding-bottom: 20px;'&gt;&lt;/div&gt;</code>
+      <code>  &lt;div style='padding-top: 30px;'&gt;&lt;/div&gt;</code>
+      <code>&lt;/div&gt;</code>
+    </pre>
+    Чему равна высота родительского блока?
+  </section>
+  <section class="slide">
+    <h2>Задачка 2</h2>
+    <pre>
+      <code>&lt;div&gt;</code>
+      <code>  &lt;div style='margin-bottom: 20px;'&gt;&lt;/div&gt;</code>
+      <code>  &lt;div style='margin-top: 30px;'&gt;&lt;/div&gt;</code>
+      <code>&lt;/div&gt;</code>
+    </pre>
+    Чему равна высота родительского блока?
+  </section>
+  <section class="slide">
+    <h2>Свойство border</h2>
+    Устанавливает <a href="https://webref.ru/css#B" target="_blank">рамку</a> элемента.
+    <table style="font-size: 20px;">
+      <tr>
+        <td>
+          <pre>
+            <code>div {</code>
+            <code> border-width: 10px;</code>
+            <code> border-style: solid;</code>
+            <code> border-color: #0f0;</code>
+            <code>}</code>
+          </pre>
+        </td>
+        <td>
+          <pre>
+            <code>div {</code>
+            <code> border: 10px solid #0f0;</code>
+            <code>}</code>
+          </pre>
+        </td>
+      </tr>
+    </table>
+  </section>
+  <section class="slide">
+    <h2>Свойство border-radius</h2>
+    Устанавливает радиус скругления уголков рамки.
+    <style>
+      .table-border-radius td {
+        padding: 8px;
+      }
+    </style>
+    <table class="table-border-radius">
+      <tr>
+        <td>
+          <code>border-radius: 0;</code>
+        </td>
+        <td>
+          <div style="background: blue;width: 50px; height: 50px;border-radius: 0;"></div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code>border-radius: 10px;</code>
+        </td>
+        <td>
+          <div style="background: blue;width: 50px; height: 50px;border-radius: 10px;"></div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code>border-radius: 50%;</code>
+        </td>
+        <td>
+          <div style="background: blue;width: 50px; height: 50px;border-radius: 50%;"></div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code>border-radius: 50% 0 50% 0;</code>
+        </td>
+        <td>
+          <div style="background: blue;width: 50px; height: 50px;border-radius: 50% 0 50% 0;"></div>
+        </td>
+      </tr>
+    </table>
+  </section>
+  <section class="slide">
+    <h2>Свойства width, height, box-sizing</h2>
+    Свойство <code>width/height</code> устанавливает ширину/высоту элемента.
+    <br>
+    <hr>
+    Свойство <code>box-sizing</code> применяется для изменения алгоритма расчёта ширины и высоты элемента.
+    <br>
+    <code>box-sizing: content-box | border-box</code>
+  </section>
+  <section class="slide">
+    <h2>Display inline | block | inline-block</h2>
+    <style>
+      .table-display {
+        font-size: 20px;
+      }
+      .table-display td:first-child {
+        width: 230px;
+      }
+    </style>
+    <table class="table-display">
+      <tr>
+        <td>
+          <code>inline</code>
+        </td>
+        <td>
+          Элемент отображается как строчный. 
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code>block</code>
+        </td>
+        <td>
+          Элемент показывается как блочный.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code>inline-block</code>
+        </td>
+        <td>
+          Это значение генерирует блочный элемент, который обтекается
+          другими элементами веб-страницы подобно строчному элементу. 
+        </td>
+      </tr>
+    </table>
+  </section>
+  <section class="slide">
+    <h2>Практика</h2>
+    Делаем простейший layout на основе <code>inline-block</code>
+  </section>
+  <section class="slide">
+    <h2>Padding-хак</h2>
+    Практика: создаем адаптивную обертку для видео.<br>
+    Спойлер: <code>padding-top:56%</code>
+  </section>
+  <section class="slide">
+    <h2>Практика</h2>
+    Делаем ссылку доступной для "fat finger"
+  </section>
+  <section class="slide">
+    <h2>Домашка</h2>
+    <a href="https://docs.google.com/document/d/1Z37FWNaZVXzTqkrFYb1FueD1vK3bWh2gFto9Xe17Jts/edit?usp=sharing" target="_blank">Ссылка</a>
+  </section>
+  <section class="slide">
+    <h2>Вопросы для подготовки к интервью</h2>
+    <ol>
+      <li>Что такое блочная модель? Из чего она состоит?</li>
+      <li>Для чего нужны свойста margin/padding?</li>
+      <li>Из чего строится размер элемента?</li>
+      <li>Что делает свойство box-sizing?</li>
+      <li>Как ведут себя margin у двух элементов по соседству?</li>
+      <li>Какие теги по умолчанию являются блочными, а какие строчными? Можно ли изменить их поведение и как?</li>
+    </ol>
+  </section>
+  <section class="slide">
+    <h2>Посмотреть</h2>
+    <ul>
+      <li>
+        <a href="https://www.youtube.com/watch?v=LVqg3N7QYVU" target="_blank">
+          Модель отображения. Основы | Олег Мохов
+        </a>
+      </li>
+    </ul>
+  </section>
+  <footer class="badge">
+      <a href="/">Home</a>
+  </footer>
+  <div class="progress"></div>
+  <script src="shower/shower.js"></script>
+  <!-- &lt;&gt; -->
+</body>
+</html>

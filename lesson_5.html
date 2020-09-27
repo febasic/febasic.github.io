@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <title>Знакомство с CSS | Курс Frontend Basic</title>
+  <meta charset="utf-8">
+  <meta content='NOINDEX, NOFOLLOW' name='robots'>
+  <meta name="description" content="Знакомство с CSS | Курс Frontend Basic. Компьютерная Школа Hillel">
+  <meta property="og:title" content="Frontend Basic">
+  <meta property="og:description" content="Знакомство с CSS | Курс Frontend Basic | Компьютерная Школа Hillel">
+  <meta property="og:image" content="https://assets.ithillel.ua/images/og.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="shower/themes/ribbon/styles/styles.css">
+  <link rel="stylesheet" href="fontawesome-free-5.14.0-web/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176065403-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-176065403-1');
+  </script>
+</head>
+<body class="shower list">
+  <header class="caption">
+      <h1>Знакомство с CSS | Курс Frontend Basic</h1>
+      <p>Александр Плахотенко, Компьютерная Школа Hillel</p>
+  </header>
+  <section class="slide slide--title">
+    <h2>Знакомство с CSS</h2>
+  </section>
+  <section class="slide">
+    <h2>План</h2>
+    <ol>
+      <li>Что такое CSS? Каскадность. Наследование.</li>
+      <li>Подключение CSS.</li>
+      <li>Родные стили. Normalize.css, Reset.css</li>
+      <li>Селекторы.</li>
+      <li>Стилизация текста.</li>
+    </ol>
+  </section>
+  <section class="slide">
+    <h2>CSS</h2>
+    <strong>CSS (Cascading Style Sheets)</strong> - это язык, используемый для представления внешнего вида документа (HTML, XML, XHTML, SVG).
+    <br>
+    CSS отвечает за:
+    <ul>
+      <li>стили (внешний вид);</li>
+      <li>визуальные эффекты;</li>
+      <li>анимации.</li>
+    </ul>
+  </section>
+  <section class="slide">
+    <h2>Каскадность</h2>
+    <strong>Каскадность в CSS</strong> - это механизм комбинирования стилей<br> из разных CSS-правил.
+  </section>
+  <section class="slide">
+    <h2>Наследование</h2>
+    <strong>Наследование в CSS</strong> - это свойство, благодаря которому правила форматирования (стили) передаются от родителя к потомку.
+    <hr>
+    <strong>Важно:</strong> далеко не все свойства в CSS наследуются.
+  </section>
+  <section class="slide">
+    <h2>Какие свойства наследуются в CSS?</h2>
+    В основном наследуются свойства, которые касаются стилизации текста:
+    <code>
+      font-size, font-family, font-style, font-weight, color, text-align, text-transform, text-indent,
+      line-height, letter-spacing, word-spacing, white-space, direction
+    </code>
+  </section>
+  <section class="slide">
+    <h2>Способы задания стилей элементу</h2>
+    <ul>
+      <li>тег <code>&lt;style&gt;</code>;</li>
+      <li>атрибут <code>style</code>;</li>
+      <li>тег <code>&lt;link&gt;</code>.</li>
+    </ul>
+  </section>
+  <section class="slide">
+    <h2>Normalize.css vs Reset.css</h2>
+    normalize.css (reset.css) - это набор стилей для нормализации (сброса) 
+    <a href="nr.html" target="_blank">родных стилей тегов</a>
+  </section>
+  <section class="slide">
+    <h2>Практика</h2>
+    <strong>Задача:</strong> нормализовать/сбросить родные стили тегов<br>
+    используя
+    <a href="https://necolas.github.io/normalize.css/latest/normalize.css" target="_blank">normalize.css</a> /
+    <a href="https://cdn.jsdelivr.net/npm/reset-css@4.0.1/reset.css" target="_blank">reset.css</a>.
+  </section>
+  <section class="slide">
+    <h2>Селектор</h2>
+    <strong>Селектор</strong> - это часть CSS-правила, которая сообщает браузеру, к какому элементу (или элементам) веб-страницы будет применён стиль.
+    <hr>
+    <pre>
+      <code><mark class="important">*</mark> { </code>
+      <code>  color: red;</code>
+      <code>}</code>
+    </pre>
+    <code>*</code> - универсальный селектор
+  </section>
+  <section class="slide">
+    <h2>Селектор тег</h2>
+    <table>
+      <tr>
+        <th>
+          HTML
+        </th>
+        <th>
+          CSS
+        </th>
+      </tr>
+      <tr>
+        <td>
+          <pre>
+            <code>&lt;h1&gt;</code>
+            <code>  Заголовок</code>
+            <code>&lt;/h1&gt;</code>
+          </pre>
+        </td>
+        <td>
+          <pre>
+            <code><mark class="important">h1</mark> { </code>
+            <code>  color: red;</code>
+            <code>}</code>
+          </pre>
+        </td>
+      </tr>
+    </table>
+  </section>
+  <section class="slide">
+    <h2>Селектор id</h2>
+    <table>
+      <tr>
+        <th>
+          HTML
+        </th>
+        <th>
+          CSS
+        </th>
+      </tr>
+      <tr>
+        <td>
+          <pre>
+            <code>&lt;h1 <mark class="important">id='title'</mark>&gt;</code>
+            <code>  Заголовок</code>
+            <code>&lt;/h1&gt;</code>
+          </pre>
+        </td>
+        <td>
+          <pre>
+            <code><mark class="important">#title</mark> { </code>
+            <code>  color: red;</code>
+            <code>}</code>
+          </pre>
+        </td>
+      </tr>
+    </table>
+    <strong>Важно:</strong> никогда не используйте id для стилизации!
+  </section>
+  <section class="slide">
+    <h2>Селектор class</h2>
+    <table>
+      <tr>
+        <th>
+          HTML
+        </th>
+        <th>
+          CSS
+        </th>
+      </tr>
+      <tr>
+        <td>
+          <pre>
+            <code>&lt;h1 <mark class="important">class='title'</mark>&gt;</code>
+            <code>  Заголовок</code>
+            <code>&lt;/h1&gt;</code>
+          </pre>
+        </td>
+        <td>
+          <pre>
+            <code><mark class="important">.title</mark> { </code>
+            <code>  color: red;</code>
+            <code>}</code>
+          </pre>
+        </td>
+      </tr>
+    </table>
+  </section>
+  <section class="slide slide--title">
+    <h2>Стилизация текста</h2>
+  </section>
+  <section class="slide">
+    <h2>Способы подключения шрифтов</h2>
+    <ul>
+      <li>
+        <a href="https://fonts.google.com/" target="_blank">Google Fonts</a>
+      </li>
+      <li>@font-face</li>
+    </ul>
+  </section>
+  <section class="slide">
+    <h2>Практика</h2>
+    <strong>Задача:</strong> подключить необходимые для
+    <a href="https://www.figma.com/file/E6xNcvoOLUTAW4mK08tMwn5f/Templates-8.-More-on-Figma.info?node-id=0%3A1" target="_blank">макета</a>
+    шрифты используя<br> сервис <a href="https://fonts.google.com/" target="_blank">Google Fonts</a>.
+  </section>
+  <section class="slide">
+    <h2>Подключение через @font-face</h2>
+    <pre>
+      <code>@font-face {</code>
+      <code> font-family: 'Roboto';</code>
+      <code> font-style: normal;</code>
+      <code> font-weight: 400;</code>
+      <code> <mark>font-display: swap;</mark></code>
+      <code> src: <mark>local('Roboto Regular'), local('Roboto-Regular'),</mark></code>
+      <code>      url(Roboto.woff2) format('woff2');</code>
+      <code>}</code>
+    </pre>
+  </section>
+  <section class="slide">
+    <h2>Форматы шрифтов</h2>
+    <code><s> ttf, eot, svg, woff</s></code>
+    <br>
+    <a href="https://caniuse.com/#search=woff2" target="_blank" style="font-size: 36px;">
+      <code>woff2</code>
+    </a>
+  </section>
+  <section class="slide">
+    <h2>Font Display</h2>
+    <strong>Font Display</strong> определяет то, как шрифт, подключенный через font face будет отображаться в
+    зависимости от того, загрузился ли он и готов ли к использованию.<br>
+    <a href="https://font-display.glitch.me/" target="_blank">Font-display</a>
+  </section>
+  <section class="slide  slide--title">
+    <img src="images/font_display.png" alt="Font Display" class="cover">
+  </section>
+  <section class="slide">
+    <h2> CSS свойства для стилизации текста</h2>
+    <code>
+      font-family, font-size, font-weight, font-style, color, background-color, text-decoration,<br> text-transform, white-space,
+      text-align, <br>vertical-align, line-height, letter-spacing, <br>text-indent, text-shadow, word-spacing
+    </code>
+  </section>
+  <section class="slide">
+    <h2>Цвета в CSS</h2>
+    <!-- <ol>
+      <li>hex</li>
+      <li>rgb</li>
+      <li>grba</li>
+      <li>hsl</li>
+    </ol> -->
+    <style>
+      .table-colors {
+        font-size: 14px;
+      }
+      .table-colors td,
+      .table-colors th {
+        padding: 8px;
+      }
+    </style>
+    <table class="table-colors">
+      <tr>
+        <th>Формат</th>
+        <th>Описание</th>
+        <th>Пример</th>
+      </tr>
+      <tr>
+        <td><b>RGB</b></td>
+        <td>Можно определить цвет, используя значения красной, зеленой и синей составляющей в десятичном исчислении.</td>
+        <td>
+          <code style="background-color: rgb(0%,100%,100%);">
+            rgb(0,255,255)
+            rgb(0%,100%,100%)
+          </code>
+        </td>
+      </tr>
+      <tr style="background-color: rgba(255, 255, 0, 0.15);">
+        <td><b>RGBA</b></td>
+        <td>Формат RGBA похож по синтаксису на RGB, но включает в себя альфа-канал, задающий прозрачность элемента.</td>
+        <td>
+          <code style="background-color: rgb(0%,100%,100%, 0.2);">
+            rgba(0,255,255, 0.2)
+            rgba(0%,100%,100%, 0.2)
+          </code>
+        </td>
+      </tr>
+      <tr style="background-color: rgba(255, 255, 0, 0.15);">
+        <td><b>HEX</b></td>
+        <td>Для задания цветов используются числа в шестнадцатеричном коде. </td>
+        <td>
+          <code style="background-color: #0ff;">
+            #00ffff<br>
+            #0ff
+          </code>
+        </td>
+      </tr>
+      <tr>
+        <td><b>HSL</b></td>
+        <td>Hue (оттенок), Saturate (насыщенность) и Lightness (светлота)</td>
+        <td>
+          <code style="background-color: hsl(180, 100%, 50%);">
+            hsl(180, 100%, 50%)
+          </code>
+        </td>
+      </tr>
+      <tr>
+        <td><b>HSLA</b></td>
+        <td>Формат HSLA похож по синтаксису на HSL, но включает в себя альфа-канал, задающий прозрачность элемента.</td>
+        <td>
+          <code style="background-color: hsla(180, 100%, 50%, 0.2);">
+            hsla(180, 100%, 50%, 0.2)
+          </code>
+        </td>
+      </tr>
+    </table>
+  </section>
+  <section class="slide">
+    <h2>Единицы измерения в CSS</h2>
+    <ul>
+      <li>%</li>
+      <li>em</li>
+      <li>rem</li>
+      <li>px</li>
+      <li>pt</li>
+    </ul>
+    <a href="https://webref.ru/css#unit" target="_blank">Единицы измерения в CSS</a>
+  </section>
+  <section class="slide">
+    <h2>Домашка</h2>
+    <a href="https://docs.google.com/document/d/1Y0q5XrwlDCCW48MMaOVUXvtEeVzhIV-ZDGyvbqOnCXQ/edit?usp=sharing" target="_blank">Ссылка</a>
+  </section>
+  <section class="slide">
+    <h2>Вопросы для подготовки к интервью</h2>
+    <ol>
+      <li>Что такое CSS?</li>
+      <li>Какие есть способы задания стилей элементу?</li>
+      <li>Как подключить CSS на страницу?</li>
+      <li>Что такое каскадность в CSS?</li>
+      <li>Что такое наследование? Какие свойства наследуются в CSS, а какие нет?</li>
+      <li>Что такое normalize.css и reset.css? Чем они отличаются?</li>
+      <li>Что такое селектор?</li>
+    </ol>
+  </section>
+  <footer class="badge">
+      <a href="/">Home</a>
+  </footer>
+  <div class="progress"></div>
+  <script src="shower/shower.js"></script>
+  <!-- &lt;&gt; -->
+</body>
+</html>

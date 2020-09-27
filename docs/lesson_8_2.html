@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <title>Псевдоклассы. Псевдоэлементы | Курс Frontend Basic</title>
+  <meta charset="utf-8">
+  <meta content='NOINDEX, NOFOLLOW' name='robots'>
+  <meta name="description" content="Псевдоклассы. Псевдоэлементы | Курс Frontend Basic. Компьютерная Школа Hillel">
+  <meta property="og:title" content="Frontend Basic">
+  <meta property="og:description" content="Псевдоклассы. Псевдоэлементы | Курс Frontend Basic | Компьютерная Школа Hillel">
+  <meta property="og:image" content="https://assets.ithillel.ua/images/og.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="shower/themes/ribbon/styles/styles.css">
+  <link rel="stylesheet" href="fontawesome-free-5.14.0-web/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176065403-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-176065403-1');
+  </script>
+  <style>
+    .table-css-selectors {
+      font-size: 16px;
+    }
+    .table-css-selectors td,
+    .table-css-selectors th {
+      padding: 12px 8px;
+    }
+  </style>
+</head>
+<body class="shower list">
+  <header class="caption">
+      <h1>Псевдоклассы. Псевдоэлементы | Курс Frontend Basic</h1>
+      <p>Александр Плахотенко, Компьютерная Школа Hillel</p>
+  </header>
+  <section class="slide slide--title">
+    <h2>Псевдоклассы. Псевдоэлементы</h2>
+  </section>
+  <section class="slide">
+    <h2>План</h2>
+    <ol>
+      <li>Псевдоэлементы.</li>
+      <li>Псевдоклассы.</li>
+      <li>Практическое применение.</li>
+    </ol>
+  </section>
+  <section class="slide">
+    <h2>Псевдоэлементы</h2>
+    <figure>
+      <blockquote>
+        <p>
+          <strong>Псевдоэлемент</strong> в CSS — это ключевое слово, добавляемое к селектору, которое позволяет
+          стилизовать определённую часть выбранного элемента. Например, псевдоэлемент <code>::first-line</code> может быть
+          использован для изменения шрифта первой строки абзаца.
+        </p>
+      </blockquote>
+      <figcaption>MDN</figcaption>
+    </figure>
+    <q>q</q>
+  </section>
+  <section class="slide">
+    <h2>Псевдоэлементы</h2>
+    <table style="font-size:18px;">
+      <tr>
+        <td>
+          <pre>
+            <code>p<mark>::first-line</mark> {</code>
+            <code>  color: red;</code>
+            <code>}</code>
+          </pre>
+        </td>
+        <td>
+          <style>
+            .first-line {
+              font-size: 18px;
+              max-width: 300px;
+            }
+            .first-line::first-line {
+              color: red;
+            }
+          </style>
+          <p class="first-line">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe ex dignissimos
+            repellat dicta hic itaque vitae impedit, facilis delectus autem!
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <pre>
+            <code>p<mark>::first-letter</mark> {</code>
+            <code>  color: red;</code>
+            <code>  font-weight: 700;</code>
+            <code>  font-size: 32px;</code>
+            <code>}</code>
+          </pre>
+        </td>
+        <td>
+          <style>
+            .first-letter {
+              font-size: 18px;
+              max-width: 300px;
+            }
+            .first-letter::first-letter,
+            .first-letter::first-letter {
+              color: red;
+              font-weight: 700;
+              font-size: 32px;
+            }
+          </style>
+          <p class="first-letter">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe ex dignissimos
+            repellat dicta hic itaque vitae impedit, facilis delectus autem!
+          </p>
+        </td>
+      </tr>
+    </table>
+  </section>
+  <section class="slide">
+    <h2>Псевдоэлементы</h2>
+    <table style="font-size:18px;">
+      <tr>
+        <td>
+          <pre>
+            <code>span<mark>::before</mark> {</code>
+            <code>  <mark class="important">content: 'I am a before element';</mark></code>
+            <code>  color: red;</code>
+            <code>}</code>
+          </pre>
+        </td>
+        <td>
+          <style>
+            .before {
+              display: block;
+              font-size: 18px;
+              max-width: 300px;
+            }
+            .before::before {
+              content: 'I am before element';
+              color: red
+            }
+          </style>
+          <span class="before">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <pre>
+            <code>span<mark>::after</mark> {</code>
+            <code>  <mark class="important">content: 'I am an after element';</mark></code>
+            <code>  color: red;</code>
+            <code>}</code>
+          </pre>
+        </td>
+        <td>
+          <style>
+            .after {
+              display: block;
+              font-size: 18px;
+              max-width: 300px;
+            }
+            .after::after {
+              content: 'I am after element';
+              color: red
+            }
+          </style>
+          <span class="after">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          </span>
+        </td>
+      </tr>
+    </table>
+  </section>
+  <section class="slide">
+    <h2>Псевдоэлементы</h2>
+    <table style="font-size:18px;">
+      <tr>
+        <td>
+          <pre>
+            <code>input<mark>::placeholder</mark> {</code>
+            <code>  color: red;</code>
+            <code>  text-transform: uppercase;</code>
+            <code>  font-weight: 700;</code>
+            <code>}</code>
+          </pre>
+        </td>
+        <td>
+          <style>
+            .placeholder::placeholder {
+              color: red;
+              text-transform: uppercase;
+              font-weight: 700;
+            }
+          </style>
+          <input type="text" placeholder="placeholder text" class="placeholder">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <pre>
+            <code>p<mark>::selection</mark> {</code>
+            <code>  background-color: rebeccapurple;</code>
+            <code>  color: white;</code>
+            <code>}</code>
+          </pre>
+        </td>
+        <td>
+          <style>
+            .selection {
+              display: block;
+              font-size: 18px;
+              max-width: 300px;
+            }
+            .selection::selection {
+              background-color: rebeccapurple;
+              color: white;
+            }
+          </style>
+          <p class="selection">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima, labore recusandae.
+            Quam odio autem repellendus animi veritatis et hic. Rerum!
+          </p>
+        </td>
+      </tr>
+    </table>
+  </section>
+  <section class="slide">
+    <h2>::marker</h2>
+    <pre>
+      <code>ul li<mark>::marker</mark> {</code>
+      <code>  color: red;</code>
+      <code>}</code>
+    </pre>
+    <a href="https://caniuse.com/?search=%3A%3Amarker%20pseudo-element" target="_blank">
+      can i use
+    </a>
+  </section>
+  <section class="slide">
+    <h2>Практика</h2>
+    <strong>Задача:</strong> с помощью псевдоэлементов <code>before</code> и <code>after</code> а также магии реализовать hover для элемента button.
+    <br>
+    <a href="https://ianlunn.github.io/Hover/" target="_blank">hover</a>
+  </section>
+  <section class="slide">
+    <h2>Псевдоклассы</h2>
+    <figure>
+      <blockquote>
+        <p>
+          <strong>Псевдокласс</strong> в CSS —  это ключевое слово, добавленное к селектору, которое определяет его особое состояние.
+          Например, <code>:hover</code> может быть использован для изменения цвета кнопки при наведении курсора на неё.
+        </p>
+      </blockquote>
+      <figcaption>MDN</figcaption>
+    </figure>
+  </section>
+  <section class="slide">
+    <h2>Псевдоклассы</h2>
+    <table class="table-css-selectors">
+      <tr>
+        <th>Псевдокласс</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>
+          <code>:first-child</code>
+        </td>
+        <td>
+          выбор первого потомка
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code>:last-child</code>
+        </td>
+        <td>
+          выбор последнего потомка
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code>:hover</code>
+        </td>
+        <td>
+          устанавливает стили при наведении курсора мыши
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code>:focus</code>
+        </td>
+        <td>
+          устанавливает стили в состоянии фокуса
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code>:active</code>
+        </td>
+        <td>
+          устанавливает стили элемента в активном состоянии (нажатая кнопка мыши)
+        </td>
+      </tr>
+    </table>
+  </section>
+  <section class="slide">
+    <h2>Псевдоклассы</h2>
+    <table class="table-css-selectors">
+      <tr>
+        <th>Псевдокласс</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>
+          <code>:nth-child</code>
+        </td>
+        <td>
+          выбор каждого n-го элемента среди соседних <code>nth-child(2n)</code> <code>nth-child(2n + 1)</code>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code>:nth-last-child</code>
+        </td>
+        <td>
+          то же что и <code>:nth-child</code>, но выбор элементов происходит начиная с последнего
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code>:nth-of-type()</code>
+        </td>
+        <td>
+          то же что и <code>:nth-child</code>, но выбирает элементы только с заданным тегом
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code style="font-size: 14px;">:nth-last-of-type()</code>
+        </td>
+        <td>
+          то же что и <code>:nth-of-type()</code>, но выбор элементов происходит начиная с последнего
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code>:only-child</code>
+        </td>
+        <td>
+          любой элемент, являющийся единственным потомком родителя
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code>:only-of-type</code>
+        </td>
+        <td>
+          выбирает элемент, который является единственным потомком такого типа
+        </td>
+      </tr>
+    </table>
+  </section>
+  <section class="slide">
+    <h2>Псевдоклассы</h2>
+    <table class="table-css-selectors">
+      <tr>
+        <th>
+          Псевдокласс
+        </th>
+        <th>
+          Описание
+        </th>
+      </tr>
+      <tr>
+        <td>
+          <code>:empty</code>
+        </td>
+        <td>
+          находит любой элемент, у которого нет потомков
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code>:not(X)</code>
+        </td>
+        <td>
+          находит элементы, не соответствующие селектору X
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code>:root</code>
+        </td>
+        <td>
+          находит корневой элемент дерева документа (например html)
+        </td>
+      </tr>
+    </table>
+  </section>
+  <section class="slide">
+    <h2>Псевдоклассы</h2>
+    <table class="table-css-selectors">
+      <tr>
+        <th>
+          Псевдокласс
+        </th>
+        <th>
+          Описание
+        </th>
+      </tr>
+      <tr>
+        <td>
+          <code>:read-only</code>
+        </td>
+        <td>
+          находит элементы, недоступные для редактирования пользователем
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code>:required</code>
+        </td>
+        <td>
+          находит любые <code>input</code> элементы, имеющие атрибут <code>required</code>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code>:valid</code>
+        </td>
+        <td>
+          находит любые <code>input</code> или <code>form</code> элементы, контент которых валиден
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code>:visited</code>
+        </td>
+        <td>
+          позволяет вам выбирать ссылки, которые были посещены
+        </td>
+      </tr>
+    </table>
+  </section>
+  <section class="slide">
+    <h2>Это все? Нет!</h2>
+    Есть и другие псевдоклассы и псевдоэлементы. Информацию о них можно найти в спецификации.
+    Далеко не все псевдоклассы и псевдоэлементы используются на практике, но знать о них нужно,
+    так как с их помощью можно реализовать простое решение сложной задачи.
+  </section>
+  <section class="slide">
+    <h2>Практика</h2>
+    <strong>Задача:</strong> с помощью псевдоклассов стилизовать таблицу.
+  </section>
+  <section class="slide">
+    <h2>Вопросы для подготовки к интервью</h2>
+    <ol>
+      <li>Какие вы знаете псевдоклассы/псевдоэлементы?</li>
+      <li>Для чего нужен тот или иной псевдокласс/псевдоэлемент?</li>
+    </ol>
+  </section>
+  <footer class="badge">
+      <a href="/">Home</a>
+  </footer>
+  <div class="progress"></div>
+  <script src="shower/shower.js"></script>
+  <!-- &lt;&gt; -->
+</body>
+</html>
