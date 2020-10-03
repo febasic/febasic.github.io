@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <title>Препроцессор SASS | Курс Frontend Basic</title>
+  <meta charset="utf-8">
+  <meta content='NOINDEX, NOFOLLOW' name='robots'>
+  <meta name="description" content="Препроцессор SASS | Курс Frontend Basic. Компьютерная Школа Hillel">
+  <meta property="og:title" content="Frontend Basic">
+  <meta property="og:description" content="Препроцессор SASS | Курс Frontend Basic | Компьютерная Школа Hillel">
+  <meta property="og:image" content="https://assets.ithillel.ua/images/og.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="node_modules/@shower/ribbon/styles/styles.css">
+  <link rel="stylesheet" href="fontawesome-free-5.14.0-web/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176065403-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-176065403-1');
+  </script>
+</head>
+<body class="shower list">
+  <header class="caption">
+      <h1>Препроцессор SASS | Курс Frontend Basic</h1>
+      <p>Александр Плахотенко, Компьютерная Школа Hillel</p>
+  </header>
+  <section class="slide slide--title">
+    <h2>Препроцессор SASS</h2>
+  </section>
+  <section class="slide">
+    <h2>План</h2>
+    <ol>
+      <li>Основы SASS. </li>
+      <li>Синтаксис SASS.</li>
+      <li>SASS features.</li>
+    </ol>
+  </section>
+  <section class="slide">
+    <h2>Что такое препроцессор?</h2>
+    CSS препроцессор - это надстройка над CSS, которая расширяет функционал и синтаксис CSS.
+    Код написанный в синтаксисе препроцессора компилируется в CSS.
+    <br>
+    <img style="float: right;" width="235" src="https://vmorneau.me/content/images/2015/03/css_sass_compass.jpg" alt="">
+  </section>
+  <section class="slide">
+    <h2>Популярные препроцессоры</h2>
+    <img width="825" src="https://miro.medium.com/max/1344/1*yQMlZSgr9xhSLAha_XMHIA.png" alt="">
+  </section>
+  <section class="slide">
+    <h2>Системы сборки</h2>
+    <table style="font-size: 172px;">
+      <tr>
+        <td>
+          <a href="https://gulpjs.com/" target="_blank" style="background: none;">
+            <i style="color: #DB4446;" class="fab fa-gulp"></i>
+          </a>
+        </td>
+        <td>
+          <a href="https://gruntjs.com/" target="_blank" style="background: none;">
+            <i style="color: #453014;"  class="fab fa-grunt"></i>
+          </a>
+        </td>
+        <td>
+          <a href="https://webpack.js.org/" target="_blank" style="background: none;">
+            <img src="https://webpack.js.org/d19378a95ebe6b15d5ddea281138dcf4.svg" alt="">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </section>
+  <section class="slide">
+    <h2>Необходимые плагины для VS Code</h2>
+    <ol>
+      <li>
+        <a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.live-sass" target="_blank">
+          Live Sass Compiler
+        </a>
+      </li>
+      <li>
+        <a href="https://marketplace.visualstudio.com/items?itemName=Syler.sass-indented" target="_blank">
+          SASS
+        </a>
+      </li>
+    </ol>
+  </section>
+  <section class="slide">
+    <h2>Препроцессор SASS</h2>
+    <p>
+      SASS - это CSS препроцессор, который существенно расширяет синтаксис и возможности CSS.
+      SASS обладает широким спектром возможностей и функций: переменные, вложенные правила,
+      миксины, функции, циклы, условные опереторы и др.
+    </p>
+    <img width="192" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Sass_Logo_Color.svg/1200px-Sass_Logo_Color.svg.png"
+          style="display: block; float: right;"
+          alt="sass logo">
+  </section>
+  <section class="slide">
+    <h2>Принцип DRY (Don't repeat yourself)</h2>
+    DRY (Don't repeat yourself) - это принцип разработки ПО, основная идея которого
+    заключается в том, что количество повторяющихся участков кода должно сводиться к минимуму.
+  </section>
+  <section class="slide">
+    <h2>SASS features</h2>
+    <ul style="font-size: 22px;">
+      <li><mark>удобный и читабельный синтаксис (the indented syntax);</mark></li>
+      <li><mark>возможность разбивать кодовую базу на отдельные фрагменты (@import);</mark></li>
+      <li><mark>переменные, maps (Ассоциативные массивы);</mark></li>
+      <li>циклы (@for, @each);</li>
+      <li>условные операторы (@if, @else)</li>
+      <li><mark>DRY-features (@mixin, @function);</mark></li>
+      <li>вывод ошибок и предупреждений (@debug, @warn, @error).</li>
+    </ul>
+  </section>
+  <section class="slide">
+    <h2>@import</h2>
+    <figure>
+      <blockquote>
+        <p>
+          Sass расширяет CSS правило <code>@import</code>, позволяя импортировать scss и sass файлы.
+          Все импортированные scss и sass файлы могут быть объединены в одном результирующем css
+          файле. Кроме того, любые переменные или миксины, объявленные в импортированном файле,
+          могут использоваться в главном файле.
+        </p>
+      </blockquote>
+      <figcaption>
+        <a href="https://sass-scss.ru/documentation/pravila_i_direktivi/direktiva_import/">
+          SassDocs
+        </a>
+      </figcaption>
+    </figure>
+  </section>
+  <section class="slide">
+    <h2>Синтаксис SASS</h2>
+    <table style="font-size: 18px;">
+      <tr>
+        <th>SASS</th>
+        <th>CSS</th>
+      </tr>
+      <tr>
+        <td>
+          <pre>
+            <code>$primary-color: black</code>
+            <code>$secondary-color: white</code>
+            <code>body</code>
+            <code>  margin: 0</code>
+            <code>  color: $primary-color</code>
+            <code>  background-color: $secondary-color</code>
+          </pre>
+        </td>
+        <td>
+          <pre>
+            <code>body {</code>
+            <code>  margin: 0;</code>
+            <code>  color: black;</code>
+            <code>  background-color: white;</code>
+            <code>}</code>
+          </pre>
+        </td>
+      </tr>
+    </table>
+  </section>
+  <section class="slide">
+    <h2>Синтаксис SCSS (Sassy CSS)</h2>
+    <table style="font-size: 18px;">
+      <tr>
+        <th>SCSS</th>
+        <th>CSS</th>
+      </tr>
+      <tr>
+        <td>
+          <pre>
+            <code>$primary-color: black;</code>
+            <code>$secondary-color: white;</code>
+            <code>body {</code>
+            <code>  margin: 0;</code>
+            <code>  color: $primary-color;</code>
+            <code>  background-color: $secondary-color;</code>
+            <code>}</code>
+          </pre>
+        </td>
+        <td>
+          <pre>
+            <code>body {</code>
+            <code>  margin: 0;</code>
+            <code>  color: black;</code>
+            <code>  background-color: white;</code>
+            <code>}</code>
+          </pre>
+        </td>
+      </tr>
+    </table>
+  </section>
+  <section class="slide">
+    <h2>Вложенные правила</h2>
+    <blockquote>
+      Sass позволяет вкладывать правила CSS друг в друга.
+      Вложенные правила применяются только для элементов, соответствующих внешним селекторам.
+    </blockquote>
+    <table style="font-size: 18px;">
+      <tr>
+        <th>
+          SASS
+        </th>
+        <th>
+          CSS
+        </th>
+      </tr>
+      <tr>
+        <td>
+          <pre>
+            <code>.link</code>
+            <code>  color: black</code>
+            <code>  .icon</code>
+            <code>    font-size: 14px</code>
+          </pre>
+        </td>
+        <td>
+          <pre>
+            <code>.link {</code>
+            <code>  color: black;</code>
+            <code>}</code>
+            <code>.link .icon {</code>
+            <code>  font-size: 14px;</code>
+            <code>}</code>
+          </pre>
+        </td>
+      </tr>
+    </table>
+  </section>
+  <section class="slide">
+    <h2>& в SASS</h2>
+    <blockquote>
+      Амперсанд для родительского селектора позволяет создать новый, расширенный селетор на основе родительского.
+    </blockquote>
+    <table style="font-size: 18px;">
+      <tr>
+        <th>
+          SASS
+        </th>
+        <th>
+          CSS
+        </th>
+      </tr>
+      <tr>
+        <td>
+          <pre>
+            <code>.link</code>
+            <code>  color: black</code>
+            <code>  &:hover</code>
+            <code>    color: blue</code>
+          </pre>
+        </td>
+        <td>
+          <pre>
+            <code>.link {</code>
+            <code>  color: black;</code>
+            <code>}</code>
+            <code>.link:hover {</code>
+            <code>  font-size: 14px;</code>
+            <code>}</code>
+          </pre>
+        </td>
+      </tr>
+    </table>
+  </section>
+  <section class="slide">
+    <h2>Интерполяция</h2>
+    <pre>
+      <code>$border-width: 5</code>
+      <code>.bordered</code>
+      <code>  border-width: #{$border-width}px</code>
+    </pre>
+    <a href="https://sass-scss.ru/documentation/sassscript/strokovie_operatsii/" target="_blank">
+      Операции со строками в SASS
+    </a>
+  </section>
+  <section class="slide">
+    <h2>Переменные</h2>
+    Переменные в SASS - это способ хранения информации для дальнейшего ее переиспользования в коде проекта.
+    <pre>
+      <code>$primary-color: black</code>
+      <code>$secondary-color: white</code>
+      <code>$primary-font: 'Roboto', sans-serif</code>
+      <code>$secondary-font: 'Open Sans', sans-serif</code>
+    </pre>
+  </section>
+  <section class="slide">
+    <h2>if()</h2>
+    <figure>
+      <blockquote>
+        <p>
+          Встроенная функция <code>if()</code> позволяет осуществлять ветвление, опираясь на условие,
+          и возвращает один из двух возможных результатов.
+        </p>
+      </blockquote>
+      <figcaption>
+        <a href="https://sass-scss.ru/documentation/direktivi_kontrolya_i_virazheniya/funktsiya_if/" target="_blank">
+          SassDocs
+        </a>
+      </figcaption>
+    </figure>
+  </section>
+  <section class="slide">
+    <h2>@if</h2>
+    <figure>
+      <blockquote>
+        <p>
+          Директива <code>@if</code> принимает выражение SassScript и использует стили, вложенные в неё в случае,
+          если выражение возвращает любое значение, кроме false или null.
+        </p>
+      </blockquote>
+      <figcaption>
+        <a href="https://sass-scss.ru/documentation/direktivi_kontrolya_i_virazheniya/direktiva_if/" target="_blank">
+          SassDocs
+        </a>
+      </figcaption>
+    </figure>
+  </section>
+  <section class="slide">
+    <h2>Комбо-пример для if(), @if</h2>
+    <pre style="font-size: 16px;">
+      <code>$type: monster;</code>
+      <code>p {</code>
+      <code>  @if $type == ocean {</code>
+      <code>    color: blue;</code>
+      <code>  } @else if $type == matador {</code>
+      <code>    color: red;</code>
+      <code>  } @else if $type == monster {</code>
+      <code>    color: green;</code>
+      <code>  } @else {</code>
+      <code>    color: black;</code>
+      <code>  }</code>
+      <code>}</code>
+    </pre>
+  </section>
+  <section class="slide">
+    <h2>Директива @for</h2>
+    <figure>
+      <blockquote>
+        <p>
+          Директива @for выводит набор стилей заданное число раз. Для каждого повторения используется
+          переменная-счётчик для изменения вывода.
+        </p>
+      </blockquote>
+      <figcaption>
+        <p>
+          <a href="https://sass-scss.ru/documentation/direktivi_kontrolya_i_virazheniya/direktiva_for/">
+            SassDocs
+          </a>
+        </p>
+      </figcaption>
+    </figure>
+    <pre>
+      <code>@for $i from 1 through 3 {</code>
+      <code> .item-#{$i} { width: 2em * $i; }</code>
+      <code>}</code>
+    </pre>
+  </section>
+  <section class="slide">
+    <h2>Директива @each</h2>
+    <pre>
+      <code>@each $animal in puma, sea-slug, egret, salamander {</code>
+      <code>  .#{$animal}-icon {</code>
+      <code>    background-image: url('/images/#{$animal}.png');</code>
+      <code>  }</code>
+      <code>}</code>
+    </pre>
+  </section>
+  <section class="slide">
+    <h2>Директива @while</h2>
+    <pre>
+      <code>$i: 6;</code>
+      <code>@while $i > 0 {</code>
+      <code>  .item-#{$i} { width: 2em * $i; }</code>
+      <code>  $i: $i - 2;</code>
+      <code>}</code>
+    </pre>
+  </section>
+  <section class="slide">
+    <h2>Функции</h2>
+    <figure>
+      <blockquote>
+        <p>
+          Функции в Sass могут возвращать любое корректное значение CSS и могут быть назначены
+          любому свойству. Они даже могут быть рассчитаны на основе переданного аргумента.
+        </p>
+      </blockquote>
+      <figcaption>
+        <a href="https://tproger.ru/translations/complete-sass-guide/" target="_blank">
+          Развёрнутое руководство по Sass/SCSS
+        </a>
+      </figcaption>
+    </figure>
+    <pre>
+      <code>@function double($width)</code>
+      <code>  @return $width * 2</code>
+    </pre>
+  </section>
+  <section class="slide">
+    <h2>Объявление миксина</h2>
+    <figure>
+      <blockquote>
+        <p>
+          Миксины объявляются директивой @mixin. После неё должно стоять имя миксина и,
+          опционально, его параметры, и блок, содержащий тело миксина.
+        </p>
+      </blockquote>
+      <figcaption>
+        <a href="https://sass-scss.ru/documentation/miksini/obyavlenie_miksina/" target="_blank">
+          SassDocs
+        </a>
+      </figcaption>
+    </figure>
+  </section>
+  <section class="slide">
+    <h2>Использование миксина</h2>
+    <figure>
+      <blockquote>
+        <p>
+          Миксины вызываются в документ директивой @include. Она принимает имя миксина и, опционально,
+          передаваемые в него аргументы, включает стили, определённые этим миксином, в текущее правило.
+        </p>
+      </blockquote>
+      <figcaption>
+        <a href="https://sass-scss.ru/documentation/miksini/ispolzovanie_miksina/" target="_blank">
+          SassDocs
+        </a>
+      </figcaption>
+    </figure>
+  </section>
+  <section class="slide">
+    <h2>Пример объявления и использования миксина</h2>
+    <pre style="font-size: 20px;">
+      <code><mark>@mixin media-breakpoint-up($breakpoint)</mark></code>
+      <code>  @media screen and ( min-width:  $breakpoint)</code>
+      <code>    @content</code>
+      <code> </code>
+      <code>.container</code>
+      <code>  max-width: 100%</code>
+      <code>  <mark>@include media-breakpoint-up(sm)</mark></code>
+      <code>    max-width: 500px</code>
+    </pre>
+  </section>
+  <section class="slide">
+    <h2>Maps (Ассоциативные массивы)</h2>
+    <figure>
+      <blockquote>
+        <p>
+          Мапы, или ассоциативные массивы, представляют собой связь между ключами и значениями, где ключи используются для поиска
+          значений. Они позволяют легко собирать значения в именованные группы и получать доступ к этим группам динамически.
+        </p>
+      </blockquote>
+      <figcaption>
+        <a href="https://sass-scss.ru/documentation/sassscript/mapi/" target="_blank">
+          SassDocs
+        </a>
+      </figcaption>
+    </figure>
+    <pre>
+      <code>$map: (key1: value1, key2: value2, key3: value3);</code>
+    </pre>
+  </section>
+  <section class="slide">
+    <h2>Функция map-get</h2>
+    Функции <code>map-get</code> позволяет получить значение в указанном массиве.
+    <pre>
+      <code>map-get($map-name, "key-name")</code>
+    </pre>
+  </section>
+  <section class="slide">
+    <h2>Практика</h2>
+    <strong>Задача:</strong> создать миксины для медиа-запросов.
+  </section>
+  <section class="slide">
+    <h2>Домашка</h2>
+    <a href="https://docs.google.com/document/d/18rc9sjbE3xPysZo2maGz7xrLCXvRBJxyFSzIU2C6_Ww/edit?usp=sharing" target="_blank">Ссылка</a>
+  </section>
+  <section class="slide">
+    <h2>Вопросы для подготовки к интервью</h2>
+    <ol>
+      <li>Для чего нужны препроцессоры?</li>
+      <li>Для чего нужны переменные в препроцессорах?</li>
+      <li>Для чего нужны циклы в препроцессорах?</li>
+      <li>Для чего нужны миксины в препроцессорах?</li>
+      <li>Для чего нужны функции в препроцессорах?</li>
+      <li>Для чего нужны maps в препроцессорах?</li>
+    </ol>
+  </section>
+  <section class="slide">
+    <h2>Почитать</h2>
+    <ul>
+      <li>
+        <a href="https://tproger.ru/translations/complete-sass-guide/" target="_blank">
+          Развёрнутое руководство по Sass/SCSS
+        </a>
+      </li>
+      <li>
+        <a href="https://sass-scss.ru/documentation/" target="_blank">
+          Документация препроцессора SASS
+        </a>
+      </li>
+    </ul>
+  </section>
+  <footer class="badge">
+      <a href="/">Home</a>
+  </footer>
+  <div class="progress"></div>
+  <script src="node_modules/@shower/core/dist/shower.js"></script>
+  <!-- &lt;&gt; -->
+</body>
+</html>
