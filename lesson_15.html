@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <title>CSS методологии. БЭМ | Курс Frontend Basic</title>
+  <meta charset="utf-8">
+  <meta content='NOINDEX, NOFOLLOW' name='robots'>
+  <meta name="description" content="CSS методологии. БЭМ | Курс Frontend Basic. Компьютерная Школа Hillel">
+  <meta property="og:title" content="Frontend Basic">
+  <meta property="og:description" content="CSS методологии. БЭМ | Курс Frontend Basic | Компьютерная Школа Hillel">
+  <meta property="og:image" content="https://assets.ithillel.ua/images/og.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="node_modules/@shower/ribbon/styles/styles.css">
+  <link rel="stylesheet" href="fontawesome-free-5.14.0-web/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176065403-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-176065403-1');
+  </script>
+</head>
+<body class="shower list">
+  <header class="caption">
+      <h1>CSS методологии. БЭМ | Курс Frontend Basic</h1>
+      <p>Александр Плахотенко, Компьютерная Школа Hillel</p>
+  </header>
+  <section class="slide slide--title">
+    <h2>CSS методологии. БЭМ</h2>
+  </section>
+  <section class="slide">
+    <h2>План</h2>
+    <ol>
+      <li>CSS методологии.</li>
+      <li>Знакомство с БЭМ.</li>
+      <li>Преимущества и недостатки БЭМ.</li>
+    </ol>
+  </section>
+  <section class="slide">
+    <h2>Преимущества и недостатки CSS</h2>
+    <table>
+      <tr>
+        <th>Преимущества</th>
+        <th>Недостатки</th>
+      </tr>
+      <tr>
+        <td class="next">
+          <ul>
+            <li>каскадность;</li>
+            <li>наследование;</li>
+            <li>специфичность.</li>
+          </ul>
+        </td>
+        <td class="next">
+          <ul>
+            <li>каскадность;</li>
+            <li>наследование;</li>
+            <li>специфичность.</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+  </section>
+  <section class="slide">
+    <h2>Хороший код?</h2>
+    <pre>
+      <code>#header > nav > ul > li > a {</code>
+      <code>  font: size: 18px;</code>
+      <code>  code: black !important;</code>
+      <code>}</code>
+    </pre>
+    <span class="next" style="font-size: 112px; float: right; color: rgb(143, 43, 18);">
+      <i class="fas fa-poo"></i>
+    </span>
+  </section>
+  <section class="slide">
+    <h2>Поддержка большого проекта</h2>
+    <img src="https://febasic.github.io/html_css_basics/images/architecture.gif" alt="">
+    <br>
+    <a href="https://pikabu.ru/story/v_chem_slozhnost_podderzhki_bolshogo_proekta_bayan_s_prodolzheniem_4578878"
+        target="_blank">
+        В чем сложность поддержки большого проекта?
+    </a>
+  </section>
+  <section class="slide">
+    <h2>Общие принципы написания стилей</h2>
+    <ul>
+      <li>никаких id;</li>
+      <li>никаких тегов;</li>
+      <li>никакой вложенности;</li>
+      <li>только классы.</li>
+    </ul>
+  </section>
+  <section class="slide">
+    <h2>CSS методологии</h2>
+    <ul>
+      <li>SMACSS;</li>
+      <li>OOCSS;</li>
+      <li>Atomic CSS;</li>
+      <li>БЭМ.</li>
+    </ul>
+    <a href="https://habr.com/ru/post/256109/" target="_blank">
+      Способы организации CSS-кода | Хабр
+    </a>
+  </section>
+  <section class="slide">
+    <h2>БЭМ (Блок Элемент Модификатор)</h2>
+    <strong>БЭМ</strong> - это методология, которая помогает создавать пререиспользуемые компоненты. Главная идея БЭМ: все есть блок.
+    <img width="500" style="float:right;" src="https://en.bem.info/kFetIbKxQdABHhUecbic45Il0Bg.png" alt="">
+  </section>
+  <section class="slide">
+    <h2>Именование классов в БЭМ</h2>
+    <pre>
+      <code>block</code>
+      <code>block__element</code>
+      <code>block--modifier block__element--modifier</code>
+    </pre>
+  </section>
+  <section class="slide">
+    <h2>Простейший пример</h2>
+    <pre>
+      <code>block: main-nav</code>
+      <code>element: main-nav__item</code>
+      <code>modifier: main-nav__item--active</code>
+    </pre>
+    <nav class="main-nav">
+      <a href="/home" class="main-nav__item main-nav__item--active">home</a>
+      <a href="/about" class="main-nav__item">about</a>
+      <a href="/about" class="main-nav__item">services</a>
+      <a href="/blog" class="main-nav__item">blog</a>
+      <a href="/contact_us" class="main-nav__item">contact us</a>
+    </nav>
+    <style>
+      .main-nav {
+        display: flex;
+      }
+      .main-nav__item {
+        display: inline-block;
+        margin-right: 5px;
+        padding: 20px 30px;
+        background-color: rgba(1, 66, 187, 0.6);
+        background-image: none !important;
+        color: white !important;
+        text-transform: capitalize;
+        transition: background-color 0.2s;
+      }
+      .main-nav__item--active {
+        background-color: rgb(1, 66, 187);
+      }
+    </style>
+    <script>
+      let navItems = document.querySelectorAll('.main-nav__item');
+      let isActiveClassName = 'main-nav__item--active';
+      for (let i = 0; i < navItems.length; i++) {
+          navItems[i].addEventListener('click', (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+          navItems.forEach(item => item.classList.remove(isActiveClassName));
+          event.target.classList.add(isActiveClassName);
+        })
+      }
+    </script>
+  </section>
+  <section class="slide">
+    <h2>БЭМ сущности</h2>
+    <ol>
+      <li>блок;</li>
+      <li>элемент;</li>
+      <li>модификатор.</li>
+    </ol>
+  </section>
+  <section class="slide">
+    <h2>Блок</h2>
+    <figure>
+      <blockquote>
+        <p>
+          Логически и функционально независимый компонент страницы.
+        </p>
+      </blockquote>
+      <figcaption>
+        <a href="https://ru.bem.info/methodology/key-concepts/" target="_blank">
+          документация
+        </a>
+      </figcaption>
+    </figure>
+    <code>.block</code><br>
+    <code>.block-name</code><br>
+    <code>.block-long-name</code><br>
+    <code>.block-very-long-name</code>
+  </section>
+  <section class="slide">
+    <h2>Блок</h2>
+    <ul>
+      <li>блок может состоять из элементов;</li>
+      <li>блок можно вкладывать в элемент или другой блок.</li>
+    </ul>
+  </section>
+  <section class="slide">
+    <h2>Элемент</h2>
+    <figure>
+      <blockquote>
+        <p>
+          Составная часть блока, которая не может использоваться в отрыве от него.
+          Элементы не существуют вне блока. Каждый элемент может принадлежать только одному блоку.
+          Например, пункт меню вне блока меню не используется, значит является его элементом.
+        </p>
+      </blockquote>
+      <figcaption>
+        <a href="https://ru.bem.info/methodology/key-concepts/" target="_blank">
+          документация
+        </a>
+      </figcaption>
+    </figure>
+  </section>
+  <section class="slide">
+    <h2>Элемент</h2>
+    <ul>
+      <li>элемент не может существовать вне блока;</li>
+      <li>в элемент могут быть вложены блоки или другие элементы.</li>
+    </ul>
+    <code>.block__element</code><br>
+    <code>.block-name__element-name</code><br>
+    <code>.block-long-name__element-long-name</code><br>
+    <code>.block-very-long-name__element-very-long-name</code><br>
+    <code><s>.block__element__element</s></code>
+  </section>
+  <section class="slide">
+    <h2>Модификатор</h2>
+    <figure>
+      <blockquote>
+        <p>
+          БЭМ-сущность, определяющая внешний вид, состояние и поведение блока или элемента.
+        </p>
+      </blockquote>
+      <figcaption>
+        <a href="https://ru.bem.info/methodology/key-concepts/" target="_blank">
+          документация
+        </a>
+      </figcaption>
+    </figure>
+    <code>block--modifier</code><br>
+    <code>block__element--modifier</code>
+    <div style="font-size: 72px; color: orange;">
+      <i class="fas fa-smile"></i>
+      <i class="fas fa-smile"></i>
+      <i class="fas fa-smile"></i>
+      <i class="fas fa-smile"></i>
+      <i class="fas fa-smile"></i>
+      <i class="fas fa-smile-wink" style="color: orangered;"></i>
+      <i class="fas fa-smile"></i>
+    </div>
+  </section>
+  <section class="slide">
+    <h2>Микс</h2>
+    <figure>
+      <blockquote>
+        <p>
+          Способ использования разных БЭМ-сущностей на одном DOM-узле.
+        </p>
+      </blockquote>
+      <figcaption>
+        <a href="https://ru.bem.info/methodology/key-concepts/" target="_blank">
+          документация
+        </a>
+      </figcaption>
+    </figure>
+    <code>class='row__column main-nav'</code><br>
+    <code>class='section__item services-list'</code>
+  </section>
+  <section class="slide">
+    <h2>БЭМ и SASS</h2>
+    <table>
+      <tr>
+        <td>
+          <pre style="font-size: 20px;">
+            <code>.nav-block</code>
+            <code> /* styles */</code>
+            <code>  &__item</code>
+            <code>    /* styles */</code>
+            <code>    &--active</code>
+            <code>      /* styles */</code>
+            <code>  &--header</code>
+            <code>    /* styles */</code>
+          </pre>
+        </td>
+        <td class="next" style="font-size: 48px; color: red;">
+          НИКОГДА!<br>
+          <i class="fas fa-hand-point-left"></i> так<br>
+          не делайте
+        </td>
+      </tr>
+    </table>
+  </section>
+  <section class="slide">
+    <h2>Преимущества БЭМ</h2>
+    <ul>
+      <li>простота поддержки и чтения кода;</li>
+      <li>простота переиспользования готовых компонент;</li>
+      <li>положительное влияние на производительность отрисовки стилей.</li>
+    </ul>
+  </section>
+  <section class="slide">
+    <h2>Недостатки БЭМ</h2>
+    <ul>
+      <li>иногда бэм классы имеют очень длинные имена;</li>
+      <li>необходимо хорошо подумать прежде чем создавать новый компонент.</li>
+    </ul>
+    <code>&lt;section class='very-long-block-class-name very-long-block-class-name--one-modifier&lt;/section&gt;</code>
+  </section>
+  <section class="slide">
+    <h2>Вопросы для подготовки к интервью</h2>
+    <ol>
+      <li>Какие вы знаете способы организации стилей?</li>
+      <li>Что такое БЭМ? В чем заключается концепция методологии БЭМ?</li>
+      <li>Каковы преимущества методологии БЭМ?</li>
+      <li>Каковы недостатки методологии БЭМ?</li>
+      <li>Что такое блок/элемент/модификатор/микс?</li>
+      <li>Можно ли вкладывать блок в элемент?</li>
+    </ol>
+  </section>
+  <footer class="badge">
+      <a href="/">Home</a>
+  </footer>
+  <div class="progress"></div>
+  <script src="node_modules/@shower/core/dist/shower.js"></script>
+  <!-- &lt;&gt; -->
+</body>
+</html>
