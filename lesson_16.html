@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <title>CSS Фреймворки | Курс Frontend Basic</title>
+  <meta charset="utf-8">
+  <meta content='NOINDEX, NOFOLLOW' name='robots'>
+  <meta name="description" content="CSS Фреймворки | Курс Frontend Basic. Компьютерная Школа Hillel">
+  <meta property="og:title" content="Frontend Basic">
+  <meta property="og:description" content="CSS Фреймворки | Курс Frontend Basic | Компьютерная Школа Hillel">
+  <meta property="og:image" content="https://assets.ithillel.ua/images/og.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="shower/themes/ribbon/styles/styles.css">
+  <link rel="stylesheet" href="fontawesome-free-5.14.0-web/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176065403-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-176065403-1');
+  </script>
+</head>
+<body class="shower list">
+  <header class="caption">
+      <h1>CSS Фреймворки | Курс Frontend Basic</h1>
+      <p>Александр Плахотенко, Компьютерная Школа Hillel</p>
+  </header>
+  <section class="slide slide--title">
+    <h2>CSS Фреймворки</h2>
+  </section>
+  <section class="slide">
+    <h2>План</h2>
+    <ol>
+      <li>Популярные CSS фреймворки.</li>
+      <li>Знакомство с фреймворком  bootstrap.</li>
+    </ol>
+  </section>
+  <section class="slide">
+    <h2>CSS Фреймворк</h2>
+    <strong>CSS Фреймворк</strong> - это набор готовых решений (элементы UI, сетка, миксины, функции)
+    для ускорения верстки.
+  </section>
+  <section class="slide">
+    <h2>Популярные CSS фреймворки</h2>
+    <table>
+      <tr>
+        <td >
+          <img width="240" src="./images/bootstrap.svg" alt="">
+        </td>
+        <td>
+          <img width="350" height="300" src="./images/foundation.svg" alt="">
+        </td>
+      </tr>
+    </table>
+  </section>
+  <section class="slide">
+    <h2>Знакомство с фреймворком  bootstrap</h2>
+    <ul>
+      <li>
+        <a href="https://github.com/twbs/bootstrap/archive/v4.5.2.zip">скачать bootstrap;</a>
+      </li>
+      <li>
+        подключить bootstrap;
+      </li>
+      <li>
+        разобраться с работой сетки bootstrap;
+      </li>
+      <li>
+        кастомизировать сетку bootstrap;
+      </li>
+      <li>
+        оптимизировать подключение bootstrap модулей.
+      </li>
+    </ul>
+    <strong>Важно:</strong> для корректной работы JavaScript модулей bootstrap (&lt; 5v) необходимо подключить
+    библиотеку <a href="https://cdnjs.com/libraries/jquery" target="_blank">jquery</a>.
+  </section>
+  <section class="slide">
+    <h2>Кастомизация сетки bootstrap</h2>
+    <pre>
+      <code>$grid-columns: 12;</code>
+      <code>$grid-gutter-width: 30px;</code>
+    </pre>
+  </section>
+  <section class="slide">
+    <h2>Кастомизация сетки bootstrap</h2>
+    <pre>
+      <code>$grid-breakpoints: (</code>
+      <code>  xs: 0,</code>
+      <code>  sm: 480px,</code>
+      <code>  md: 768px,</code>
+      <code>  lg: 1024px</code>
+      <code>);</code>
+    </pre>
+  </section>
+  <section class="slide">
+    <h2>Кастомизация сетки bootstrap</h2>
+    <pre>
+      <code>$container-max-widths: (</code>
+      <code>  sm: 420px,</code>
+      <code>  md: 720px,</code>
+      <code>  lg: 960px</code>
+      <code>);</code>
+    </pre>
+  </section>
+  <section class="slide">
+    <h2>Знакомство с фреймворком  bootstrap</h2>
+    <ul>
+      <li>
+        разобрать работу модуля colapse;
+      </li>
+      <li>
+        разобрать работу модуля modal;
+      </li>
+      <li>
+        разобрать работу модуля carousel.
+      </li>
+    </ul>
+    <strong>Важно:</strong> для корректной работы JavaScript модулей bootstrap (&lt; 5v) необходимо подключить
+    библиотеку <a href="https://cdnjs.com/libraries/jquery" target="_blank">jquery</a>.
+  </section>
+  <section class="slide">
+    <h2>Преимущества и недостатки</h2>
+    <table style="font-size: 18px;">
+      <tr>
+        <th>Преимущества</th>
+        <th>Недостатки</th>
+      </tr>
+      <tr>
+        <td>
+          <ul>
+            <li>большое количество готовых решений;</li>
+            <li>количество ошибок сводиться к минимуму.</li>
+          </ul>
+        </td>
+        <td>
+          <ul>
+            <li>большое количество неиспользуемого кода.</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+  </section>
+  <section class="slide">
+    <h2>Домашка</h2>
+    <a href="https://docs.google.com/document/d/1fX35D1kFCn7_NHjopmN_zA3e--UtqJg9juHv_--pUG8/edit?usp=sharing" target="_blank">
+      Ссылка
+    </a>
+  </section>
+  <section class="slide">
+    <h2>Вопросы для подготовки к интервью</h2>
+    <ol>
+      <li>Что такое CSS фреймворк?</li>
+      <li>Для чего нужны CSS фреймворки?</li>
+      <li>Какие вы знаете CSS фреймворки?</li>
+      <li>Как кастомизировать bootstrap?</li>
+      <li>Каковы преимущества и недостатки использования CSS фреймворков?</li>
+    </ol>
+  </section>
+  <section class="slide">
+    <h2>Почитать</h2>
+    <ul>
+      <li>
+        <a href="https://getbootstrap.com/docs/4.5/getting-started/introduction/" target="_blank">
+          Bootstrap Documentation
+        </a>
+      </li>
+      <li>
+        <a href="https://bootstrap-4.ru/docs/4.5/getting-started/introduction/" target="_blank">
+          Bootstrap Документация
+        </a>
+      </li>
+    </ul>
+  </section>
+  <footer class="badge">
+      <a href="/">Home</a>
+  </footer>
+  <div class="progress"></div>
+  <script src="shower/shower.js"></script>
+  <!-- &lt;&gt; -->
+</body>
+</html>
