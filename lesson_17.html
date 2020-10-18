@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <title>CSS Анимации и другая магия | Курс Frontend Basic</title>
+  <meta charset="utf-8">
+  <meta content='NOINDEX, NOFOLLOW' name='robots'>
+  <meta name="description" content="CSS Анимации и другая магия | Курс Frontend Basic. Компьютерная Школа Hillel">
+  <meta property="og:title" content="Frontend Basic">
+  <meta property="og:description" content="CSS Анимации и другая магия | Курс Frontend Basic | Компьютерная Школа Hillel">
+  <meta property="og:image" content="https://assets.ithillel.ua/images/og.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="node_modules/@shower/ribbon/styles/styles.css">
+  <link rel="stylesheet" href="fontawesome-free-5.14.0-web/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176065403-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-176065403-1');
+  </script>
+  <style>
+    .wrapper {
+      position: relative;
+      perspective: 400px;
+      perspective-origin: 50% 50%;
+      transform-style: preserve-3d;
+    }
+    .box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+      width: 200px;
+      height: 200px;
+      background: #244c8e;
+      transition: all 0.3s;
+    }
+    .box:before {
+      content: 'box';
+      color: white;
+      text-transform: uppercase;
+      font-weight: 900;
+      font-size: 38px;
+    }
+    .box--dashed {
+      position: absolute;
+      left: 0;
+      top: 0;
+      border: 2px dashed black;
+      background: transparent;
+    }
+    .box--dashed:before {
+      color: grey;
+    }
+    [data-for] {
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    [contenteditable] {
+      cursor: text;
+    }
+  </style>
+</head>
+<body class="shower list">
+  <header class="caption">
+      <h1>CSS Анимации и другая магия | Курс Frontend Basic</h1>
+      <p>Александр Плахотенко, Компьютерная Школа Hillel</p>
+  </header>
+  <section class="slide slide--title">
+    <h2>CSS Анимации и другая магия</h2>
+  </section>
+  <section class="slide">
+    <h2>План</h2>
+    <ol>
+      <li>CSS Трансформации.</li>
+      <li>CSS Фильтры.</li>
+      <li>Clip-path. Shape-outside.</li>
+      <li>CSS Анимации.</li>
+    </ol>
+  </section>
+  <section class="slide slide--title">
+    <h2>CSS Трансформации</h2>
+  </section>
+  <section class="slide">
+    <h2>translate</h2>
+    <table style="font-size: 20px;">
+      <tr>
+        <td style="width: 540px;">
+          <code data-for='#box1' style="background-color: rgb(36, 76, 142); color: white;">
+            transform: translate(<span contenteditable="true" class="editable">50</span>px);
+          </code><br>
+          <code data-for='#box1'>transform: translate(<span contenteditable="true" class="editable">50</span>%);</code><br>
+          <code data-for='#box1'>transform: translate(<span contenteditable="true" class="editable">50</span>%,<span contenteditable="true" class="editable">100</span>%);</code><br>
+          <code data-for='#box1'>transform: translateX(<span contenteditable="true" class="editable">50</span>%);</code><br>
+          <code data-for='#box1'>transform: translateY(<span contenteditable="true" class="editable">50</span>%);</code><br>
+          <code data-for='#box1'>transform: translateZ(<span contenteditable="true" class="editable">-50</span>px);</code><br>
+          <code data-for='#box1'>
+            transform: translate3d(<span contenteditable="true" class="editable">50</span>px,<span contenteditable="true" class="editable">50</span>px,<span contenteditable="true" class="editable">-150</span>px);
+          </code>
+        </td>
+        <td>
+          <div class="wrapper">
+            <div class="box box--dashed"></div>
+            <div id='box1' class="box" style="transform: translate(50px);"></div>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </section>
+  <section class="slide">
+    <h2>scale</h2>
+    <table>
+      <tr>
+        <td style="width: 540px;">
+          <code data-for='#box2' style="background-color: rgb(36, 76, 142); color: white;">
+            transform: scale(<span contenteditable="true" class="editable">0.5</span>);
+          </code><br>
+          <code data-for='#box2'>transform: scale(<span contenteditable="true" class="editable">0.5</span>,<span contenteditable="true" class="editable">1.5</span>);</code>
+          <code data-for='#box2'>transform: scaleX(<span contenteditable="true" class="editable">0.5</span>);</code><br>
+          <code data-for='#box2'>transform: scaleY(<span contenteditable="true" class="editable">0.5</span>);</code><br>
+          <code data-for='#box2'>transform: scaleZ(<span contenteditable="true" class="editable">1.5</span>);</code><br>
+          <code data-for='#box2'>transform: scale3d(<span contenteditable="true" class="editable">0.8</span>,<span contenteditable="true" class="editable">1.5</span>,<span contenteditable="true" class="editable">1.5</span>);</code><br>
+        </td>
+        <td>
+          <div class="wrapper">
+            <div class="box box--dashed"></div>
+            <div id='box2' class="box" style="transform: scale(0.5);"></div>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </section>
+  <section class="slide">
+    <h2>skew</h2>
+    <table>
+      <tr>
+        <td style="width: 540px;">
+          <code data-for='#box3' style="background-color: rgb(36, 76, 142); color: white;">
+            transform: skew(<span contenteditable="true" class="editable">-45</span>deg);
+          </code><br>
+          <code data-for='#box3'>transform: skew(<span contenteditable="true" class="editable">10</span>deg,<span contenteditable="true" class="editable">10deg</span>);</code>
+          <code data-for='#box3'>transform: skewX(<span contenteditable="true" class="editable">45</span>deg);</code><br>
+          <code data-for='#box3'>transform: skewY(<span contenteditable="true" class="editable">45</span>deg);</code>
+        </td>
+        <td>
+          <div class="wrapper">
+            <div class="box box--dashed"></div>
+            <div id='box3' class="box" style="transform: skew(-45deg);"></div>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </section>
+  <section class="slide">
+    <h2>rotate</h2>
+    <table style="font-size: 20px;">
+      <tr>
+        <td style="width: 540px;">
+          <code data-for='#box4' style="background-color: rgb(36, 76, 142); color: white;">
+            transform: rotate(<span contenteditable="true" class="editable">-45</span>deg);
+          </code><br>
+          <code data-for='#box4'>transform: rotate(<span contenteditable="true" class="editable">10</span>, <span contenteditable="true" class="editable">10</span>);</code><br>
+          <code data-for='#box4'>transform: rotateX(<span contenteditable="true" class="editable">45</span>deg);</code><br>
+          <code data-for='#box4'>transform: rotateY(<span contenteditable="true" class="editable">45</span>deg);</code><br>
+          <code data-for='#box4'>transform: rotateZ(<span contenteditable="true" class="editable">45</span>deg);</code><br>
+          <code data-for='#box4'>transform: rotate3d(<span contenteditable="true" class="editable">1</span>,<span contenteditable="true" class="editable">1</span>,<span contenteditable="true" class="editable">1</span>,<span contenteditable="true" class="editable">45</span>deg);</code><br>
+        </td>
+        <td>
+          <div class="wrapper">
+            <div class="box box--dashed"></div>
+            <div id='box4' class="box" style="transform: rotate(-45deg);"></div>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </section>
+  <section class="slide">
+    <h2>matrix</h2>
+    <table style="font-size: 20px;">
+      <tr>
+        <td style="width: 540px;">
+          <code data-for='#box5' style="background-color: rgb(36, 76, 142); color: white;">
+            transform: matrix(
+              <span contenteditable="true" class="editable">1</span>,
+              <span contenteditable="true" class="editable">2</span>,
+              <span contenteditable="true" class="editable">-1</span>,
+              <span contenteditable="true" class="editable">1</span>,
+              <span contenteditable="true" class="editable">80</span>,
+              <span contenteditable="true" class="editable">80</span>
+              );
+          </code><br>
+        </td>
+        <td>
+          <div class="wrapper">
+            <div class="box box--dashed"></div>
+            <div id='box5' class="box" style="transform: matrix(1, 2, -1, 1, 80, 80);"></div>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </section>
+  <section class="slide">
+    <h2>matrix 3d</h2>
+    <table style="font-size: 20px;">
+      <tr>
+        <td style="width: 540px;">
+          <code data-for='#box6' style="background-color: rgb(36, 76, 142); color: white;">
+            transform: matrix3d(<br>
+              <span contenteditable="true" class="editable">1</span>,
+              <span contenteditable="true" class="editable">0</span>,
+              <span contenteditable="true" class="editable">0</span>,
+              <span contenteditable="true" class="editable">0</span>,<br>
+              <span contenteditable="true" class="editable">0</span>,
+              <span contenteditable="true" class="editable">1</span>,
+              <span contenteditable="true" class="editable">0</span>,
+              <span contenteditable="true" class="editable">0</span>,<br>
+              <span contenteditable="true" class="editable">0</span>,
+              <span contenteditable="true" class="editable">0</span>,
+              <span contenteditable="true" class="editable">1</span>,
+              <span contenteditable="true" class="editable">0</span>,<br>
+              <span contenteditable="true" class="editable">-50</span>,
+              <span contenteditable="true" class="editable">-100</span>,
+              <span contenteditable="true" class="editable">0</span>,
+              <span contenteditable="true" class="editable">1.1</span>
+              );
+          </code><br>
+        </td>
+        <td>
+          <div class="wrapper">
+            <div class="box box--dashed"></div>
+            <div id='box6' class="box" style="transform: matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,-50,-100,0,1.1);"></div>
+            
+          </div>
+        </td>
+      </tr>
+    </table>
+  </section>
+  <section class="slide">
+    <h2>Multiple transformations</h2>
+    <table style="font-size: 20px;">
+      <tr>
+        <td style="width: 540px;">
+          <code data-for='#box7' style="background-color: rgb(36, 76, 142); color: white;">
+            transform: translate(<span contenteditable="true" class="editable">50</span>px) scale(<span contenteditable="true" class="editable">0.8</span>);
+          </code><br>
+          <code data-for='#box7'>
+            transform: translateY(<span contenteditable="true" class="editable">150</span>px) rotate(<span contenteditable="true" class="editable">45</span>deg);
+          </code><br>
+        </td>
+        <td>
+          <div class="wrapper">
+            <div class="box box--dashed"></div>
+            <div id='box7' class="box" style="transform: translate(50px) scale(0.8);"></div>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </section>
+  <section class="slide slide--title">
+    <h2>CSS Фильтры</h2>
+  </section>
+  <section class="slide">
+    <h2>filter</h2>
+    <table style="font-size: 19px;">
+      <tr>
+        <td style="width: 540px;">
+          <code data-for='#box8'>
+            filter: blur(<span contenteditable="true" class="editable">5</span>px);
+          </code><br>
+          <code data-for='#box8'>
+            filter: sepia(<span contenteditable="true" class="editable">100</span>%);
+          </code><br>
+          <code data-for='#box8'>
+            filter: hue-rotate(<span contenteditable="true" class="editable">180</span>deg);
+          </code><br>
+          <code data-for='#box8'>
+            filter: brightness(<span contenteditable="true" class="editable">1.8</span>);
+          </code><br>
+          <code data-for='#box8'>
+            filter: saturate(<span contenteditable="true" class="editable">50</span>%);
+          </code><br>
+          <code data-for='#box8'>
+            filter: contrast(<span contenteditable="true" class="editable">10</span>%);
+          </code><br>
+          <code data-for='#box8'>
+            filter: grayscale(<span contenteditable="true" class="editable">100</span>%);
+          </code><br>
+          <code data-for='#box8'>
+            filter: invert(<span contenteditable="true" class="editable">100</span>%);
+          </code><br>
+          <code data-for='#box8'>
+            filter: opacity(<span contenteditable="true" class="editable">50</span>%);
+          </code><br>
+          <code data-for='#box8'>
+            filter: drop-shadow(
+              <span contenteditable="true" class="editable">40</span>px
+              <span contenteditable="true" class="editable">40</span>px
+              <span contenteditable="true" class="editable">20</span>px
+              blue);
+          </code><br>
+        </td>
+        <td>
+          <div id='box8'>
+            <div style="width: 300px; height: 300px;">
+              <img style="width: 100%; height: 100%; object-fit: cover;" src="./images/cat10.jpg" alt="">
+            </div>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </section>
+  <section class="slide">
+    <h2>Multiple filters</h2>
+    <table style="font-size: 19px;">
+      <tr>
+        <td style="width: 540px;">
+          <code data-for='#box9'>
+            filter: saturate(<span contenteditable="true" class="editable">40</span>%)
+                    grayscale(<span contenteditable="true" class="editable">50</span>%)
+              ;
+          </code><br>
+          <code data-for='#box9'>
+            filter: invert(<span contenteditable="true" class="editable">100</span>%)
+                    grayscale(<span contenteditable="true" class="editable">100</span>%)
+              ;
+          </code><br>
+          <code data-for='#box9'>
+            filter: sepia(<span contenteditable="true" class="editable">100</span>%)
+                    brightness(<span contenteditable="true" class="editable">1.2</span>)
+              ;
+          </code><br>
+        </td>
+        <td>
+          <div id='box9'>
+            <div style="width: 300px; height: 300px;">
+              <img style="width: 100%; height: 100%; object-fit: cover;" src="./images/cat10.jpg" alt="">
+            </div>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </section>
+  <section class="slide slide--title">
+    <h2>Clip-path &amp; Shape-outside</h2>
+  </section>
+  <section class="slide">
+    <h2>Clip-path</h2>
+    <table style="font-size: 19px;">
+      <tr>
+        <td style="width: 540px;">
+          <code data-for='#box10'>
+            clip-path: inset(
+              <span contenteditable="true" class="editable">10</span>px
+              <span contenteditable="true" class="editable">20</span>px);
+          </code><br>
+          <code data-for='#box10'>
+            clip-path: circle(
+              <span contenteditable="true" class="editable">50</span>px
+              at
+              <span contenteditable="true" class="editable">150</span>px
+              <span contenteditable="true" class="editable">190</span>px);
+          </code><br>
+          <code data-for='#box10'>
+            clip-path: polygon(<br>
+              <span contenteditable="true" class="editable">50</span>%
+              <span contenteditable="true" class="editable">0</span>%,
+              <span contenteditable="true" class="editable">100</span>%
+              <span contenteditable="true" class="editable">50</span>%,
+              <span contenteditable="true" class="editable">50</span>%
+              <span contenteditable="true" class="editable">100</span>%,
+              <span contenteditable="true" class="editable">0</span>%
+              <span contenteditable="true" class="editable">50</span>%);
+          </code><br>
+        </td>
+        <td>
+          <div id='box10'>
+            <div style="width: 300px; height: 300px;">
+              <img style="width: 100%; height: 100%; object-fit: cover;" src="./images/cat10.jpg" alt="">
+            </div>
+          </div>
+        </td>
+      </tr>
+    </table>
+    <a href="https://bennettfeely.com/clippy/" target="_blank">
+      clippy
+    </a>
+  </section>
+  <section class="slide slide--title">
+    <h2>
+      <a href="https://codepen.io/plakhotenko/pen/WNxwBKb?editors=1100" target="_blank">
+        Shape-outside
+      </a>
+    </h2>
+  </section>
+  <section class="slide slide--title">
+    <h2>CSS Анимации</h2>
+  </section>
+  <section class="slide">
+    <h2>@keyframes </h2>
+    <pre>
+      <code>@keyframes zoom {</code>
+      <code>  0% {</code>
+      <code>    transform: scale(0);</code>
+      <code>  }</code>
+      <code>  100% {</code>
+      <code>    transform: scale(1);</code>
+      <code>  }</code>
+      <code>}</code>
+    </pre>
+  </section>
+  <section class="slide">
+    <h2>CSS Анимации</h2>
+    <pre style="font-size: 19px;">
+      <code>.animated {</code>
+      <code>  animation-name: zoom;</code>
+      <code>  animation-duration: 1s;</code>
+      <code>  animation-iteration-count: 1 | 2 | 3 ... infinite;</code>
+      <code>  animation-direction: normal | reverse | alternate | alternate-reverse;</code>
+      <code>  animation-timing-function: ease | ease-in | ease-out | ease-in-out| linear;</code>
+      <code>  animation-delay: 0.1s;</code>
+      <code>  animation-fill-mode: none | forwards | backwards | both;</code>
+      <code>  animation-play-state: running | paused;</code>
+      <code>}</code>
+    </pre>
+  </section>
+  <section class="slide">
+    <h2>Домашка</h2>
+    <a href="https://docs.google.com/document/d/1CHwC7Zd4I8-T9PNsdjakkQIkLFly32K1Bblde4O1ocM/edit?usp=sharing" target="_blank">Ссылка</a>
+  </section>
+  <section class="slide">
+    <h2>Вопросы для подготовки к интервью</h2>
+    <ol>
+      <li>Как создать CSS анимацию?</li>
+      <li>Приведите пример использования CSS анимации.</li>
+      <li>Какие вы знаете CSS фильтры?</li>
+      <li>Какие вы знаете CSS трансформации?</li>
+      <li>Как работает свойство Clip-path?</li>
+      <li>Как работает свойство Shape-outside?</li>
+    </ol>
+  </section>
+  <section class="slide">
+    <h2>Почитать</h2>
+    <ul>
+      <li>
+        <a href="https://developer.mozilla.org/ru/docs/Web/CSS/animation" target="_blank">
+          Анимации | MDN
+        </a>
+      </li>
+      <li>
+        <a href="https://developer.mozilla.org/ru/docs/Web/CSS/transform" target="_blank">
+          Трансформации | MDN
+        </a>
+      </li>
+      <li>
+        <a href="https://www.w3schools.com/cssref/css3_pr_transform.asp" target="_blank">
+          CSS transform Property | w3schools
+        </a>
+      </li>
+      <li>
+        <a href="https://developer.mozilla.org/ru/docs/Web/CSS/filter" target="_blank">
+          Фильтры | MDN
+        </a>
+      </li>
+      <li>
+        <a href="https://developer.mozilla.org/ru/docs/Web/CSS/clip-path" target="_blank">
+          Clip-path | MDN
+        </a>
+      </li>
+      <li>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/shape-outside" target="_blank">
+          Shape-outside | MDN
+        </a>
+      </li>
+    </ul>
+  </section>
+  <section class="slide">
+    <h2>Посмотреть</h2>
+    <ul>
+      <li>
+        <a href="https://www.youtube.com/watch?v=coq1N7JW6sQ" target="_blank">
+          Неквадратный веб, Юлия Бухвалова
+        </a>
+      </li>
+      <li>
+        <a href="https://www.youtube.com/watch?v=VoA-aQu75Xk" target="_blank">
+          Вы не знаете CSS, Антон Немцев
+        </a>
+      </li>
+    </ul>
+  </section>
+  <footer class="badge">
+      <a href="/">Home</a>
+  </footer>
+  <div class="progress"></div>
+  <script src="node_modules/@shower/core/dist/shower.js"></script>
+  <!-- TODO  need refactoring-->
+  <script>
+    window.onload = function() {
+
+      var getSiblings = function (elem) {
+        var siblings = [];
+        var sibling = elem.parentNode.firstChild;
+        while (sibling) {
+          if (sibling.nodeType === 1 && sibling !== elem) {
+            siblings.push(sibling);
+          }
+          sibling = sibling.nextSibling
+        }
+        return siblings;
+      };
+
+      let editableElements = document.querySelectorAll('.editable');
+      let editableElementsLength = editableElements.length;
+
+      let editableElementsWrappers = document.querySelectorAll('[data-for]');
+
+      editableElementsWrappers.forEach(function(editable) {
+        editable.addEventListener('click', function(event) {
+
+          this.setAttribute('style', 'background-color: rgb(36, 76, 142); color: white;');
+
+          let boxSelector = this.getAttribute('data-for');
+          let box = document.querySelector(boxSelector);
+          let styles = this.innerText;
+          box.setAttribute('style', styles);
+
+          document.querySelector(boxSelector)
+          getSiblings(this).forEach(function(item) {
+            item.removeAttribute('style');
+          });
+        });
+      });
+
+      for (let i = 0; i < editableElementsLength; i++) {
+        let editable = editableElements[i];
+
+        editable.addEventListener('keydown', function(event) {
+          event.stopPropagation();
+        });
+
+        editable.addEventListener('input', function(event) {
+          let target = event.target;
+          let parent = target.parentElement;
+          let styles = parent.innerText;
+          let value = target.innerHTML;
+          let boxSelector = parent.getAttribute('data-for');
+          let box = document.querySelector(boxSelector);
+
+          if (isNaN(value)) {
+            target.setAttribute('style', 'color: red;');
+          } else {
+            box.setAttribute('style', styles);
+            target.setAttribute('style', 'color: inherit;');
+          }
+        });
+      }
+    };
+  </script>
+  <!-- &lt;&gt; -->
+</body>
+</html>
