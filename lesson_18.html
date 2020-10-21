@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <title>Оптимизация графики | Курс Frontend Basic</title>
+  <meta charset="utf-8">
+  <meta content='NOINDEX, NOFOLLOW' name='robots'>
+  <meta name="description" content="Оптимизация графики | Курс Frontend Basic. Компьютерная Школа Hillel">
+  <meta property="og:title" content="Frontend Basic">
+  <meta property="og:description" content="Оптимизация графики | Курс Frontend Basic | Компьютерная Школа Hillel">
+  <meta property="og:image" content="https://assets.ithillel.ua/images/og.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="node_modules/@shower/ribbon/styles/styles.css">
+  <link rel="stylesheet" href="fontawesome-free-5.14.0-web/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176065403-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-176065403-1');
+  </script>
+</head>
+<body class="shower list">
+  <header class="caption">
+      <h1>Оптимизация графики | Курс Frontend Basic</h1>
+      <p>Александр Плахотенко, Компьютерная Школа Hillel</p>
+  </header>
+  <section class="slide slide--title">
+    <h2>Оптимизация графики</h2>
+  </section>
+  <section class="slide">
+    <h2>План</h2>
+    <ol>
+      <li>Инструменты для оптимизации графики.</li>
+      <li>Оптимизация загрузки изображений.</li>
+    </ol>
+  </section>
+  <section class="slide">
+    <h2>Зачем оптимизировать графику?</h2>
+    <ol>
+      <li>для оптимизации скорости загрузки;</li>
+      <li>для формирования лояльной аудитории;</li>
+      <li>для более высокого ранжирования в поисковой выдаче.</li>
+    </ol>
+  </section>
+  <section class="slide">
+    <h2>Как оптимизировать графику?</h2>
+    <ol>
+      <li>использовать графические форматы по назначению;</li>
+      <li>использовать прогрессивные форматы графики (webp, jpeg 2000, avif);</li>
+      <li>использовать инструменты для сжатия графических файлов;</li>
+      <li>использовать в проекте адаптивную графику (picture, media queries).</li>
+    </ol>
+  </section>
+  <section class="slide">
+    <h2>Популярные инструменты для сжатия графических файлов</h2>
+    <ul>
+      <li>
+        <a href="https://squoosh.app/" target="_blank">
+          squoosh
+        </a>
+      </li>
+      <li>
+        <a href="https://tinypng.com/" target="_blank">
+          tinypng
+        </a>
+      </li>
+      <li>
+        <a href="https://jakearchibald.github.io/svgomg/" target="_blank">
+          svgomg
+        </a>
+      </li>
+    </ul>
+  </section>
+  <section class="slide">
+    <h2>cwebp</h2>
+    <code>cwebp [options] -q quality input.png -o output.webp</code>
+    <a href="https://developers.google.com/speed/webp/docs/cwebp" target="_blank">
+      Документация
+    </a>
+  </section>
+  <section class="slide">
+    <h2>Отложенная загрузка изображений</h2>
+    <code>&lt;img src='image.jpg' alt='...' <mark>loading='lazy'</mark>&gt;</code>
+    <br>
+    <a href="https://caniuse.com/?search=loading" target="_blank">
+      caniuse
+    </a>
+  </section>
+  <section class="slide">
+    <h2>Практика</h2>
+    <strong>Задача:</strong> оптимизировать графику в проекте.
+  </section>
+  <section class="slide">
+    <h2>Домашка</h2>
+    <a href="https://docs.google.com/document/d/1fX35D1kFCn7_NHjopmN_zA3e--UtqJg9juHv_--pUG8/edit?usp=sharing" target="_blank">Ссылка</a>
+  </section>
+  <section class="slide">
+    <h2>Вопросы для подготовки к интервью</h2>
+    <ol>
+      <li>Зачем необходимо оптимизировать графику?</li>
+      <li>Как реализовать отложенную загрузку изображений?</li>
+      <li>Какие вы знаете инструменты для оптимизации изображений?</li>
+    </ol>
+  </section>
+  <footer class="badge">
+      <a href="/">Home</a>
+  </footer>
+  <div class="progress"></div>
+  <script src="node_modules/@shower/core/dist/shower.js"></script>
+  <!-- &lt;&gt; -->
+</body>
+</html>
