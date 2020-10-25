@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang='ru'>
+<head>
+  <title>Знакомство с SVG | Курс Frontend Basic</title>
+  <meta charset='utf-8'>
+  <meta content='NOINDEX, NOFOLLOW' name='robots'>
+  <meta name='description' content='Знакомство с SVG | Курс Frontend Basic. Компьютерная Школа Hillel'>
+  <meta property='og:title' content='Frontend Basic'>
+  <meta property='og:description' content='Знакомство с SVG | Курс Frontend Basic | Компьютерная Школа Hillel'>
+  <meta property='og:image' content='https://assets.ithillel.ua/images/og.jpg'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel="stylesheet" href="shower/themes/ribbon/styles/styles.css">
+  <link rel='stylesheet' href='fontawesome-free-5.14.0-web/css/all.min.css'>
+  <link rel='stylesheet' href='style.css'>
+  <link rel='icon' type='image/png' href='images/favicon.png'>
+  <script async src='https://www.googletagmanager.com/gtag/js?id=UA-176065403-1'></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-176065403-1');
+  </script>
+</head>
+<body class='shower list'>
+  <header class='caption'>
+      <h1>Знакомство с SVG | Курс Frontend Basic</h1>
+      <p>Александр Плахотенко, Компьютерная Школа Hillel</p>
+  </header>
+  <section class='slide slide--title'>
+    <h2>Знакомство с SVG</h2>
+  </section>
+  <section class='slide'>
+    <h2>План</h2>
+    <ol>
+      <li>Определение и система координат.</li>
+      <li>Способы добавить svg на страницу.</li>
+      <li>Примитивные фигуры.</li>
+      <li>Заливка и обводка.</li>
+      <li>SVG Mask.</li>
+      <li>ClipPath.</li>
+      <li>TextPath.</li>
+    </ol>
+  </section>
+  <section class='slide'>
+    <h2>SVG</h2>
+    <figure>
+      <blockquote>
+        <p>
+          (Scalable Vector Graphics — SVG) является языком разметки расширенным из XML для описания двухмерной векторной графики.
+        </p>
+      </blockquote>
+      <figcaption>
+        <a href='https://developer.mozilla.org/ru/docs/Web/SVG/Tutorial' target='_blank'>
+          MDN
+        </a>
+      </figcaption>
+    </figure>
+  </section>
+  <section class='slide'>
+    <h2>Система координат</h2>
+    Начало координат - верхний левый угол документа.<br>
+    <img src='https://developer.mozilla.org/@api/deki/files/78/=Canvas_default_grid.png' alt=''>
+  </section>
+  <section class='slide'>
+    <h2>Viewbox</h2>
+    Атрибут viewBox определяет расположение и размеры окна отображения SVG.
+    <pre>
+      <code>&lt;svg <mark>viewBox='0 0 100 100'&gt;</mark></code>
+      <code>  &lt;rect x='0' y='0' width='100%' height='100%'/&gt;</code>
+      <code>&lt;/svg&gt;</code>
+    </pre>
+  </section>
+  <section class='slide'>
+    <h2>Заливка и обводка</h2>
+    <pre>
+      <code>fill: #00ff00;</code>
+      <code>stroke: #0000ff;</code>
+      <code>stroke-width: 4;</code>
+      <code>stroke-dasharray: 0 10 3 4;</code>
+      <code>fill-opacity: 0.5;</code>
+      <code>stroke-opacity: 0.5;</code>
+    </pre>
+  </section>
+  <section class='slide'>
+    <h2>Строительные блоки</h2>
+    Строительными блоками в SVG графике являются примитивные фигуры, такие как: линия, прямоугольник,
+    окружность, полигон, путь и др.
+  </section>
+  <section class='slide'>
+    <h2>Line</h2>
+    <pre>
+      <code>&lt;svg viewBox='0 0 100 100'&gt;</code>
+      <code>  &lt;line x1='0' y1='0' x2='100' y2='100' stroke='black' /&gt;</code>
+      <code>&lt;/svg&gt;</code>
+    </pre>
+    <svg style="width: 200px; height: 200px; border: 1px solid grey; float: right;" viewBox='0 0 100 100'>
+      <line x1="0" y1="0" x2="100" y2="100" stroke='#244c8e' fill='none'/>
+    </svg>
+  </section>
+  <section class='slide'>
+    <h2>Rectangle</h2>
+    <pre style="font-size: 18px;">
+      <code>&lt;svg viewBox='0 0 100 100'&gt;</code>
+      <code>  &lt;rect x='0' y='0' width='50%' height='100%'/&gt;</code>
+      <code>  &lt;rect x='50%' y='0' rx='30' ry='30' width='50%' height='100%'/&gt;</code>
+      <code>&lt;/svg&gt;</code>
+    </pre>
+    <svg style="width: 400px; height: 200px; border: 1px solid grey; float: right; fill:#244c8e;" viewBox='0 0 200 100'>
+      <rect x="0" y="0" width="50%" height="100%" />
+      <rect x="50%" y="0" rx='30' ry='30' width="50%" height="100%" />
+    </svg>
+  </section>
+  <section class='slide'>
+    <h2>Circle</h2>
+    <pre>
+      <code>&lt;svg viewBox='0 0 100 100'&gt;</code>
+      <code>  &lt;circle cx='50' cy='50' r='50'/&gt;</code>
+      <code>&lt;/svg&gt;</code>
+    </pre>
+    <svg style="width: 200px; height: 200px; border: 1px solid grey; float: right; fill:#244c8e;" viewBox='0 0 100 100'>
+      <circle cx='50' cy='50' r='50'/>
+    </svg>
+  </section>
+  <section class='slide'>
+    <h2>Ellipse</h2>
+    <pre>
+      <code>&lt;svg viewBox='0 0 100 100'&gt;</code>
+      <code>  &lt;ellipse cx='100' cy='50' rx='100' ry='50'/&gt;</code>
+      <code>&lt;/svg&gt;</code>
+    </pre>
+    <svg style="width: 400px; height: 200px; border: 1px solid grey; float: right; fill:#244c8e;" viewBox='0 0 200 100'>
+      <ellipse cx='100' cy='50' rx='100' ry='50'/>
+    </svg>
+  </section>
+  <section class='slide'>
+    <h2>Polyline</h2>
+    <pre style="font-size: 20px;">
+      <code>&lt;svg viewBox='0 0 100 100'&gt;</code>
+      <code>  &lt;polyline points='0, 0 40,40, 60,90, 70,30, 120,70, 200,0' </code>
+      <code>  stroke='#244c8e' fill='none'/&gt;</code>
+      <code>&lt;/svg&gt;</code>
+    </pre>
+    <svg style="width: 400px; height: 200px; border: 1px solid grey; float: right;" viewBox='0 0 200 100'>
+      <polyline points='0, 0 40,40, 60,90, 70,30, 120,70, 200,0' stroke='#244c8e' fill='none'/>
+    </svg>
+  </section>
+  <section class='slide'>
+    <h2>Polygon</h2>
+    <pre style="font-size: 20px;">
+      <code>&lt;svg viewBox='0 0 100 100'&gt;</code>
+      <code>  &lt;polygon points='0, 90 40,40, 60,90, 70,30, 120,70, 200,100, 0,90'</code>
+      <code>  stroke='#244c8e' fill='#244c8e'/&gt;</code>
+      <code>&lt;/svg&gt;</code>
+    </pre>
+    <svg style="width: 400px; height: 200px; border: 1px solid grey; float: right;" viewBox='0 0 200 100'>
+      <polygon points='0, 90 40,40, 60,90, 70,30, 120,70, 200,100, 0,90' stroke='#244c8e' fill='#244c8e'/>
+    </svg>
+  </section>
+  <section class='slide'>
+    <h2>Path</h2>
+    <pre style="font-size: 20px;">
+      <code>&lt;svg viewBox='0 0 100 100'&gt;</code>
+      <code>  &lt;path d="M10 10 C 10 20, 10 190, 150 20"</code>
+      <code>  stroke="#244c8e" fill="transparent"/&gt;</code>
+      <code>&lt;/svg&gt;</code>
+    </pre>
+    <svg style="width: 400px; height: 200px; border: 1px solid grey; float: right;" viewBox='0 0 200 100'>
+      <path d="M10 10 C 10 20, 10 190, 200 20" stroke="#244c8e" fill="transparent"/>
+    </svg>
+  </section>
+  <section class='slide'>
+    <h2>Text</h2>
+    <pre style="font-size: 20px;">
+      <code>&lt;svg viewBox='0 0 100 100'&gt;</code>
+      <code>  &lt;text x='10' y='20'&gt;Lorem, ipsum dolor sit</code>
+      <code>  amet consectetur adipisicing elit.&lt;/text&gt;</code>
+      <code>&lt;/svg&gt;</code>
+    </pre>
+    <svg style="width: 400px; height: 200px; border: 1px solid grey; float: right;font-size: 6px" viewBox='0 0 200 100'>
+      <text x='10' y='20'>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</text>
+    </svg>
+  </section>
+  <section class='slide'>
+    <h2>TextPath</h2>
+    <pre style='font-size: 14px'>
+      <code>&lt;svg width='400' height='200' viewBox='0 0 200 100'&gt;</code>
+      <code>  &lt;path id='my_path' d='M10 10 C 10 20, 10 190, 200 20' fill='transparent'/&gt;</code>
+      <code>  &lt;text&gt;</code>
+      <code>    &lt;textPath xlink:href='#my_path'&gt;svg text path&lt;/textPath&gt;</code>
+      <code>  &lt;/text&gt;</code>
+      <code>&lt;/svg&gt;</code>
+    </pre>
+    <svg style="width: 400px; height: 200px; border: 1px solid grey; float: right;font-size: 6px" viewBox='0 0 200 100'>
+      <path id="my_path"  d="M10 10 C 10 20, 10 190, 200 20" fill="transparent"/>
+      <text x='10' y='20'>
+        <textPath xlink:href='#my_path'>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure laudantium tenetur vero quod vitae.
+        </textPath>
+      </text>
+    </svg>
+  </section>
+  <section class='slide slide--title'>
+    <h2>
+      <a href='https://codepen.io/plakhotenko/pen/NWNQopL' target='_blank'>
+        Демо
+      </a>
+    </h2>
+  </section>
+  <section class='slide'>
+    <h2>Image</h2>
+    <table>
+      <tr>
+        <td>
+          <pre>
+            <code>&lt;svg&gt;</code>
+            <code>  &lt;image </code>
+            <code>  width='260' height='242'</code>
+            <code>  href='image.png' /&gt;</code>
+            <code>&lt;/svg&gt;</code>
+          </pre>
+        </td>
+        <td>
+          <svg width='260' height='242' viewBox='0 0 260 242'>
+            <image width='260' height='242'
+            href='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Grapefruit%2C_half.jpg/645px-Grapefruit%2C_half.jpg' />
+          </svg>
+        </td>
+      </tr>
+    </table>
+  </section>
+  <section class='slide'>
+    <h2>Как создать clipPath</h2>
+    <pre>
+      <code>&lt;svg&gt;</code>
+      <code>  &lt;clipPath id='my-clip-path'</code>
+      <code>            clipPathUnits='objectBoundingBox'&gt;</code>
+      <code>    &lt;path d='M0,0 C1,0,1,1,0,1'&gt;&lt;/path&gt;</code>
+      <code>  &lt;/clipPath&gt;</code>
+      <code>&lt;/svg&gt;</code>
+    </pre>
+  </section>
+  <section class='slide'>
+    <h2>Как применить clipPath</h2>
+    <pre>
+      <code>.image {</code>
+      <code>  clip-path: url(#my-clip-path);</code>
+      <code>}</code>
+    </pre>
+    <table>
+      <tr>
+        <td>
+          <img width='160' src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Grapefruit%2C_half.jpg/645px-Grapefruit%2C_half.jpg' alt=''>
+        </td>
+        <td>
+          <img style='clip-path: url(#my-clip-path);' width='160' src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Grapefruit%2C_half.jpg/645px-Grapefruit%2C_half.jpg' alt=''>
+        </td>
+      </tr>
+    </table>
+    <svg width='0' height='0'>
+      <clipPath id='my-clip-path' clipPathUnits='objectBoundingBox'>
+        <path d='M0,0 C1,0,1,1,0,1'></path>
+      </clipPath>
+    </svg>
+  </section>
+  <section class='slide'>
+    <h2>Как применить clipPath</h2>
+    <table>
+      <tr>
+        <td>
+          <pre>
+            <code>&lt;svg&gt;</code>
+            <code>  ...</code>
+            <code>  &lt;image clip-path='url(#clip-path)' </code>
+            <code>  width='260' height='242'</code>
+            <code>  href='image.png' /&gt;</code>
+            <code>&lt;/svg&gt;</code>
+          </pre>
+        </td>
+        <td>
+          <svg width='260' height='242' viewBox='0 0 260 242'>
+            <clipPath id='clip-path' clipPathUnits='objectBoundingBox'>
+              <path d='M0,0 C1,0,1,1,0,1'></path>
+            </clipPath>
+            <image clip-path='url(#clip-path)' width='260' height='242'
+            href='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Grapefruit%2C_half.jpg/645px-Grapefruit%2C_half.jpg' />
+          </svg>
+        </td>
+      </tr>
+    </table>
+  </section>
+  <section class='slide'>
+    <h2>&lt;clipPath&gt; vs clip-path</h2>
+    <table>
+      <tr>
+        <td></td>
+        <td>svg clipPath</td>
+        <td>css clip-path</td>
+      </tr>
+      <tr>
+        <td>Анимации</td>
+        <td>-</td>
+        <td>+</td>
+      </tr>
+      <tr>
+        <td>Плавные линии</td>
+        <td>+</td>
+        <td>-</td>
+      </tr>
+    </table>
+  </section>
+  <section class='slide'>
+    <h2>Для responsive slipPath необходимо</h2>
+    <ul>
+      <li>clipPathUnits='objectBoundingBox'.</li>
+      <li>использовать относительные пути</li>
+    </ul>
+    Полезный инструмент:
+    <a href='https://yoksel.github.io/relative-clip-path/' target='_blank'>
+      Convert SVG absolute clip-path to relative
+    </a>
+  </section>
+  <section class='slide slide--title'>
+    <h2>
+      <a href='https://codepen.io/plakhotenko/pen/rNxZoZz' target='_blank'>
+        Демо
+      </a>
+    </h2>
+  </section>
+  <section class='slide'>
+    <h2>Как создать SVG маску</h2>
+    <pre style='font-size: 20px;'>
+      <code>&lt;svg width='100%' height='100%'&gt;</code>
+      <code>  &lt;defs&gt;</code>
+      <code>    <mark>&lt;mask id='mask' x='0' y='0' width='100%' height='100%'&gt;</mark></code>
+      <code>      <mark>&lt;rect fill='white' x='0' y='0' width='100%' height='100%'&gt;</mark></code>
+      <code>      <mark>&lt;text x='50%' y='50%' fill='black' text-anchor='middle&gt;SVG&lt;text&gt;</mark></code>
+      <code>     <mark>&lt;/mask&gt;</mark></code>
+      <code>  &lt;/defs&gt;</code>
+      <code>  &lt;rect fill='white' x='0' y='0' width='100%' height='100%' &gt;</code>
+      <code>&lt;svg&gt;</code>
+    </pre>
+  </section>
+  <section class='slide'>
+    <h2>Как применить SVG маску</h2>
+    <pre>
+      <code>svg rect {</code>
+      <code>  mask: url(#mask);</code>
+      <code>}</code>
+    </pre>
+  </section>
+  <section class='slide slide--title'>
+    <h2>
+      <a href='https://codepen.io/plakhotenko/pen/WNwBRME' target='_blank'>
+        Демо
+      </a>
+    </h2>
+  </section>
+  <section class='slide'>
+    <h2>Библиотеки</h2>
+    <ul>
+      <li>
+        <a href="https://maxwellito.github.io/vivus/" target="_blank">
+          vivus.js
+        </a>
+      </li>
+      <li>
+        <a href="http://snapsvg.io/demos/" target="_blank">
+          SnapSVG
+        </a>
+      </li>
+      <li>
+        <a href="http://dmitrybaranovskiy.github.io/raphael/" target="_blank">
+          Raphaël
+        </a>
+      </li>
+      <li>
+        <a href="http://paperjs.org/" target="_blank">
+          paperjs
+        </a>
+      </li>
+    </ul>
+  </section>
+  <section class='slide'>
+    <h2>Как встроить SVG в HTML?</h2>
+    <ul>
+      <li>background-image</li>
+      <li>svg</li>
+      <li>img</li>
+      <li>other</li>
+    </ul>
+  </section>
+  <section class='slide'>
+    <h2>Вопросы для подготовки к интервью</h2>
+    <ol>
+      <li>Что такое SVG?</li>
+      <li>Из каких примитивов строится SVG графика?</li>
+      <li>Опишите способы анимирования SVG.</li>
+      <li>Как добавить SVG в HTML документ?</li>
+      <li>В чем заключается отличие между разными способами встраивания SVG?</li>
+      <li>Какие вы знаете библиотеки для анимирования SVG?</li>
+      <li>Что такое smil animation в SVG?</li>
+    </ol>
+  </section>
+  <section class='slide'>
+    <h2>Почитать</h2>
+    <ul>
+      <li>
+        <a href='https://developer.mozilla.org/ru/docs/Web/SVG/Tutorial' target='_blank'>
+          SVG — учебное руководство | MDN
+        </a>
+      </li>
+      <li>
+        <a href='https://htmlacademy.ru/blog/boost/graphics/short-4' target='_blank'>
+          Как правильно вставлять SVG
+        </a>
+      </li>
+      <li>
+        <a href='https://habr.com/ru/post/450924/' target='_blank'>
+          Все об SVG анимации
+        </a>
+      </li>
+    </ul>
+  </section>
+  <section class='slide'>
+    <h2>Посмотреть</h2>
+    <ul>
+      <li>
+        <a href='https://www.youtube.com/watch?v=pnWy3c3F-t8' target='_blank'>
+          Тёмная сторона SVG | Иринa Руденко
+        </a>
+      </li>
+      <li>
+        <a href='https://www.youtube.com/watch?v=Me4j7QeKBCM' target='_blank'>
+          Кто такие дивелоперы, ручной SVG и волнительное подчёркивание | Вадим Макеев
+        </a>
+      </li>
+      <li>
+        <a href='https://www.youtube.com/watch?v=M8Gq_HPDXsU' target='_blank'>
+          SVG Text Path Animation | Tutorial
+        </a>
+      </li>
+      <li>
+        <a href='https://www.youtube.com/watch?v=OTKnhVTeN4w' target='_blank'>
+          SVG Text Masking with Video | Tutorial
+        </a>
+      </li>
+      <li>
+        <a href='https://www.youtube.com/watch?v=UBoGK2ywgXc' target='_blank'>
+          Простая анимация SVG | Tutorial
+        </a>
+      </li>
+    </ul>
+  </section>
+  <footer class='badge'>
+      <a href='/'>Home</a>
+  </footer>
+  <div class='progress'></div>
+  <script src="shower/shower.js"></script>
+  <!-- &lt;&gt; -->
+</body>
+</html>
