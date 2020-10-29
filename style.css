@@ -3,6 +3,7 @@ html {
   --html-color: #f16529;
   --css-color: #264de4;
   --js-color: #f0db4f;
+  --brand-color: #244c8e;
 }
 .shower {
   --slide-ratio: calc(16 / 9);
@@ -67,7 +68,8 @@ html {
   color: white !important;
 }
 .slide--cern {
-  background: linear-gradient(rgba(0,0,0, 0.6), rgba(0,0,0, 0.5)), url('https://www.universetoday.com/wp-content/uploads/2018/12/nwOtx-2000x1200.jpg');
+  background: linear-gradient(rgba(0,0,0, 0.6), rgba(0,0,0, 0.5)),
+              url('https://www.universetoday.com/wp-content/uploads/2018/12/nwOtx-2000x1200.jpg');
   background-size: cover;
 }
 .close-button {
@@ -87,4 +89,8 @@ html {
 }
 .demo-nav__list-item:before {
   display: none;
+}
+.code-sample {
+  color: white;
+  background-color: var(--brand-color) !important;
 }

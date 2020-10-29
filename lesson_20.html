@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <title>Знакомство с CSS Grid | Курс Frontend Basic</title>
+  <meta charset="utf-8">
+  <meta content='NOINDEX, NOFOLLOW' name='robots'>
+  <meta name="description" content="Знакомство с CSS Grid | Курс Frontend Basic. Компьютерная Школа Hillel">
+  <meta property="og:title" content="Frontend Basic">
+  <meta property="og:description" content="Знакомство с CSS Grid | Курс Frontend Basic | Компьютерная Школа Hillel">
+  <meta property="og:image" content="https://assets.ithillel.ua/images/og.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="node_modules/@shower/ribbon/styles/styles.css">
+  <link rel="stylesheet" href="fontawesome-free-5.14.0-web/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176065403-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-176065403-1');
+  </script>
+</head>
+<body class="shower list">
+  <header class="caption">
+      <h1>Знакомство с CSS Grid | Курс Frontend Basic</h1>
+      <p>Александр Плахотенко, Компьютерная Школа Hillel</p>
+  </header>
+  <section class="slide slide--title">
+    <h2>Знакомство с CSS Grid</h2>
+  </section>
+  <section class="slide">
+    <h2>План</h2>
+    <ol>
+      <li>Структура Grid Layout.</li>
+      <li>Свойства для grid контейнера.</li>
+      <li>Свойства для grid элемента.</li>
+      <li>Отладка.</li>
+      <li>Выравнивание grid элементов.</li>
+      <li>Выравнивание grid контейнера</li>
+      <li>Order &amp; grid-auto-flow.</li>
+    </ol>
+  </section>
+  <section class="slide">
+    <h2>Способы создания layout'а страницы</h2>
+    <ul class="next">
+      <li>table;</li>
+      <li>float;</li>
+      <li>inline-block;</li>
+      <li>flex;</li>
+      <li>grid.</li>
+    </ul>
+  </section>
+  <section class="slide slide--title">
+    <h2>
+      <a href="https://caniuse.com/?search=css%20grid%20layout" target="_blank">
+        Поддержка Grid
+      </a>
+    </h2>
+  </section>
+  <section class="slide">
+    <h2>Структура</h2>
+    <img width="700" src="./images/grid.svg" alt="">
+  </section>
+  <section class="slide slide--title">
+    <h2>Свойства для grid контейнера</h2>
+  </section>
+  <section class="slide">
+    <h2>Display</h2>
+    <pre>
+      <code>.grid {</code>
+      <code>  display: <mark>grid</mark> | <mark>inline-grid</mark>;</code>
+      <code>}</code>
+    </pre>
+  </section>
+  <section class="slide slide--title">
+    <h2>fr</h2>
+  </section>
+  <section class="slide">
+    <h2>
+      <a style="font-size: 0.7em;" href="https://developer.mozilla.org/ru/docs/Web/CSS/grid-gap" target="_blank">
+        <s>grid-gap</s>
+      </a>
+      gap
+    </h2>
+    <figure>
+      <blockquote>
+        <p>
+          Свойство gap CSS задаёт отступы (gutters) между столбцами и строками, а не вдоль края контейнера сетки.
+          Является сокращением для свойств row-gap и column-gap.
+        </p>
+      </blockquote>
+      <figcaption>
+        <a href="https://developer.mozilla.org/ru/docs/Web/CSS/gap" target="_blank">
+          MDN
+        </a>
+      </figcaption>
+    </figure>
+    <b>Примеры:</b><br>
+    <code>gap: 10px;</code>
+    <code>row-gap: 10px;</code>
+    <code>column-gap: 10px;</code>
+  </section>
+  <secion class="slide">
+    <h2>grid-template-columns</h2>
+    Свойство <code class="code-sample">grid-template-columns</code> задает количество колонок в сетке а также их ширину.<br>
+    <b>Примеры:</b><br>
+    <code>grid-template-columns: 1fr 1fr 1fr;</code><br>
+    <code>grid-template-columns: repeat(3, 1fr)</code><br>
+    <code>grid-template-columns: 80px 1fr 500px;</code><br>
+    <code>grid-template-columns: 1fr 80% 1fr;</code><br>
+  </secion>
+  <secion class="slide">
+    <h2>grid-template-rows</h2>
+    Свойство <code class="code-sample">grid-template-rows</code> задает количество строк в сетке а также их высоту.<br>
+    <b>Примеры:</b><br>
+    <code>grid-template-rows: 1fr 1fr 1fr;</code><br>
+    <code>grid-template-rows: repeat(3, 1fr)</code><br>
+    <code>grid-template-rows: 80px 1fr 500px;</code><br>
+    <code>grid-template-rows: 1fr 80% 1fr;</code><br>
+  </secion>
+  <section class="slide">
+    <h2>grid-template-areas</h2>
+    Свойство <code class="code-sample">grid-template-areas</code> задает названия grid областей.<br>
+    <b>Пример:</b><br>
+    <pre>
+      <code>grid-template-areas:</code>
+      <code>  "header header header"</code>
+      <code>  "nav main aside"</code>
+      <code>  "footer footer footer";</code>
+    </pre>
+  </section>
+  <secion class="slide">
+    <h2>grid-template</h2>
+    Свойство <code class="code-sample">grid-template</code> объединяет свойства:
+    <code>grid-template-columns</code>
+    <code>grid-template-rows</code>
+    <code>grid-template-areas</code><br>
+    <a href="https://codepen.io/plakhotenko/pen/bGeWxXV?editors=1100" target="_blank">
+      <b>Пример:</b>
+    </a>
+    <br>
+    <pre>
+      <code>grid-template:</code>
+      <code>  "header header header" 80px</code>
+      <code>  "nav main aside" 1fr</code>
+      <code>  "footer footer footer" 160px / 1fr 4fr 1fr;</code>
+    </pre>
+  </secion>
+  <section class="slide">
+    <h2>minmax()</h2>
+    <figure>
+      <blockquote>
+        <p>
+          minmax() это CSS функция, определяющая диапазон размеров, который больше или равен min и меньше или равен max.
+        </p>
+      </blockquote>
+      <figcaption>
+        <a href="https://developer.mozilla.org/ru/docs/Web/CSS/minmax" target="_blank">
+          MDN
+        </a>
+      </figcaption>
+    </figure>
+    <b>Пример:</b><br>
+    <code>minmax(400px, 50%)</code><br>
+    <code>minmax(min-content, 200px)</code><br>
+    <code>minmax(max-content, 200px)</code><br>
+  </section>
+  <section class="slide">
+    <h2>repeat()</h2>
+    <figure>
+      <blockquote>
+        <p>
+          repeat() это CSS функция, определяющая повторяющийся фрагмент колонок/столбцов, существенно упрощающая создание grid шаблона.
+        </p>
+      </blockquote>
+      <figcaption>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/repeat" target="_blank">
+          MDN
+        </a>
+      </figcaption>
+    </figure>
+    <b>Пример:</b><br>
+    <code>repeat(12, 1fr)</code><br>
+    <code>repeat(12, 300px 1fr)</code><br>
+  </section>
+  <section class="slide slide--title">
+    <h2>Свойства для grid элемента</h2>
+  </section>
+  <section class="slide">
+    <h2>grid-colum</h2>
+    Свойства <code>grid-column-start</code>, <code>grid-column-end</code> определяют положение элемента в сетке по горизонтали,
+    посредством указания номеров линий. Свойство <code>grid-column</code> объединяет 
+    <code>grid-column-start</code>, <code>grid-column-end</code>.<br>
+    <b>Пример:</b><br>
+    <code>grid-colum-start: 4;</code><br>
+    <code>grid-colum-end: 5;</code><br>
+    <code>grid-colum: 4/5;</code><br>
+  </section>
+  <section class="slide">
+    <h2>grid-row</h2>
+    Свойства <code>grid-row-start</code>, <code>grid-row-end</code> определяют положение элемента в сетке по вертикали,
+    посредством указания номеров линий. Свойство <code>grid-row</code> объединяет
+    <code>grid-row-start</code>, <code>grid-row-end</code>.<br>
+    <b>Пример:</b><br>
+    <code>grid-row-start: 4;</code><br>
+    <code>grid-row-end: 5;</code><br>
+    <code>grid-row: 4/5;</code><br>
+  </section>
+  <section class="slide">
+    <h2>grid-area</h2>
+    Свойство <code>grid-area</code> определяет положение элемента в сетке. Свойство <code>grid-area</code> объединяет 
+    <code>grid-row</code>, <code>grid-column</code>.<br>
+    <b>Пример:</b><br>
+    <code>grid-area: 1 / 1 / 2 / 2;</code><br>
+    <code>grid-area: aside;</code><br>
+  </section>
+  <section class="slide slide--title">
+    <h2>
+      <a href="https://www.figma.com/file/vFtP73IdNkhpkVBOYUIOMp/Grid?node-id=0%3A1" target="_blank">
+        Практика
+      </a>
+    </h2>
+  </section>
+  <section class="slide slide--title">
+    <h2>Отладка</h2>
+  </section>
+  <section class="slide slide--title">
+    <h2>Выравнивание grid элементов</h2>
+  </section>
+  <section class="slide">
+    <h2>Свойства для grid контейнера</h2>
+    <code>align-items: stretch | start | end | center;</code><br>
+    <code>justify-items: stretch | start | end | center;</code><br>
+  </section>
+  <section class="slide">
+    <h2>Свойства для grid элементов</h2>
+    <code>align-self: stretch | start | end | center;</code><br>
+    <code>justify-self: stretch | start | end | center;</code>
+  </section>
+  <section class="slide">
+    <h2>Выравнивание grid контейнера</h2>
+    <code>align-content: stretch;</code><br>
+    <code style="font-size: 18px;">/* start | end | center | space-around | space-between | space-evenly */</code><br>
+    <hr>
+    <code>justify-content: stretch;</code><br>
+    <code style="font-size: 18px;">/* start | end | center | space-around | space-between | space-evenly */</code><br>
+  </section>
+  <section class="slide">
+    <h2>Order</h2>
+    Свойство <code>order</code> определяет (переопределяет) порядок следования grid элементов
+    внутри grid контейнера.
+    <hr>
+    <pre>
+      <code>.grid-item {</code>
+      <code>  order: 0 | -1 | 1 | 2 ... ;</code>
+      <code>}</code>
+    </pre>
+  </section>
+  <section class="slide">
+    <h2>grid-auto-flow</h2>
+    <code>grid-auto-flow: row;</code><br>
+    <code>grid-auto-flow: column;</code><br>
+    <code>grid-auto-flow: dense;</code><br>
+    <code>grid-auto-flow: row dense;</code><br>
+    <code>grid-auto-flow: column dense;</code><br>
+  </section>
+  <section class="slide slide--title">
+    <h2>Flex vs Grid</h2>
+  </section>
+  <section class="slide">
+    <h2>Почитать</h2>
+    <ol>
+      <li>
+        <a href="https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout" target="_blank">
+          Основные понятия Grid Layout | MDN
+        </a>
+      </li>
+      <li>
+        <a href="https://wp-kama.ru/id_8945/grid-v-css.html" target="_blank">
+          https://wp-kama.ru/id_8945/grid-v-css.html
+        </a>
+      </li>
+      <li>
+        <a href="https://medium.com/@stasonmars/%D0%B2%D0%B5%CC%88%D1%80%D1%81%D1%82%D0%BA%D0%B0-%D0%BD%D0%B0-grid-%D0%B2-css-%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D0%B5-%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE-%D0%B8-%D1%81%D0%BF%D1%80%D0%B0%D0%B2%D0%BE%D1%87%D0%BD%D0%B8%D0%BA-220508316f8b" target="_blank">
+          Вёрстка на Grid в CSS. Полное руководство и справочник
+        </a>
+      </li>
+      <li>
+        <a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="_blank">
+          A Complete Guide to Grid
+        </a>
+      </li>
+      <li>
+        <a href="https://www.w3schools.com/css/css_grid.asp" target="_blank">
+          CSS Grid Layout Module
+        </a>
+      </li>
+    </ol>
+  </section>
+  <section class="slide">
+    <h2>Посмотреть</h2>
+    <ul>
+      <li>
+        <a href="https://www.youtube.com/watch?v=hAFcdRrhwQM" target="_blank">
+          Можно вообще все. Раскладка по гриду. | Вадим Макеев
+        </a>
+      </li>
+    </ul>
+  </section>
+  <section class="slide">
+    <h2>Поиграть</h2>
+    <ul>
+      <li>
+        <a href="https://cssgridgarden.com/#ru" target="_blank">
+          GRID GARDEN
+        </a>
+      </li>
+    </ul>
+  </section>
+  <section class="slide">
+    <h2>Вопросы для подготовки к интервью</h2>
+    <ol>
+      <li>Что лучше flex или grid?</li>
+      <li>Опишите структуру grid контейнера.</li>
+      <li>Что делает свойство grid-row/grid-column/grid-area?</li>
+      <li>Что делает свойство align-items/justify-items?</li>
+      <li>Что делает свойство align-content/justify-content?</li>
+      <li>Как можно влиять на поряд элементов внутри grid контейнера?</li>
+      <li>С помощью чего можно осуществлять отладку grid layout'а?</li>
+    </ol>
+  </section>
+  <footer class="badge">
+      <a href="/">Home</a>
+  </footer>
+  <div class="progress"></div>
+  <script src="node_modules/@shower/core/dist/shower.js"></script>
+  <!-- &lt;&gt; -->
+</body>
+</html>
