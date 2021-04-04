@@ -48,10 +48,15 @@
     <h2>Как оптимизировать графику?</h2>
     <ol>
       <li>использовать графические форматы по назначению;</li>
-      <li>использовать прогрессивные форматы графики (webp, jpeg 2000, avif);</li>
+      <li>использовать прогрессивные форматы графики (webp, jpeg 2000, avif)*;</li>
       <li>использовать инструменты для сжатия графических файлов;</li>
-      <li>использовать в проекте адаптивную графику (picture, media queries).</li>
+      <li>использовать в проекте адаптивную графику (picture, media queries,
+        <a href="https://developer.mozilla.org/ru/docs/Web/CSS/image-set()" target="_blank">image-set</a>.)
+      </li>
     </ol>
+    <hr>
+    Стоит предусмотреть fallback в формате jpeg/png для
+    <a href="https://caniuse.com/?search=webp" target="_blank">браузеров, которые не умеют работать с webp</a>
   </section>
   <section class="slide">
     <h2>Популярные инструменты для сжатия графических файлов</h2>
