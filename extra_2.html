@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <title>Оптимизация производительности | Курс Frontend Basic</title>
+  <meta charset="utf-8">
+  <meta content='NOINDEX, NOFOLLOW' name='robots'>
+  <meta name="description" content="Оптимизация производительности | Курс Frontend Basic. Компьютерная Школа Hillel">
+  <meta property="og:title" content="Frontend Basic">
+  <meta property="og:description" content="Оптимизация производительности | Курс Frontend Basic | Компьютерная Школа Hillel">
+  <meta property="og:image" content="https://assets.ithillel.ua/images/og.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="shower/themes/ribbon/styles/styles.css">
+  <link rel="stylesheet" href="fontawesome-free-5.14.0-web/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176065403-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-176065403-1');
+  </script>
+</head>
+<body class="shower list">
+  <header class="caption">
+      <h1>Оптимизация производительности | Курс Frontend Basic</h1>
+      <p>Александр Плахотенко, Компьютерная Школа Hillel</p>
+  </header>
+  <section class="slide slide--title">
+    <h2>Оптимизация производительности</h2>
+  </section>
+  <section class="slide">
+    <h2>План</h2>
+    <ol>
+      <li>Инструменты для тестирования</li>
+      <li>Рекомендации по улучшению производительности</li>
+    </ol>
+  </section>
+  <section class="slide">
+    <h2>Инструменты для тестирования</h2>
+    <ul>
+      <li>
+        <a href="https://developers.google.com/speed/pagespeed/insights/" target="_blank">
+          PageSpeed Insights
+        </a>
+      </li>
+      <li>
+        <a href="https://web.dev/measure/" target="_blank">https://web.dev/measure/</a>
+      </li>
+      <li>
+        Lighthouse Chrome Extension
+      </li>
+    </ul>
+  </section>
+  <section class="slide">
+    <h2>Важно</h2>
+    <i>
+      Не стоит слепо внедрять все рекомендации Google PageSpeed. Большая часть этих рекомендаций - это гипотезы, которые нуждаются в тестировании. 
+    </i>
+  </section>
+  <section class="slide">
+    <img width="700" src="./images/pagespeed_screen.png" alt="">
+  </section>
+  <section class="slide">
+    <h2>Метрики</h2>
+    <ul>
+      <li>
+        <a href="https://web.dev/fcp/" target="_blank">
+          FCP (First Contentful Paint)
+        </a>
+      </li>
+      <li>
+        <a href="https://web.dev/speed-index/" target="_blank">
+          SI (Speed Index)
+        </a>
+      </li>
+      <li>
+        <a href="https://web.dev/lcp/" target="_blank">
+          LCP (Largest Contentful Paint)
+        </a>
+      </li>
+      <li>
+        <a href="https://web.dev/tti/" target="_blank">
+          TTI (Time to Interactive)
+        </a>
+      </li>
+      <li>
+        <a href="https://web.dev/tbt/" target="_blank">
+          TBT (Total Blocking Time)
+        </a>
+      </li>
+      <li>
+        <a href="https://web.dev/cls/" target="_blank">
+          CLS (Cumulative Layout Shift)
+        </a>
+      </li>
+    </ul>
+    <a href="https://googlechrome.github.io/lighthouse/scorecalc/" target="_blank">Lighthouse Scoring Calculator</a>
+  </section>
+  <section class="slide slide--title">
+    <h2>Рекомендации</h2>
+  </section>
+  <section class="slide slide--title">
+    <h2>
+      <a href="lesson_18.html#4">
+        Оптимизация графики
+      </a>
+    </h2>
+  </section>
+  <section class="slide">
+    <h2>Минификация статических ресурсов</h2>
+    <ul>
+      <li>
+        <a href="https://web.dev/minify-css/" target="_blank">
+          Minify CSS
+        </a>
+      </li>
+      <li>
+        <a href="https://web.dev/unminified-javascript/" target="_blank">
+          Minify JavaScript
+        </a>
+      </li>
+    </ul>
+  </section>
+  <section class="slide">
+    <h2>Кэширование</h2>
+    <a href="https://web.dev/uses-long-cache-ttl/" target="_blank">Serve static assets with an efficient cache policy</a>
+  </section>
+  <section class="slide">
+    <h2>Critical CSS*</h2>
+    Critical CSS - это практика размещения стилей, необходимых для отрисовки первого экрана сайта, непосредственно внутри head с помощью тега style.
+    <br>
+    Подробнее: <a href="https://web.dev/extract-critical-css/" target="_blank">Extract critical CSS</a> 
+    <hr>
+    <i style="font-size: 14px;">Стоит предварительно обсудить с командой. Внедрение Critical CSS может привести к ухудшению поддержки проекта.</i>
+  </section>
+  <section class="slide">
+    <h2>Оптимизация шрифтов</h2>
+    <ol>
+      <li>Используйте формат woff2 (+ woff, как fallback для IE11)</li>
+      <li>
+        <a href="lesson_5.html?full#20">
+          Используйте font-display: swap
+        </a>
+      </li>
+      <li>
+        <a href="https://dev.to/masakudamatsu/which-fallback-fonts-should-we-choose-to-make-fout-less-jarring-3d8d" target="_blank">
+          Правильно подбирайте fallback для кастомного шрифта
+        </a>
+      </li>
+      <li>Удаляйте ненужные глифы из шрифта</li>
+    </ol>
+  </section>
+  <section class="slide">
+    <h2>Lazy Loading</h2>
+    <ul>
+      <li>
+        <code>loading='lazy'</code> для изображений
+      </li>
+      <li>
+        <code>loading='lazy'</code> для iframe'ов
+      </li>
+      <li>
+        <code>preload='none'</code> для video
+      </li>
+    </ul>
+  </section>
+  <section class="slide">
+    <h2>Не используйте формат gif</h2>
+    Вместо формата gif стоит использовать видео-форматы (mp4, webm). Необходимые атрибуты для тега video: autoplay, loop, muted, playsinline*.
+    <br>
+    Подробнее:
+    <a href="https://web.dev/efficient-animated-content/" target="_blank">
+      Use video formats for animated content
+    </a>
+    <hr>
+    * атрибут playsinline необходим для корректного воспроизведения видео на iOS устройствах.
+    Подробнее: <a href="https://webkit.org/blog/6784/new-video-policies-for-ios/" target="_blank">New video Policies for iOS</a>
+  </section>
+  <section class="slide">
+    <h2>Подключайте внешние библиотеки правильно</h2>
+    Стоит подключать только необходимые модули из внешних библиотек (к примеру bootstrap). Это позволит минимизировать вес скриптов и стилей.
+  </section>
+  <section class="slide">
+    <h2>Другие рекомендации</h2>
+    <ul>
+      <li>Не используйте preloader</li>
+      <li>Не используйте анимации для первого экрана</li>
+      <li>В случае использование js lazy loading стоит убедиться в том, что не блокируется контент на первом экране сайта</li>
+    </ul>
+  </section>
+  <section class="slide">
+    <h2>Вопросы для подготовки к интервью</h2>
+    <ol>
+      <li>Какие вы знаете методы улучшения производительности?</li>
+    </ol>
+  </section>
+  <section class="slide">
+    <h2>Посмотреть</h2>
+    <ol>
+      <li>
+        <a href="https://www.youtube.com/watch?v=uI3Q5m9xkkw" target="_blank">
+          _ ___ ______? Вадим Макеев
+        </a>
+      </li>
+    </ol>
+  </section>
+  <footer class="badge">
+      <a href="/">Home</a>
+  </footer>
+  <div class="progress"></div>
+  <script src="shower/shower.js"></script>
+  <!-- &lt;&gt; -->
+</body>
+</html>
