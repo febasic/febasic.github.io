@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Знакомство с JS | Курс Frontend Pro</title>
+    <meta charset="utf-8">
+    <meta content='NOINDEX, NOFOLLOW' name='robots'>
+    <meta name="description" content="Знакомство с JS | Курс Frontend Pro. Компьютерная Школа Hillel">
+    <meta property="og:title" content="Frontend Basic">
+    <meta property="og:description" content="Знакомство с JS | Курс Frontend Pro | Компьютерная Школа Hillel">
+    <meta property="og:image" content="https://assets.ithillel.ua/images/og.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="node_modules/@shower/ribbon/styles/styles.css">
+    <link rel="stylesheet" href="fontawesome-free-5.14.0-web/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176065403-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-176065403-1');
+    </script>
+</head>
+<body class="shower list">
+<header class="caption">
+    <h1>Знакомство с JS | Курс Frontend Pro</h1>
+    <p>Компьютерная Школа Hillel</p>
+</header>
+<section class="slide slide--title">
+    <h2>Знакомство с JS</h2>
+</section>
+<section class="slide">
+    <h2>План</h2>
+    <ol>
+        <li>Среда разработки</li>
+        <li>Движки браузера</li>
+        <li>Переменные</li>
+    </ol>
+</section>
+<section class="slide">
+    <h2>Где работает JS?</h2>
+
+    <ul>
+        <li>
+            Любой браузер(Chrome, Opera, Safari, Firefox) на любой платформе (MacOS, Windows, Linux, Chromium, Android, iOS). Например, любой сайт(Facebook, Instagram, Google в браузер)
+        </li>
+        <li>
+            Прямо на компьютере(устройстве)(Node.js, Deno). Например, любой бекенд написанный на js(Paypal, Netflix)
+        </li>
+        <li>
+            На мобильных платформах(React Native). Примеры, мобильные приложения Facebook, Instagram
+        </li>
+    </ul>
+</section>
+<section class="slide">
+    <h2>Где работает JS?</h2>
+    <ul>
+        <li>
+            В виде десктопных приложений(Electron). Примеры приложений, Skype, Microsoft Teams, VS Code, Slack
+        </li>
+        <li>
+            Машинное обучение(tenzorflow)
+        </li>
+        <li>
+            Ещё много областей
+        </li>
+    </ul>
+</section>
+<section class="slide">
+    <h2>
+        Что может делать JavaScript в браузере?
+    </h2>
+    <ul>
+        <li>
+            Добавлять/менять html код, стили и тд
+        </li>
+        <li>
+            Реагировать на действие пользователя(клики, скроллы, перемещение курсора, нажатия клавиш)
+        </li>
+        <li>
+            Делать запросы на сервера, скачивать и отправлять файлы и прочая работа с сетью
+        </li>
+        <li>
+            Работать с куками(cookies), задавать вопросы пользователю, показывать ему сообщения
+        </li>
+        <li>
+            Сохранять на стороне клиента данные(local storage, session storage)
+        </li>
+    </ul>
+</section>
+<section class="slide">
+    <h2>
+        Что он не может?
+    </h2>
+    <ul>
+        <li>
+            Не имеет доступа к файловой системе устройства
+        </li>
+        <li>
+            Не может смотреть информацию и иметь доступ к другим вкладкам
+        </li>
+        <li>
+            Просто так нельзя общаться с серверами других доменов
+        </li>
+    </ul>
+</section>
+<section class="slide">
+    <h2>Из чего состоит JavaScript в браузере</h2>
+    <ul>
+        <li>Сам движок javascript</li>
+        <li>DOM(Document Object Model): То что работает с DOM деревом(теги, элементы и работа с ними)</li>
+        <li>
+            BOM(Browser Object Model): Работа с сетью, экраном, историей браузера и информация о нем
+        </li>
+    </ul>
+</section>
+<section class="slide">
+    <h2>Что такое GitHub?</h2>
+    <figure>
+        <blockquote>
+            <p>
+                <strong>GitHub</strong> — сервис онлайн-хостинга репозиториев.
+            </p>
+        </blockquote>
+        <figcaption>
+            <a href="https://github.com/" target="_blank">https://github.com/</a>
+        </figcaption>
+    </figure>
+    <div style="font-size: 240px; line-height: 1; color:#333; float: right;">
+        <i class="fab fa-github"></i>
+    </div>
+</section>
+<section class="slide">
+    <h2>Репозиторий</h2>
+    <figure>
+        <blockquote>
+            <p>
+                <strong>Репозиторий Git</strong> — это исходный код проекта.
+                Git репозиторий также содержит информацию обо всех изменениях
+                в проекте в виде промежуточных состояний (commits).
+            </p>
+        </blockquote>
+        <figcaption></figcaption>
+    </figure>
+</section>
+<section class="slide">
+    <h2>Первые шаги</h2>
+    <ol>
+        <li>установить git на компьютер;</li>
+        <li>выполнить базовую настройку;</li>
+        <li>инициализировать репозиторий;</li>
+        <li>создать первый commit;</li>
+        <li>зарегистрировать аккаунт на GitHub;</li>
+        <li>залить код проекта на удаленный репозиторий.</li>
+    </ol>
+</section>
+<section class="slide">
+    <h2>Первоначальная настройка</h2>
+    <pre>
+      <code>git config --global user.name "John Doe"</code>
+      <code>git config --global user.email johndoe@example.com</code>
+      <code>git config --global core.editor subl</code>
+    </pre>
+    настройки сохраняются в файле <code>~/.gitconfig</code>
+    <br>
+    <a href="https://git-scm.com/book/ru/v2/%D0%92%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5-%D0%9F%D0%B5%D1%80%D0%B2%D0%BE%D0%BD%D0%B0%D1%87%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F-%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-Git" target="_blank">
+        Первоначальная настройка Git
+    </a>
+</section>
+<section class="slide">
+    <h2>Базовые команды</h2>
+    <table style="font-size: 20px;">
+        <tr>
+            <th>Команда</th>
+            <th>Описание</th>
+        </tr>
+        <tr>
+            <td>
+                <code>git status</code>
+            </td>
+            <td>
+                проверка состояния репозитория
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>git init</code>
+            </td>
+            <td>
+                инициализация нового репозитория
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>git add</code>
+            </td>
+            <td>
+                добавить файл(ы) в индекс для отслеживания
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>git commit</code>
+            </td>
+            <td>
+                сохранить изменения в репозиторий
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>git push</code>
+            </td>
+            <td>
+                актуализировать удаленный репозиторий
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>git pull</code>
+            </td>
+            <td>
+                актуализировать локальный репозиторий
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>git checkout</code>
+            </td>
+            <td>
+                переключение между ветками/коммитами
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>git clone</code>
+            </td>
+            <td>
+                создание локальной копии удаленного репозитория
+            </td>
+        </tr>
+    </table>
+</section>
+<section class="slide">
+    <h2>.gitignore</h2>
+    Файл <code>.gitignore</code> содержит в себе пути к файлам/папкам, которые следует скрыть от системы контроля версий по тем или иным причинам.
+</section>
+<section class="slide">
+    <h2>Домашка (опционально)</h2>
+    С помощью сервиса github pages разместить проект в интернете.
+</section>
+<section class="slide">
+    <h2>Вопросы для подготовки к интервью</h2>
+    <ol>
+        <li>Для чего нужны системы системы контроля версий?</li>
+        <li>Какие вы знаете команды для работы с git?</li>
+        <li>Для чего нужна та или иная команда.</li>
+    </ol>
+</section>
+<footer class="badge">
+    <a href="/">Home</a>
+</footer>
+<div class="progress"></div>
+<script src="node_modules/@shower/core/dist/shower.js"></script>
+<!-- &lt;&gt; -->
+</body>
+</html>
